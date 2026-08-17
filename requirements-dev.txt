@@ -1,6 +1,0 @@
-pytest
-pytest-cov
-ruff
-mypy
-jsonschema>=4.22,<5
-PyYAML>=6.0,<7
