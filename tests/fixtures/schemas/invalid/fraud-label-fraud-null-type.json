@@ -1,0 +1,15 @@
+{
+  "event_id": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+  "event_type": "fraud_label",
+  "schema_version": "1.0",
+  "source": "simulated_investigation",
+  "event_timestamp": "2026-01-16T12:00:00Z",
+  "source_timestamp": "2026-01-16T12:00:01Z",
+  "ingestion_timestamp": "2026-01-16T12:00:02Z",
+  "transaction_id": "77777777-7777-4777-8777-777777777777",
+  "is_fraud": true,
+  "fraud_type": null,
+  "label_timestamp": "2026-01-16T12:00:00Z",
+  "label_source": "SIMULATED_INVESTIGATION",
+  "investigation_status": "CONFIRMED_FRAUD"
+}

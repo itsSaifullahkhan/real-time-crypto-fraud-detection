@@ -1,0 +1,115 @@
+scenario_id: structuring
+scenario_version: "1.0"
+display_name: "Structuring"
+description: "A larger suspicious amount is divided into several smaller transactions that may look individually normal."
+enabled: true
+fraud_type: STRUCTURING
+reason_codes:
+  - HIGH_TRANSACTION_VELOCITY
+  - UNUSUAL_AMOUNT
+affected_entities:
+  - account
+  - wallet
+  - customer_transaction
+  - fraud_decision
+  - fraud_label
+affected_event_types:
+  - customer_transaction
+  - fraud_decision
+  - fraud_label
+prerequisites:
+  - "One active account has an established normal amount and normal frequency profile."
+  - "A source customer wallet and destination wallet exist."
+  - "The combined transaction sequence can be evaluated in rolling event-time windows."
+trigger_logic:
+  profile_relative_rules:
+    per_transaction_amount_multiplier_vs_normal:
+      min: 0.6
+      max: 1.5
+    combined_amount_multiplier_vs_normal:
+      min: 5
+      max: 12
+    transactions_in_sequence:
+      min: 4
+      max: 10
+  destination_wallet_pattern: "Same destination wallet is often reused, but controlled variation may use two destinations."
+event_sequence:
+  - step: 1
+    event_type: customer_transaction
+    description: "Several individually plausible withdrawals or transfers occur close together."
+    transaction_event_contains_label: false
+  - step: 2
+    event_type: fraud_decision
+    description: "Later sequence transactions can be scored with rolling counts and sums."
+    transaction_event_contains_label: false
+  - step: 3
+    event_type: fraud_label
+    description: "Delayed investigation labels all completed transactions that belong to the structured sequence."
+    transaction_event_contains_label: false
+timing_rules:
+  prerequisite_history_days:
+    min: 14
+    max: 180
+  sequence_window_minutes:
+    min: 5
+    max: 60
+  spacing_between_transactions_minutes:
+    min: 1
+    max: 12
+  maximum_scenario_duration_hours:
+    min: 1
+    max: 4
+  label_delay_hours:
+    min: 24
+    max: 96
+  late_or_out_of_order_variants_later: true
+  can_overlap_with_another_scenario: false
+expected_feature_signals:
+  - name: transaction_count_last_5_minutes
+    source: prior_transaction_events
+    availability: before_prediction
+  - name: withdrawal_sum_last_5_minutes
+    source: prior_transaction_events
+    availability: before_prediction
+  - name: transaction_count_last_1_hour
+    source: prior_transaction_events
+    availability: before_prediction
+  - name: withdrawal_sum_last_1_hour
+    source: prior_transaction_events
+    availability: before_prediction
+  - name: repeated_destination_wallet_count
+    source: prior_wallet_activity
+    availability: before_prediction
+  - name: transaction_velocity_vs_normal
+    source: historical_account_profile
+    availability: at_prediction
+label_rules:
+  labeled_transaction_selection: "All completed customer_transaction records in the structured sequence receive confirmed fraud labels."
+  multiple_labels_can_relate_to_same_scenario: true
+  label_delay_hours:
+    min: 24
+    max: 96
+  fraud_type: STRUCTURING
+  investigation_status: CONFIRMED_FRAUD
+  is_fraud: true
+  label_source: SIMULATED_INVESTIGATION
+  normal_control_records_generated: true
+  cleared_control_label:
+    investigation_status: CLEARED
+    is_fraud: false
+    fraud_type: null
+difficulty: HARD
+false_positive_risk:
+  level: HIGH
+  examples:
+    - "Legitimate transfers split for operational reasons."
+    - "Customer moving funds through known wallets during rebalancing."
+normal_control_cases:
+  - "Several normal-sized transfers to known wallets with a legitimate activity profile."
+  - "Frequent small transfers from a high-frequency account whose historical behaviour supports it."
+validation_rules:
+  - "The planned combined fraudulent amount must not appear in customer_transaction records."
+  - "Only rolling features available by event time may identify the suspicious sequence."
+  - "Individual records must remain schema-valid without label fields."
+notes:
+  - "Individual transactions may appear legitimate; the sequence is suspicious because rolling sums and repeated destination usage exceed the account profile."

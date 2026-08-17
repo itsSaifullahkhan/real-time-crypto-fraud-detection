@@ -1,0 +1,116 @@
+scenario_id: high_transaction_velocity
+scenario_version: "1.0"
+display_name: "High transaction velocity"
+description: "An account performs an unusually large number of transactions or withdrawals in a short event-time window."
+enabled: true
+fraud_type: HIGH_TRANSACTION_VELOCITY
+reason_codes:
+  - HIGH_TRANSACTION_VELOCITY
+affected_entities:
+  - account
+  - device
+  - wallet
+  - customer_transaction
+  - fraud_decision
+  - fraud_label
+affected_event_types:
+  - customer_transaction
+  - fraud_decision
+  - fraud_label
+prerequisites:
+  - "Account has a stable normal_transaction_frequency_per_day profile."
+  - "Account has enough prior transaction history to estimate recent baseline activity."
+  - "Wallet relationships satisfy the customer-transaction schema."
+trigger_logic:
+  profile_relative_rules:
+    burst_count_multiplier_vs_normal_frequency:
+      min: 5
+      max: 20
+    transactions_in_burst:
+      min: 4
+      max: 12
+  label_recommendation: "Label only the final transaction in the burst to keep the outcome definition consistent and avoid inflating fraud counts."
+event_sequence:
+  - step: 1
+    event_type: customer_transaction
+    description: "Normal historical transactions establish the account frequency profile."
+    transaction_event_contains_label: false
+  - step: 2
+    event_type: customer_transaction
+    description: "Several valid transactions occur within a short event-time window."
+    transaction_event_contains_label: false
+  - step: 3
+    event_type: fraud_decision
+    description: "The final burst transaction is scored using transaction-window features."
+    transaction_event_contains_label: false
+  - step: 4
+    event_type: fraud_label
+    description: "Delayed investigation labels the final burst transaction as high-velocity fraud."
+    transaction_event_contains_label: false
+timing_rules:
+  prerequisite_history_days:
+    min: 14
+    max: 180
+  transaction_burst_window_minutes:
+    min: 1
+    max: 5
+  maximum_scenario_duration_hours:
+    min: 1
+    max: 3
+  label_delay_hours:
+    min: 12
+    max: 72
+  late_or_out_of_order_variants_later: true
+  can_overlap_with_another_scenario: false
+expected_feature_signals:
+  - name: transaction_count_last_1_minute
+    source: prior_transaction_events
+    availability: before_prediction
+  - name: transaction_count_last_5_minutes
+    source: prior_transaction_events
+    availability: before_prediction
+  - name: transaction_count_last_1_hour
+    source: prior_transaction_events
+    availability: before_prediction
+  - name: withdrawal_sum_last_5_minutes
+    source: prior_transaction_events
+    availability: before_prediction
+  - name: withdrawal_sum_last_1_hour
+    source: prior_transaction_events
+    availability: before_prediction
+  - name: transaction_velocity_vs_normal
+    source: historical_account_profile
+    availability: at_prediction
+  - name: time_since_previous_transaction
+    source: prior_transaction_events
+    availability: before_prediction
+label_rules:
+  labeled_transaction_selection: "Only the final transaction_id in the burst receives the confirmed fraud label."
+  multiple_labels_can_relate_to_same_scenario: false
+  label_delay_hours:
+    min: 12
+    max: 72
+  fraud_type: HIGH_TRANSACTION_VELOCITY
+  investigation_status: CONFIRMED_FRAUD
+  is_fraud: true
+  label_source: SIMULATED_INVESTIGATION
+  normal_control_records_generated: true
+  cleared_control_label:
+    investigation_status: CLEARED
+    is_fraud: false
+    fraud_type: null
+difficulty: EASY_TO_MEDIUM
+false_positive_risk:
+  level: MEDIUM
+  examples:
+    - "Payroll, merchant, or exchange-like activity by a legitimate customer."
+    - "A customer splitting operational transfers during a busy period."
+normal_control_cases:
+  - "Legitimate merchant or payroll burst using known devices and wallets."
+  - "Customer rebalancing between known wallets with no other suspicious signals."
+validation_rules:
+  - "Each transaction in the burst must satisfy the customer-transaction schema."
+  - "Feature windows must use only events at or before the prediction point."
+  - "The transaction event must not include fraud label fields."
+notes:
+  - "The final transaction is the labelled event because it has the most complete observable burst context."

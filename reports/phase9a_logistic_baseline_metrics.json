@@ -1,0 +1,77 @@
+{
+  "fixed_configuration": {
+    "class_weight": "balanced",
+    "max_iter": 1000,
+    "random_state": 42,
+    "solver": "liblinear",
+    "threshold": 0.5
+  },
+  "model_name": "logistic_regression_balanced_v1",
+  "plot_paths": [
+    "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/logistic_regression_balanced_v1_validation_roc_curve.png",
+    "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/logistic_regression_balanced_v1_validation_confusion_matrix.png",
+    "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/logistic_regression_balanced_v1_validation_precision_recall_curve.png",
+    "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/logistic_regression_balanced_v1_validation_probability_distribution.png",
+    "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/logistic_regression_balanced_v1_test_roc_curve.png",
+    "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/logistic_regression_balanced_v1_test_confusion_matrix.png",
+    "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/logistic_regression_balanced_v1_test_precision_recall_curve.png",
+    "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/logistic_regression_balanced_v1_test_probability_distribution.png",
+    "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/logistic_regression_balanced_v1_top_coefficient_magnitudes.png"
+  ],
+  "test_metrics": {
+    "accuracy": 0.9602977667493796,
+    "average_precision": 0.7192982456140351,
+    "balanced_accuracy": 0.9800995024875622,
+    "confusion_matrix": {
+      "false_negative": 0,
+      "false_positive": 48,
+      "true_negative": 1158,
+      "true_positive": 3
+    },
+    "false_negative_rate": 0.0,
+    "false_negatives": 0,
+    "false_positive_rate": 0.03980099502487562,
+    "false_positives": 48,
+    "fraud_count": 3,
+    "fraud_f1": 0.1111111111111111,
+    "fraud_precision": 0.058823529411764705,
+    "fraud_recall": 1.0,
+    "normal_count": 1206,
+    "predicted_fraud_count": 51,
+    "predicted_normal_count": 1158,
+    "roc_auc": 0.9955776672194582,
+    "row_count": 1209,
+    "specificity": 0.9601990049751243,
+    "threshold": 0.5,
+    "true_negatives": 1158,
+    "true_positives": 3
+  },
+  "validation_metrics": {
+    "accuracy": 0.9595588235294118,
+    "average_precision": 0.6758012820512821,
+    "balanced_accuracy": 0.8147459727385378,
+    "confusion_matrix": {
+      "false_negative": 2,
+      "false_positive": 20,
+      "true_negative": 518,
+      "true_positive": 4
+    },
+    "false_negative_rate": 0.3333333333333333,
+    "false_negatives": 2,
+    "false_positive_rate": 0.03717472118959108,
+    "false_positives": 20,
+    "fraud_count": 6,
+    "fraud_f1": 0.26666666666666666,
+    "fraud_precision": 0.16666666666666666,
+    "fraud_recall": 0.6666666666666666,
+    "normal_count": 538,
+    "predicted_fraud_count": 24,
+    "predicted_normal_count": 520,
+    "roc_auc": 0.9653035935563817,
+    "row_count": 544,
+    "specificity": 0.9628252788104089,
+    "threshold": 0.5,
+    "true_negatives": 518,
+    "true_positives": 4
+  }
+}

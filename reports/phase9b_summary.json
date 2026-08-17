@@ -1,0 +1,295 @@
+{
+  "artifacts_created": {
+    "mlflow_comparison_artifact": "phase9b_model_comparison.json",
+    "reports": [
+      "reports/phase9b_model_comparison.json",
+      "reports/phase9b_summary.json"
+    ]
+  },
+  "cluster": {
+    "cluster_id": "0803-061312-78fw66xn",
+    "cluster_name": "crypto-fraud-dev-compute"
+  },
+  "created_at_utc": "2026-08-10T04:36:28.076466+00:00",
+  "failed_checks": [],
+  "feature_count": 55,
+  "final_locked_test_metrics": {
+    "f1": 0.4,
+    "false_negatives": 2,
+    "false_positives": 1,
+    "fraud_count": 3,
+    "normal_count": 1206,
+    "pr_auc": 0.49999999999999994,
+    "precision": 0.5,
+    "recall": 0.3333333333333333,
+    "row_count": 1209,
+    "threshold": 0.8,
+    "true_negatives": 1205,
+    "true_positives": 1
+  },
+  "mlflow_experiment_path": "/Users/akanaskhan1506@gmail.com/crypto-fraud-phase9b",
+  "notebook_path": "/Users/akanaskhan1506@gmail.com/05_xgboost_model_selection",
+  "overall_status": "PASS",
+  "overlap_checks": {
+    "train_test_overlap_count": 0,
+    "train_validation_overlap_count": 0,
+    "validation_test_overlap_count": 0
+  },
+  "package_versions": {
+    "mlflow": "3.8.1",
+    "notebook_scoped_packages_installed": [
+      "xgboost"
+    ],
+    "numpy": "2.1.3",
+    "package_status_after_install": {
+      "mlflow": {
+        "available": true,
+        "module": "mlflow",
+        "version": "3.8.1"
+      },
+      "numpy": {
+        "available": true,
+        "module": "numpy",
+        "version": "2.1.3"
+      },
+      "pandas": {
+        "available": true,
+        "module": "pandas",
+        "version": "2.2.3"
+      },
+      "sklearn": {
+        "available": true,
+        "module": "sklearn",
+        "version": "1.6.1"
+      },
+      "xgboost": {
+        "available": true,
+        "module": "xgboost",
+        "version": "3.4.0"
+      }
+    },
+    "package_status_before_install": {
+      "mlflow": {
+        "available": true,
+        "module": "mlflow",
+        "version": "3.8.1"
+      },
+      "numpy": {
+        "available": true,
+        "module": "numpy",
+        "version": "2.1.3"
+      },
+      "pandas": {
+        "available": true,
+        "module": "pandas",
+        "version": "2.2.3"
+      },
+      "sklearn": {
+        "available": true,
+        "module": "sklearn",
+        "version": "1.6.1"
+      },
+      "xgboost": {
+        "available": false,
+        "error": "No module named 'xgboost'",
+        "module": "xgboost",
+        "version": null
+      }
+    },
+    "pandas": "2.2.3",
+    "platform": "Linux-5.15.0-1116-azure-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "python_full": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+    "scikit_learn": "1.6.1",
+    "xgboost": "3.4.0"
+  },
+  "phase": "9B",
+  "preprocessing_summary": {
+    "binary_features": [
+      "account_profile_available",
+      "destination_wallet_applicable",
+      "destination_wallet_first_seen_available",
+      "device_profile_available",
+      "has_previous_successful_auth",
+      "has_previous_transaction",
+      "has_prior_tx_24h",
+      "is_new_destination_wallet",
+      "is_new_device_24h",
+      "is_night_transaction_utc",
+      "is_weekend_utc",
+      "market_data_available",
+      "normal_transaction_amount_available",
+      "recent_auth_failure_flag_10m",
+      "source_wallet_applicable",
+      "transaction_country_mismatch_home_country"
+    ],
+    "categorical_features": [
+      "asset",
+      "country",
+      "customer_risk_tier",
+      "transaction_type"
+    ],
+    "categorical_transformer": "CategoricalCleaner('__MISSING__'), OneHotEncoder(handle_unknown='ignore')",
+    "final_transformed_feature_dimension": 71,
+    "numeric_features": [
+      "account_age_days",
+      "account_profile_available",
+      "amount_above_normal_usd",
+      "amount_to_normal_ratio",
+      "crypto_quantity",
+      "destination_wallet_age_hours",
+      "destination_wallet_applicable",
+      "destination_wallet_first_seen_available",
+      "device_age_days",
+      "device_age_hours",
+      "device_distinct_account_count_1h",
+      "device_failed_auth_count_10m",
+      "device_profile_available",
+      "device_successful_auth_count_1h",
+      "failed_auth_count_10m",
+      "failed_auth_count_1h",
+      "has_previous_successful_auth",
+      "has_previous_transaction",
+      "has_prior_tx_24h",
+      "is_new_destination_wallet",
+      "is_new_device_24h",
+      "is_night_transaction_utc",
+      "is_weekend_utc",
+      "latest_market_close_usd",
+      "market_data_available",
+      "market_data_freshness_seconds",
+      "market_price_usd",
+      "market_return_1h",
+      "market_return_5m",
+      "market_volatility_1h",
+      "market_volume_sum_1h",
+      "normal_transaction_amount_available",
+      "normal_transaction_amount_usd",
+      "prior_destination_wallet_tx_count",
+      "prior_source_wallet_tx_count",
+      "prior_tx_amount_avg_24h",
+      "prior_tx_amount_max_24h",
+      "prior_tx_amount_sum_1h",
+      "prior_tx_amount_sum_24h",
+      "prior_tx_count_1h",
+      "prior_tx_count_24h",
+      "prior_tx_count_5m",
+      "recent_auth_failure_flag_10m",
+      "seconds_since_last_successful_auth",
+      "seconds_since_previous_tx",
+      "source_wallet_applicable",
+      "successful_auth_count_1h",
+      "transaction_amount_usd",
+      "transaction_country_mismatch_home_country",
+      "transaction_day_of_week_utc",
+      "transaction_hour_utc"
+    ],
+    "numeric_transformer": "NumericCoercer, SimpleImputer(strategy='median'), StandardScaler",
+    "preprocessing_fit_scope": "training split only"
+  },
+  "quality_gate_checks": {
+    "approved_feature_set_reused": true,
+    "approved_phase9a_split_reused_exactly": true,
+    "event_hubs_started": false,
+    "logistic_regression_retrained": false,
+    "one_xgboost_model_trained": true,
+    "phase10_started": false,
+    "preprocessing_fit_on_train_only": true,
+    "selected_model_artifact_available": true,
+    "test_used_only_after_model_and_threshold_selection": true,
+    "threshold_selected_using_validation_only": true,
+    "xgboost_run_logged_to_mlflow": true
+  },
+  "registration": {
+    "candidate_alias_status": "PASS",
+    "registered_model_name": "crypto_fraud.models.fraud_detection_model",
+    "registered_model_version": "1",
+    "schema_created": true,
+    "status": "PASS"
+  },
+  "scale_pos_weight": 86.93548387096774,
+  "selected_model": "xgboost",
+  "selected_model_uri": "runs:/e2c1fd72aaf14bd88bc3806c601d1d8e/model",
+  "selected_threshold": 0.8,
+  "selected_thresholds": {
+    "logistic_regression": 0.8,
+    "xgboost": 0.8
+  },
+  "selection_reason": "xgboost selected by validation priority: recall >= 0.6667, then lower false positives, higher PR-AUC, higher precision.",
+  "split_hash": "6576d4aa251135aa3666c01396b5eeaafe3be1a741b2610262c5f4aebf7bbf01",
+  "split_summary": {
+    "test": {
+      "fraud_count": 3,
+      "normal_count": 1206,
+      "row_count": 1209
+    },
+    "train": {
+      "fraud_count": 31,
+      "normal_count": 2695,
+      "row_count": 2726
+    },
+    "validation": {
+      "fraud_count": 6,
+      "normal_count": 538,
+      "row_count": 544
+    }
+  },
+  "split_version": "rare_event_aware_time_split_v2",
+  "test_set_warning": "The locked test split contains only 3 fraud cases, so performance is unstable and portfolio-level, not production-level.",
+  "validation_metrics": {
+    "logistic_regression": {
+      "f1": 0.4444444444444444,
+      "false_negatives": 2,
+      "false_positives": 8,
+      "fraud_count": 6,
+      "normal_count": 538,
+      "pr_auc": 0.6758012820512821,
+      "precision": 0.3333333333333333,
+      "recall": 0.6666666666666666,
+      "row_count": 544,
+      "threshold": 0.8,
+      "true_negatives": 530,
+      "true_positives": 4
+    },
+    "xgboost": {
+      "f1": 0.8333333333333334,
+      "false_negatives": 1,
+      "false_positives": 1,
+      "fraud_count": 6,
+      "normal_count": 538,
+      "pr_auc": 0.9444444444444444,
+      "precision": 0.8333333333333334,
+      "recall": 0.8333333333333334,
+      "row_count": 544,
+      "threshold": 0.8,
+      "true_negatives": 537,
+      "true_positives": 5
+    }
+  },
+  "workspace_report_sync": {
+    "copied_files": [
+      "phase9b_model_comparison.json",
+      "phase9b_summary.json"
+    ],
+    "status": "PASS",
+    "workspace_reports_path": "/Users/akanaskhan1506@gmail.com/phase9b_reports/phase9b_latest"
+  },
+  "xgboost_fixed_parameters": {
+    "colsample_bytree": 0.85,
+    "eval_metric": "aucpr",
+    "learning_rate": 0.05,
+    "max_depth": 3,
+    "min_child_weight": 1,
+    "n_estimators": 200,
+    "n_jobs": 1,
+    "objective": "binary:logistic",
+    "random_state": 42,
+    "reg_lambda": 1.0,
+    "scale_pos_weight": 86.93548387096774,
+    "subsample": 0.85,
+    "tree_method": "hist",
+    "verbosity": 0
+  },
+  "xgboost_model_uri": "runs:/e2c1fd72aaf14bd88bc3806c601d1d8e/model",
+  "xgboost_run_id": "e2c1fd72aaf14bd88bc3806c601d1d8e"
+}

@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.crypto-fraud-platform.local/fraud-label.schema.json",
+  "title": "Fraud Label Event",
+  "description": "Delayed investigation outcome contract used as the supervised learning label source after customer transactions and model predictions have already occurred.",
+  "type": "object",
+  "properties": {
+    "event_id": {
+      "$ref": "https://schemas.crypto-fraud-platform.local/common-event.schema.json#/$defs/uuid"
+    },
+    "event_type": {
+      "type": "string",
+      "const": "fraud_label"
+    },
+    "schema_version": {
+      "$ref": "https://schemas.crypto-fraud-platform.local/common-event.schema.json#/$defs/schema_version"
+    },
+    "source": {
+      "type": "string",
+      "const": "simulated_investigation"
+    },
+    "event_timestamp": {
+      "$ref": "https://schemas.crypto-fraud-platform.local/common-event.schema.json#/$defs/utc_date_time"
+    },
+    "source_timestamp": {
+      "$ref": "https://schemas.crypto-fraud-platform.local/common-event.schema.json#/$defs/utc_date_time"
+    },
+    "ingestion_timestamp": {
+      "$ref": "https://schemas.crypto-fraud-platform.local/common-event.schema.json#/$defs/utc_date_time"
+    },
+    "transaction_id": {
+      "$ref": "https://schemas.crypto-fraud-platform.local/common-event.schema.json#/$defs/uuid"
+    },
+    "is_fraud": {
+      "type": "boolean"
+    },
+    "fraud_type": {
+      "enum": [
+        "ACCOUNT_TAKEOVER",
+        "HIGH_TRANSACTION_VELOCITY",
+        "UNUSUAL_TRANSACTION_AMOUNT",
+        "STRUCTURING",
+        "MULE_ACCOUNT_ACTIVITY",
+        "SHARED_SUSPICIOUS_DEVICE",
+        "HIGH_VOLATILITY_UNUSUAL_WITHDRAWAL",
+        null
+      ]
+    },
+    "label_timestamp": {
+      "$ref": "https://schemas.crypto-fraud-platform.local/common-event.schema.json#/$defs/utc_date_time"
+    },
+    "label_source": {
+      "type": "string",
+      "enum": [
+        "SIMULATED_INVESTIGATION"
+      ]
+    },
+    "investigation_status": {
+      "type": "string",
+      "enum": [
+        "CONFIRMED_FRAUD",
+        "CLEARED",
+        "INCONCLUSIVE"
+      ]
+    }
+  },
+  "required": [
+    "event_id",
+    "event_type",
+    "schema_version",
+    "source",
+    "event_timestamp",
+    "source_timestamp",
+    "ingestion_timestamp",
+    "transaction_id",
+    "is_fraud",
+    "fraud_type",
+    "label_timestamp",
+    "label_source",
+    "investigation_status"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "is_fraud": {
+            "const": true
+          }
+        },
+        "required": [
+          "is_fraud"
+        ]
+      },
+      "then": {
+        "properties": {
+          "fraud_type": {
+            "type": "string",
+            "enum": [
+              "ACCOUNT_TAKEOVER",
+              "HIGH_TRANSACTION_VELOCITY",
+              "UNUSUAL_TRANSACTION_AMOUNT",
+              "STRUCTURING",
+              "MULE_ACCOUNT_ACTIVITY",
+              "SHARED_SUSPICIOUS_DEVICE",
+              "HIGH_VOLATILITY_UNUSUAL_WITHDRAWAL"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "investigation_status": {
+            "const": "CONFIRMED_FRAUD"
+          }
+        },
+        "required": [
+          "investigation_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "is_fraud": {
+            "const": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "investigation_status": {
+            "const": "CLEARED"
+          }
+        },
+        "required": [
+          "investigation_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "is_fraud": {
+            "const": false
+          }
+        }
+      }
+    }
+  ],
+  "examples": [
+    {
+      "event_id": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+      "event_type": "fraud_label",
+      "schema_version": "1.0",
+      "source": "simulated_investigation",
+      "event_timestamp": "2026-01-16T12:00:00Z",
+      "source_timestamp": "2026-01-16T12:00:01Z",
+      "ingestion_timestamp": "2026-01-16T12:00:02Z",
+      "transaction_id": "77777777-7777-4777-8777-777777777777",
+      "is_fraud": true,
+      "fraud_type": "ACCOUNT_TAKEOVER",
+      "label_timestamp": "2026-01-16T12:00:00Z",
+      "label_source": "SIMULATED_INVESTIGATION",
+      "investigation_status": "CONFIRMED_FRAUD"
+    }
+  ]
+}

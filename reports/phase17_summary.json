@@ -1,0 +1,55 @@
+{
+  "candidate_alias_after": "1",
+  "candidate_alias_before": "1",
+  "candidate_alias_changed": false,
+  "created_at_utc": "2026-08-11T07:05:24.035602+00:00",
+  "dashboard_created_in_ui": false,
+  "dashboard_sections_available": {
+    "by_asset": true,
+    "by_country": true,
+    "confusion_matrix": true,
+    "fraud_activity_over_time": true,
+    "high_risk_transactions": true,
+    "kpi_cards": true,
+    "model_metrics": true
+  },
+  "dashboard_sql_created": true,
+  "dashboard_sql_path": "sql/fraud_monitoring_dashboard.sql",
+  "failed_checks": [],
+  "fraud_label_leakage": false,
+  "gold_tables": {
+    "kpi_summary": "crypto_fraud.gold.fraud_kpi_summary",
+    "model_monitoring": "crypto_fraud.gold.model_monitoring_summary",
+    "time_series": "crypto_fraud.gold.fraud_activity_timeseries",
+    "transaction_decisions": "crypto_fraud.gold.fraud_transaction_decisions"
+  },
+  "gold_tables_queryable": true,
+  "notebook": "databricks/10_gold_analytics.py",
+  "overall_status": "PASS",
+  "phase": "17",
+  "rows": {
+    "kpi_summary": 1,
+    "model_monitoring": 2,
+    "time_series": 1,
+    "transaction_decisions": 868
+  },
+  "secrets_exposed": false,
+  "source_counts": {
+    "feedback_labels": 805,
+    "scored_decisions": 805,
+    "transactions": 868
+  },
+  "source_reconciliation": "PASS",
+  "source_reconciliation_checks": {
+    "fraud_probabilities_in_unit_interval": true,
+    "gold_transaction_ids_unique": true,
+    "gold_transaction_rows_match_source_transactions": true,
+    "kpi_labeled_transactions_match_feedback": true,
+    "kpi_scored_transactions_match_decisions": true,
+    "kpi_total_transactions_match_gold": true,
+    "transaction_amounts_numeric_and_present": true
+  },
+  "threshold": 0.8,
+  "threshold_changed": false,
+  "workspace_path": "/Users/akanaskhan1506@gmail.com/10_gold_analytics"
+}

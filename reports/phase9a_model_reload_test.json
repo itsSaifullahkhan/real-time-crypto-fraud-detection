@@ -1,0 +1,29 @@
+{
+  "max_probability_difference": 0.0,
+  "predicted_classes_match_exactly": true,
+  "probability_tolerance": 1e-12,
+  "sample_coverage": {
+    "btc_examples": 3,
+    "eth_examples": 6,
+    "fraud_examples": 3,
+    "normal_examples": 6,
+    "transaction_types": [
+      "DEPOSIT",
+      "TRANSFER",
+      "WITHDRAWAL"
+    ]
+  },
+  "sample_row_count": 9,
+  "sample_transaction_ids": [
+    "0efa1bdb-d819-5219-9da7-84bde8b7f60c",
+    "de55f3a0-b224-52d6-84a6-f68f880c823f",
+    "84cab336-0a72-5a80-a65e-5d1fe0a8169c",
+    "7474c219-17ce-5710-9601-80077c4e927b",
+    "d5dcbbab-36dc-5ff4-b7f9-46076bf0f1e1",
+    "fc5cc8d5-d34d-56e9-a156-9209a0c10a2f",
+    "2cf46ab4-2842-538f-b7e1-5619db4fcb62",
+    "3b77b6df-c7d8-582e-95b7-1aaa21e7836e",
+    "58eaae43-70f8-5ca4-8416-10cc3552f309"
+  ],
+  "status": "PASS"
+}

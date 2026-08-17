@@ -1,0 +1,33 @@
+{
+  "phase": "15",
+  "status": "PASS",
+  "notebook": "08_feature_consistency_validation",
+  "workspace_path": "/Users/akanaskhan1506@gmail.com/08_feature_consistency_validation",
+  "canonical_feature_count": 55,
+  "sample_count": 83,
+  "consistency_results": {
+    "exact_consistent": 51,
+    "tolerance_consistent": 4,
+    "mismatched": 0,
+    "not_verifiable": 0
+  },
+  "major_mismatches_found": [],
+  "major_mismatches_fixed": [],
+  "final_model_feature_count": 55,
+  "feature_ordering_verified": true,
+  "dtypes_compatible": true,
+  "fraud_label_leakage": false,
+  "registered_candidate_model_changed": false,
+  "threshold": 0.8,
+  "threshold_changed": false,
+  "short_live_reverification_required": false,
+  "short_live_reverification_result": "NOT REQUIRED",
+  "model_validation": {
+    "sample_rows_scored": 83,
+    "minimum_probability": 0.00012530155072454363,
+    "maximum_probability": 0.9986183643341064,
+    "predicted_fraud_count_at_threshold_0_80": 25,
+    "positive_probabilities_valid": true
+  },
+  "secrets_exposed": false
+}

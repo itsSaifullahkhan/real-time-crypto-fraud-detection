@@ -1,0 +1,130 @@
+{
+  "classification_threshold": 0.5,
+  "deterministic_ordering": [
+    "feature_timestamp ascending",
+    "transaction_id ascending"
+  ],
+  "entity_counts": {
+    "test": {
+      "unique_account_count": 96,
+      "unique_device_count": 128
+    },
+    "train": {
+      "unique_account_count": 96,
+      "unique_device_count": 134
+    },
+    "validation": {
+      "unique_account_count": 96,
+      "unique_device_count": 130
+    }
+  },
+  "failed_checks": [
+    "test_split_zero_fraud"
+  ],
+  "fraud_normal_counts": {
+    "test": {
+      "fraud_count": 0,
+      "fraud_rate": 0.0,
+      "normal_count": 672
+    },
+    "train": {
+      "fraud_count": 36,
+      "fraud_rate": 0.011483253588516746,
+      "normal_count": 3099
+    },
+    "validation": {
+      "fraud_count": 4,
+      "fraud_rate": 0.005952380952380952,
+      "normal_count": 668
+    }
+  },
+  "ordering_columns": [
+    "feature_timestamp ascending",
+    "transaction_id ascending"
+  ],
+  "overlap_checks": {
+    "all_transactions_assigned_once": 1,
+    "train_test_overlap_count": 0,
+    "train_validation_overlap_count": 0,
+    "validation_test_overlap_count": 0
+  },
+  "percentages": {
+    "test": 0.15003348961821836,
+    "train": 0.6999330207635633,
+    "validation": 0.15003348961821836
+  },
+  "phase": "9A",
+  "row_counts": {
+    "test": 672,
+    "train": 3135,
+    "validation": 672
+  },
+  "selected_time_boundaries": {
+    "test_min_timestamp": "2026-06-06T23:01:19+00:00",
+    "test_start_index": 3807,
+    "test_start_transaction_id": "106f5d52-43e0-581b-9f53-8235661610ca",
+    "train_end_index_exclusive": 3135,
+    "train_max_timestamp": "2026-06-05T21:46:14+00:00",
+    "validation_end_index_exclusive": 3807,
+    "validation_max_timestamp": "2026-06-06T22:56:59+00:00",
+    "validation_min_timestamp": "2026-06-05T21:48:32+00:00",
+    "validation_start_index": 3135,
+    "validation_start_transaction_id": "1e33e6e2-35ff-5241-ab6b-8a7073db48ce"
+  },
+  "selection_algorithm": "Fixed chronological row cut at 70 and 85 percent. This split failed because the latest 15 percent contained zero fraud cases.",
+  "source_table": "crypto_fraud.features.transaction_training_dataset",
+  "split_boundaries": {
+    "test": {
+      "duplicate_transaction_count": 0,
+      "fraud_count": 0,
+      "fraud_rate": 0.0,
+      "max_feature_timestamp": "2026-06-07T23:58:57+00:00",
+      "min_feature_timestamp": "2026-06-06T23:01:19+00:00",
+      "normal_count": 672,
+      "null_target_count": 0,
+      "percentage": 0.15003348961821836,
+      "row_count": 672,
+      "unique_account_count": 96,
+      "unique_device_count": 128
+    },
+    "train": {
+      "duplicate_transaction_count": 0,
+      "fraud_count": 36,
+      "fraud_rate": 0.011483253588516746,
+      "max_feature_timestamp": "2026-06-05T21:46:14+00:00",
+      "min_feature_timestamp": "2026-06-01T00:30:28+00:00",
+      "normal_count": 3099,
+      "null_target_count": 0,
+      "percentage": 0.6999330207635633,
+      "row_count": 3135,
+      "unique_account_count": 96,
+      "unique_device_count": 134
+    },
+    "validation": {
+      "duplicate_transaction_count": 0,
+      "fraud_count": 4,
+      "fraud_rate": 0.005952380952380952,
+      "max_feature_timestamp": "2026-06-06T22:56:59+00:00",
+      "min_feature_timestamp": "2026-06-05T21:48:32+00:00",
+      "normal_count": 668,
+      "null_target_count": 0,
+      "percentage": 0.15003348961821836,
+      "row_count": 672,
+      "unique_account_count": 96,
+      "unique_device_count": 130
+    }
+  },
+  "split_hash": "18e6650582a6b9d83870428d6a0a49df3de3febb1b57185aeaffd16a5593186b",
+  "split_policy": "oldest 70 percent train, next 15 percent validation, newest 15 percent test",
+  "split_version": "time_split_v1",
+  "time_boundary_checks": {
+    "train_max_lte_validation_min": true,
+    "validation_max_lte_test_min": true
+  },
+  "transaction_id_counts": {
+    "test": 672,
+    "train": 3135,
+    "validation": 672
+  },
+  "warnings": []
+}

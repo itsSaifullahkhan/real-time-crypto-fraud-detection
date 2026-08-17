@@ -1,0 +1,22 @@
+{
+  "actual_fraud_count": 91,
+  "actual_normal_count": 714,
+  "created_at_utc": "2026-08-11T06:26:01.586165+00:00",
+  "f1": 0.0,
+  "false_negatives": 91,
+  "false_positives": 0,
+  "feedback_metrics_table": "crypto_fraud.monitoring.fraud_feedback_metrics",
+  "feedback_table": "crypto_fraud.monitoring.fraud_prediction_feedback",
+  "fraud_label_leakage": false,
+  "fraud_rate": 0.11304347826086956,
+  "labeled_decision_count": 805,
+  "phase": "16",
+  "pr_auc": 0.13241646044743863,
+  "precision": 0.0,
+  "predicted_fraud_count": 0,
+  "recall": 0.0,
+  "roc_auc": 0.5366608181734233,
+  "threshold": 0.8,
+  "true_negatives": 714,
+  "true_positives": 0
+}

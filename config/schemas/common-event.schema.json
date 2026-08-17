@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.crypto-fraud-platform.local/common-event.schema.json",
+  "title": "Common Event Fields",
+  "description": "Reusable metadata fields and definitions shared by event contracts in the Real-Time Crypto Fraud Detection Platform.",
+  "type": "object",
+  "properties": {
+    "event_id": {
+      "$ref": "#/$defs/uuid"
+    },
+    "event_type": {
+      "$ref": "#/$defs/event_type"
+    },
+    "schema_version": {
+      "$ref": "#/$defs/schema_version"
+    },
+    "source": {
+      "$ref": "#/$defs/source"
+    },
+    "event_timestamp": {
+      "$ref": "#/$defs/utc_date_time"
+    },
+    "source_timestamp": {
+      "$ref": "#/$defs/utc_date_time"
+    },
+    "ingestion_timestamp": {
+      "$ref": "#/$defs/utc_date_time"
+    }
+  },
+  "required": [
+    "event_id",
+    "event_type",
+    "schema_version",
+    "source",
+    "event_timestamp",
+    "source_timestamp",
+    "ingestion_timestamp"
+  ],
+  "additionalProperties": false,
+  "examples": [
+    {
+      "event_id": "00000000-0000-4000-8000-000000000001",
+      "event_type": "customer_transaction",
+      "schema_version": "1.0",
+      "source": "historical_customer_generator",
+      "event_timestamp": "2026-01-15T12:00:00Z",
+      "source_timestamp": "2026-01-15T12:00:01Z",
+      "ingestion_timestamp": "2026-01-15T12:00:02Z"
+    }
+  ],
+  "$defs": {
+    "uuid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "UUID string identifier."
+    },
+    "nullable_uuid": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/uuid"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "UUID string identifier or null when the relationship is unknown or not applicable."
+    },
+    "utc_date_time": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "(Z|\\+00:00)$",
+      "description": "UTC ISO 8601 timestamp with timezone information, normally represented with a trailing Z."
+    },
+    "schema_version": {
+      "type": "string",
+      "const": "1.0",
+      "description": "Semantic schema version for this initial contract."
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "authentication_event",
+        "customer_transaction",
+        "market_event",
+        "fraud_label",
+        "fraud_decision"
+      ],
+      "description": "Contract-specific event type."
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "historical_customer_generator",
+        "realtime_customer_generator",
+        "authentication_generator",
+        "coinbase_rest_api",
+        "coinbase_websocket",
+        "simulated_investigation",
+        "realtime_scoring_pipeline"
+      ],
+      "description": "System that produced the event."
+    },
+    "country_code": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$",
+      "description": "Two-letter uppercase ISO-style country code."
+    },
+    "asset_symbol": {
+      "type": "string",
+      "enum": [
+        "BTC",
+        "ETH"
+      ],
+      "description": "Supported crypto asset symbol."
+    },
+    "product_id": {
+      "type": "string",
+      "enum": [
+        "BTC-USD",
+        "ETH-USD"
+      ],
+      "description": "Supported Coinbase product identifier."
+    }
+  }
+}

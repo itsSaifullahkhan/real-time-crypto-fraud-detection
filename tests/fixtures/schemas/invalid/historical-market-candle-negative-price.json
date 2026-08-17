@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "source": "coinbase_exchange_rest_api",
+  "product_id": "BTC-USD",
+  "candle_start_timestamp": "2026-01-01T00:00:00Z",
+  "candle_end_timestamp": "2026-01-01T00:01:00Z",
+  "granularity_seconds": 60,
+  "open_price_usd": -42500.12,
+  "high_price_usd": 42510.5,
+  "low_price_usd": 42490.25,
+  "close_price_usd": 42505.75,
+  "volume": 12.3456789,
+  "retrieved_at": "2026-07-01T00:00:00Z"
+}

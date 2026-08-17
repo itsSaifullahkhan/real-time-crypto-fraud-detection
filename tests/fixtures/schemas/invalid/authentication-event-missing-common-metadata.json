@@ -1,0 +1,17 @@
+{
+  "event_type": "authentication_event",
+  "schema_version": "1.0",
+  "source": "authentication_generator",
+  "event_timestamp": "2026-01-15T11:58:00Z",
+  "source_timestamp": "2026-01-15T11:58:01Z",
+  "ingestion_timestamp": "2026-01-15T11:58:02Z",
+  "login_id": "55555555-5555-4555-8555-555555555555",
+  "account_id": "11111111-1111-4111-8111-111111111111",
+  "device_id": "22222222-2222-4222-8222-222222222222",
+  "country": "US",
+  "ip_address": "203.0.113.10",
+  "login_success": true,
+  "mfa_success": true,
+  "password_reset_flag": false,
+  "failure_reason": null
+}

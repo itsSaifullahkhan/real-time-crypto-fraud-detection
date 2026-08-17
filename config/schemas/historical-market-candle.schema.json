@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.crypto-fraud-platform.local/historical-market-candle.schema.json",
+  "title": "Historical Market Candle",
+  "description": "Raw Coinbase Exchange historical one-minute candle contract for BTC-USD and ETH-USD public market data. This source-specific contract is separate from live trade-level market events.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0",
+      "description": "Initial semantic schema version."
+    },
+    "source": {
+      "type": "string",
+      "const": "coinbase_exchange_rest_api",
+      "description": "Source system for historical candle records."
+    },
+    "product_id": {
+      "type": "string",
+      "enum": [
+        "BTC-USD",
+        "ETH-USD"
+      ],
+      "description": "Coinbase product identifier."
+    },
+    "candle_start_timestamp": {
+      "$ref": "#/$defs/utc_date_time"
+    },
+    "candle_end_timestamp": {
+      "$ref": "#/$defs/utc_date_time"
+    },
+    "granularity_seconds": {
+      "type": "integer",
+      "const": 60,
+      "description": "Candle interval length in seconds."
+    },
+    "open_price_usd": {
+      "$ref": "#/$defs/positive_number"
+    },
+    "high_price_usd": {
+      "$ref": "#/$defs/positive_number"
+    },
+    "low_price_usd": {
+      "$ref": "#/$defs/positive_number"
+    },
+    "close_price_usd": {
+      "$ref": "#/$defs/positive_number"
+    },
+    "volume": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Coinbase base-asset trading volume for the candle interval."
+    },
+    "retrieved_at": {
+      "$ref": "#/$defs/utc_date_time"
+    }
+  },
+  "required": [
+    "schema_version",
+    "source",
+    "product_id",
+    "candle_start_timestamp",
+    "candle_end_timestamp",
+    "granularity_seconds",
+    "open_price_usd",
+    "high_price_usd",
+    "low_price_usd",
+    "close_price_usd",
+    "volume",
+    "retrieved_at"
+  ],
+  "additionalProperties": false,
+  "examples": [
+    {
+      "schema_version": "1.0",
+      "source": "coinbase_exchange_rest_api",
+      "product_id": "BTC-USD",
+      "candle_start_timestamp": "2026-01-01T00:00:00Z",
+      "candle_end_timestamp": "2026-01-01T00:01:00Z",
+      "granularity_seconds": 60,
+      "open_price_usd": 42500.12,
+      "high_price_usd": 42510.5,
+      "low_price_usd": 42490.25,
+      "close_price_usd": 42505.75,
+      "volume": 12.3456789,
+      "retrieved_at": "2026-07-01T00:00:00Z"
+    }
+  ],
+  "$defs": {
+    "utc_date_time": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "(Z|\\+00:00)$",
+      "description": "UTC ISO 8601 timestamp with timezone information."
+    },
+    "positive_number": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "description": "Positive numeric value."
+    }
+  }
+}

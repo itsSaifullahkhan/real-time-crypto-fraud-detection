@@ -1,0 +1,567 @@
+{
+  "binary_feature_count": 16,
+  "binary_features": [
+    "account_profile_available",
+    "destination_wallet_applicable",
+    "destination_wallet_first_seen_available",
+    "device_profile_available",
+    "has_previous_successful_auth",
+    "has_previous_transaction",
+    "has_prior_tx_24h",
+    "is_new_destination_wallet",
+    "is_new_device_24h",
+    "is_night_transaction_utc",
+    "is_weekend_utc",
+    "market_data_available",
+    "normal_transaction_amount_available",
+    "recent_auth_failure_flag_10m",
+    "source_wallet_applicable",
+    "transaction_country_mismatch_home_country"
+  ],
+  "categorical_feature_count": 4,
+  "categorical_features": [
+    "asset",
+    "country",
+    "customer_risk_tier",
+    "transaction_type"
+  ],
+  "continuous_numeric_features": [
+    "account_age_days",
+    "amount_above_normal_usd",
+    "amount_to_normal_ratio",
+    "crypto_quantity",
+    "destination_wallet_age_hours",
+    "device_age_days",
+    "device_age_hours",
+    "device_distinct_account_count_1h",
+    "device_failed_auth_count_10m",
+    "device_successful_auth_count_1h",
+    "failed_auth_count_10m",
+    "failed_auth_count_1h",
+    "latest_market_close_usd",
+    "market_data_freshness_seconds",
+    "market_price_usd",
+    "market_return_1h",
+    "market_return_5m",
+    "market_volatility_1h",
+    "market_volume_sum_1h",
+    "normal_transaction_amount_usd",
+    "prior_destination_wallet_tx_count",
+    "prior_source_wallet_tx_count",
+    "prior_tx_amount_avg_24h",
+    "prior_tx_amount_max_24h",
+    "prior_tx_amount_sum_1h",
+    "prior_tx_amount_sum_24h",
+    "prior_tx_count_1h",
+    "prior_tx_count_24h",
+    "prior_tx_count_5m",
+    "seconds_since_last_successful_auth",
+    "seconds_since_previous_tx",
+    "successful_auth_count_1h",
+    "transaction_amount_usd",
+    "transaction_day_of_week_utc",
+    "transaction_hour_utc"
+  ],
+  "final_transformed_feature_dimension": 71,
+  "learned_categorical_values": {
+    "asset": [
+      "BTC",
+      "ETH"
+    ],
+    "country": [
+      "AE",
+      "AU",
+      "BR",
+      "CA",
+      "DE",
+      "FR",
+      "GB",
+      "IN",
+      "JP",
+      "NL",
+      "SG",
+      "US"
+    ],
+    "customer_risk_tier": [
+      "HIGH",
+      "LOW",
+      "MEDIUM"
+    ],
+    "transaction_type": [
+      "DEPOSIT",
+      "TRANSFER",
+      "WITHDRAWAL"
+    ]
+  },
+  "null_handling_rules": {
+    "categorical": "Fill missing categorical values with __MISSING__, one-hot encode categories learned from training data only, and ignore unknown categories at validation/test/inference time.",
+    "numeric": "Coerce approved numeric inputs, reject bad non-null numeric values before fit, impute allowed nulls with training median, then standardize."
+  },
+  "numeric_conversion_issues": {
+    "account_age_days": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "account_profile_available": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "amount_above_normal_usd": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "amount_to_normal_ratio": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "crypto_quantity": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "destination_wallet_age_hours": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "destination_wallet_applicable": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "destination_wallet_first_seen_available": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "device_age_days": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "device_age_hours": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "device_distinct_account_count_1h": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "device_failed_auth_count_10m": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "device_profile_available": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "device_successful_auth_count_1h": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "failed_auth_count_10m": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "failed_auth_count_1h": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "has_previous_successful_auth": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "has_previous_transaction": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "has_prior_tx_24h": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "is_new_destination_wallet": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "is_new_device_24h": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "is_night_transaction_utc": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "is_weekend_utc": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "latest_market_close_usd": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "market_data_available": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "market_data_freshness_seconds": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "market_price_usd": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "market_return_1h": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "market_return_5m": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "market_volatility_1h": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "market_volume_sum_1h": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "normal_transaction_amount_available": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "normal_transaction_amount_usd": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "prior_destination_wallet_tx_count": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "prior_source_wallet_tx_count": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "prior_tx_amount_avg_24h": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "prior_tx_amount_max_24h": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "prior_tx_amount_sum_1h": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "prior_tx_amount_sum_24h": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "prior_tx_count_1h": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "prior_tx_count_24h": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "prior_tx_count_5m": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "recent_auth_failure_flag_10m": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "seconds_since_last_successful_auth": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "seconds_since_previous_tx": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "source_wallet_applicable": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "successful_auth_count_1h": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "transaction_amount_usd": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "transaction_country_mismatch_home_country": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "transaction_day_of_week_utc": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    },
+    "transaction_hour_utc": {
+      "test_bad_numeric_count": 0,
+      "test_infinite_count": 0,
+      "train_bad_numeric_count": 0,
+      "train_infinite_count": 0,
+      "validation_bad_numeric_count": 0,
+      "validation_infinite_count": 0
+    }
+  },
+  "numeric_feature_count": 51,
+  "numeric_features": [
+    "account_age_days",
+    "account_profile_available",
+    "amount_above_normal_usd",
+    "amount_to_normal_ratio",
+    "crypto_quantity",
+    "destination_wallet_age_hours",
+    "destination_wallet_applicable",
+    "destination_wallet_first_seen_available",
+    "device_age_days",
+    "device_age_hours",
+    "device_distinct_account_count_1h",
+    "device_failed_auth_count_10m",
+    "device_profile_available",
+    "device_successful_auth_count_1h",
+    "failed_auth_count_10m",
+    "failed_auth_count_1h",
+    "has_previous_successful_auth",
+    "has_previous_transaction",
+    "has_prior_tx_24h",
+    "is_new_destination_wallet",
+    "is_new_device_24h",
+    "is_night_transaction_utc",
+    "is_weekend_utc",
+    "latest_market_close_usd",
+    "market_data_available",
+    "market_data_freshness_seconds",
+    "market_price_usd",
+    "market_return_1h",
+    "market_return_5m",
+    "market_volatility_1h",
+    "market_volume_sum_1h",
+    "normal_transaction_amount_available",
+    "normal_transaction_amount_usd",
+    "prior_destination_wallet_tx_count",
+    "prior_source_wallet_tx_count",
+    "prior_tx_amount_avg_24h",
+    "prior_tx_amount_max_24h",
+    "prior_tx_amount_sum_1h",
+    "prior_tx_amount_sum_24h",
+    "prior_tx_count_1h",
+    "prior_tx_count_24h",
+    "prior_tx_count_5m",
+    "recent_auth_failure_flag_10m",
+    "seconds_since_last_successful_auth",
+    "seconds_since_previous_tx",
+    "source_wallet_applicable",
+    "successful_auth_count_1h",
+    "transaction_amount_usd",
+    "transaction_country_mismatch_home_country",
+    "transaction_day_of_week_utc",
+    "transaction_hour_utc"
+  ],
+  "numeric_training_all_null": [],
+  "preprocessing_fit_scope": "training split only",
+  "sklearn_pipeline": "ColumnTransformer inside fitted sklearn Pipeline"
+}

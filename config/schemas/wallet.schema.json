@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.crypto-fraud-platform.local/wallet.schema.json",
+  "title": "Wallet Master Data",
+  "description": "Static wallet profile contract for customer wallets and external destination wallets used by customer transactions.",
+  "type": "object",
+  "properties": {
+    "wallet_id": {
+      "$ref": "https://schemas.crypto-fraud-platform.local/common-event.schema.json#/$defs/uuid"
+    },
+    "schema_version": {
+      "$ref": "https://schemas.crypto-fraud-platform.local/common-event.schema.json#/$defs/schema_version"
+    },
+    "owner_account_id": {
+      "$ref": "https://schemas.crypto-fraud-platform.local/common-event.schema.json#/$defs/nullable_uuid"
+    },
+    "wallet_type": {
+      "type": "string",
+      "enum": [
+        "CUSTOMER",
+        "EXTERNAL"
+      ]
+    },
+    "first_seen_at": {
+      "$ref": "https://schemas.crypto-fraud-platform.local/common-event.schema.json#/$defs/utc_date_time"
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": [
+        "LOW",
+        "MEDIUM",
+        "HIGH",
+        "UNKNOWN"
+      ]
+    },
+    "is_known_destination": {
+      "type": "boolean"
+    },
+    "supported_assets": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schemas.crypto-fraud-platform.local/common-event.schema.json#/$defs/asset_symbol"
+      },
+      "minItems": 1,
+      "maxItems": 2,
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "wallet_id",
+    "schema_version",
+    "owner_account_id",
+    "wallet_type",
+    "first_seen_at",
+    "risk_level",
+    "is_known_destination",
+    "supported_assets"
+  ],
+  "additionalProperties": false,
+  "examples": [
+    {
+      "wallet_id": "33333333-3333-4333-8333-333333333333",
+      "schema_version": "1.0",
+      "owner_account_id": "11111111-1111-4111-8111-111111111111",
+      "wallet_type": "CUSTOMER",
+      "first_seen_at": "2026-01-01T00:10:00Z",
+      "risk_level": "LOW",
+      "is_known_destination": true,
+      "supported_assets": [
+        "BTC",
+        "ETH"
+      ]
+    }
+  ]
+}

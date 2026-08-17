@@ -1,0 +1,21 @@
+{
+  "event_id": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+  "event_type": "fraud_decision",
+  "schema_version": "1.0",
+  "source": "realtime_scoring_pipeline",
+  "event_timestamp": "2026-01-15T12:00:03Z",
+  "source_timestamp": "2026-01-15T12:00:03Z",
+  "ingestion_timestamp": "2026-01-15T12:00:04Z",
+  "transaction_id": "77777777-7777-4777-8777-777777777777",
+  "risk_score": 0.82,
+  "decision": "REVIEW",
+  "reason_codes": [
+    "NEW_DESTINATION_WALLET",
+    "UNUSUAL_AMOUNT"
+  ],
+  "model_name": "xgboost_fraud_model",
+  "model_version": "1",
+  "prediction_timestamp": "2026-01-15T12:00:03Z",
+  "processing_latency_ms": 42.5,
+  "threshold_policy_version": "policy-1.0"
+}

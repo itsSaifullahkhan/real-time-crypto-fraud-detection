@@ -1,0 +1,1809 @@
+{
+  "sample_policy": "Deterministic lexicographic transaction_id samples by required category; duplicate transaction ids are merged with category tags.",
+  "samples": [
+    {
+      "calculated_feature_values": {
+        "account_age_days": 41,
+        "account_id": "2d269497-efdd-5814-b1a7-bf134506b8aa",
+        "account_profile_available": 1,
+        "amount_above_normal_usd": -77.2799938,
+        "amount_to_normal_ratio": 0.6034890005130836,
+        "asset": "ETH",
+        "country": "CA",
+        "crypto_quantity": 0.0741834,
+        "customer_risk_tier": "LOW",
+        "destination_wallet_age_hours": 3080.8741666666665,
+        "destination_wallet_applicable": 1,
+        "destination_wallet_first_seen_available": 1,
+        "destination_wallet_id": "e206c3e6-fc1f-55e5-92d7-49bcecbed6f1",
+        "device_age_days": 166.36975694444445,
+        "device_age_hours": 3992.8741666666665,
+        "device_distinct_account_count_1h": 0,
+        "device_failed_auth_count_10m": 0,
+        "device_id": "cdaf7b0e-a7b6-54e9-82c0-92d072a5d810",
+        "device_profile_available": 1,
+        "device_successful_auth_count_1h": 0,
+        "event_date": "2026-06-06",
+        "failed_auth_count_10m": 0,
+        "failed_auth_count_1h": 0,
+        "feature_timestamp": "2026-06-06 08:52:27",
+        "has_previous_successful_auth": 1,
+        "has_previous_transaction": 1,
+        "has_prior_tx_24h": 1,
+        "is_new_destination_wallet": 0,
+        "is_new_device_24h": 0,
+        "is_night_transaction_utc": 0,
+        "is_weekend_utc": 1,
+        "latest_market_candle_end_timestamp": "2026-06-06 08:52:00",
+        "latest_market_close_usd": 1585.53,
+        "market_data_available": 1,
+        "market_data_freshness_seconds": 27,
+        "market_price_usd": 1585.53,
+        "market_product_id": "ETH-USD",
+        "market_return_1h": 0.007037378132046079,
+        "market_return_5m": 0.0013009403398864805,
+        "market_volatility_1h": 0.001077807860200797,
+        "market_volume_sum_1h": 3909.22595148,
+        "normal_transaction_amount_available": 1,
+        "normal_transaction_amount_usd": 194.9,
+        "prior_destination_wallet_tx_count": 14,
+        "prior_source_wallet_tx_count": 21,
+        "prior_tx_amount_avg_24h": 161.07599984999996,
+        "prior_tx_amount_max_24h": 256.04000223,
+        "prior_tx_amount_sum_1h": 0.0,
+        "prior_tx_amount_sum_24h": 805.3799992499999,
+        "prior_tx_count_1h": 0,
+        "prior_tx_count_24h": 5,
+        "prior_tx_count_5m": 0,
+        "recent_auth_failure_flag_10m": 0,
+        "seconds_since_last_successful_auth": 19510,
+        "seconds_since_previous_tx": 25644,
+        "source_wallet_applicable": 1,
+        "source_wallet_id": "a31f404b-065e-5ec3-8863-add3f06fbf5b",
+        "successful_auth_count_1h": 0,
+        "transaction_amount_usd": 117.6200062,
+        "transaction_country_mismatch_home_country": 0,
+        "transaction_day_of_week_utc": 6,
+        "transaction_hour_utc": 8,
+        "transaction_id": "000b32f8-9f35-5c58-8a2c-561f52ce50a5",
+        "transaction_type": "TRANSFER"
+      },
+      "category_tags": [
+        "ETH",
+        "normal_transaction"
+      ],
+      "feature_timestamp": "2026-06-06 08:52:27",
+      "latest_market_candle_end_timestamp": "2026-06-06 08:52:00",
+      "no_future_event_used": {
+        "authentication_events": true,
+        "destination_wallet_history": true,
+        "device_authentication_events": true,
+        "market_candle": true,
+        "source_wallet_history": true,
+        "transactions": true
+      },
+      "prior_authentication_events_1h": [],
+      "prior_destination_wallet_transactions": [],
+      "prior_device_authentication_events_1h": [],
+      "prior_source_wallet_transactions": [
+        {
+          "account_id": "2d269497-efdd-5814-b1a7-bf134506b8aa",
+          "destination_wallet_id": "1b4ac813-f263-53fa-90ba-a1420fd98ee1",
+          "event_timestamp": "2026-06-05 17:56:16",
+          "source_wallet_id": "a31f404b-065e-5ec3-8863-add3f06fbf5b",
+          "transaction_id": "460e0dec-8cbd-5d47-a10f-0cf6974e2921"
+        },
+        {
+          "account_id": "2d269497-efdd-5814-b1a7-bf134506b8aa",
+          "destination_wallet_id": "3f21cade-cc02-5fd7-bd16-373dd52a50e2",
+          "event_timestamp": "2026-06-05 14:26:13",
+          "source_wallet_id": "a31f404b-065e-5ec3-8863-add3f06fbf5b",
+          "transaction_id": "806cee8a-ecbb-54b0-91f4-0668cd43b155"
+        },
+        {
+          "account_id": "2d269497-efdd-5814-b1a7-bf134506b8aa",
+          "destination_wallet_id": "bc92c5c5-3f79-5657-ae9a-95e54fadaea3",
+          "event_timestamp": "2026-06-05 14:00:27",
+          "source_wallet_id": "a31f404b-065e-5ec3-8863-add3f06fbf5b",
+          "transaction_id": "8999a5a5-2e98-5b75-b01f-09f0de79108a"
+        },
+        {
+          "account_id": "2d269497-efdd-5814-b1a7-bf134506b8aa",
+          "destination_wallet_id": "b67a457c-10ea-528f-9458-ec663f53cbc2",
+          "event_timestamp": "2026-06-05 09:29:57",
+          "source_wallet_id": "a31f404b-065e-5ec3-8863-add3f06fbf5b",
+          "transaction_id": "45c4fa97-485d-587d-b3f4-0944e19c0dcd"
+        },
+        {
+          "account_id": "2d269497-efdd-5814-b1a7-bf134506b8aa",
+          "destination_wallet_id": "ae215de0-65b5-5566-8782-39f217514e86",
+          "event_timestamp": "2026-06-04 23:32:41",
+          "source_wallet_id": "a31f404b-065e-5ec3-8863-add3f06fbf5b",
+          "transaction_id": "05a9bd3a-fc3f-59b2-86be-96f6e1f6d362"
+        },
+        {
+          "account_id": "2d269497-efdd-5814-b1a7-bf134506b8aa",
+          "destination_wallet_id": "c2e0cfca-263a-5e58-9b2d-d403f14a2fe5",
+          "event_timestamp": "2026-06-04 20:49:30",
+          "source_wallet_id": "a31f404b-065e-5ec3-8863-add3f06fbf5b",
+          "transaction_id": "216604ed-7680-5e27-82a1-620d7726de15"
+        },
+        {
+          "account_id": "2d269497-efdd-5814-b1a7-bf134506b8aa",
+          "destination_wallet_id": "cf7bccd4-fdd9-5681-aa3d-2b6d3c36de0f",
+          "event_timestamp": "2026-06-04 18:45:41",
+          "source_wallet_id": "a31f404b-065e-5ec3-8863-add3f06fbf5b",
+          "transaction_id": "b131d822-6bd0-5028-a53d-51a37cd52362"
+        },
+        {
+          "account_id": "2d269497-efdd-5814-b1a7-bf134506b8aa",
+          "destination_wallet_id": "fb8a3696-c5de-5878-8b4f-839844a6684d",
+          "event_timestamp": "2026-06-04 17:05:17",
+          "source_wallet_id": "a31f404b-065e-5ec3-8863-add3f06fbf5b",
+          "transaction_id": "8185b6e4-7705-591f-a1f9-3bd12ca61e16"
+        },
+        {
+          "account_id": "2d269497-efdd-5814-b1a7-bf134506b8aa",
+          "destination_wallet_id": "f3c50635-4321-5647-8f9c-f6bd7e8dc2f8",
+          "event_timestamp": "2026-06-04 11:27:54",
+          "source_wallet_id": "a31f404b-065e-5ec3-8863-add3f06fbf5b",
+          "transaction_id": "3d13a9b8-f093-507a-b21c-ef0fa9a94d0b"
+        },
+        {
+          "account_id": "2d269497-efdd-5814-b1a7-bf134506b8aa",
+          "destination_wallet_id": "e2cdd8e9-481c-56c0-8de5-f4312290d429",
+          "event_timestamp": "2026-06-04 08:17:25",
+          "source_wallet_id": "a31f404b-065e-5ec3-8863-add3f06fbf5b",
+          "transaction_id": "28624157-2bea-5822-853a-693cd14626af"
+        },
+        {
+          "account_id": "2d269497-efdd-5814-b1a7-bf134506b8aa",
+          "destination_wallet_id": "83533160-81a6-5c45-972c-fad106ed8988",
+          "event_timestamp": "2026-06-04 07:49:12",
+          "source_wallet_id": "a31f404b-065e-5ec3-8863-add3f06fbf5b",
+          "transaction_id": "59f3562b-d46d-58de-8b26-a1fd71fa1d6c"
+        },
+        {
+          "account_id": "2d269497-efdd-5814-b1a7-bf134506b8aa",
+          "destination_wallet_id": "58cd7f4b-bd7e-57ae-9e84-304a57acc717",
+          "event_timestamp": "2026-06-03 18:39:45",
+          "source_wallet_id": "a31f404b-065e-5ec3-8863-add3f06fbf5b",
+          "transaction_id": "1981e2e7-1b3f-5b22-92c3-a4bb086dfe84"
+        },
+        {
+          "account_id": "2d269497-efdd-5814-b1a7-bf134506b8aa",
+          "destination_wallet_id": "b9c1b0b0-a5ee-5d50-a363-285960a860ae",
+          "event_timestamp": "2026-06-03 07:32:56",
+          "source_wallet_id": "a31f404b-065e-5ec3-8863-add3f06fbf5b",
+          "transaction_id": "f9718474-69e3-55f0-ae97-9774ea78ed5f"
+        },
+        {
+          "account_id": "2d269497-efdd-5814-b1a7-bf134506b8aa",
+          "destination_wallet_id": "5bb49e69-e686-5515-8b0a-31b5c8f45b66",
+          "event_timestamp": "2026-06-03 01:03:49",
+          "source_wallet_id": "a31f404b-065e-5ec3-8863-add3f06fbf5b",
+          "transaction_id": "8d29cd87-b3bf-59fd-96cf-d2ec02f25cc1"
+        },
+        {
+          "account_id": "2d269497-efdd-5814-b1a7-bf134506b8aa",
+          "destination_wallet_id": "b9c1b0b0-a5ee-5d50-a363-285960a860ae",
+          "event_timestamp": "2026-06-02 18:09:08",
+          "source_wallet_id": "a31f404b-065e-5ec3-8863-add3f06fbf5b",
+          "transaction_id": "c336e807-1b8f-5683-8135-5d2dae4482f5"
+        },
+        {
+          "account_id": "2d269497-efdd-5814-b1a7-bf134506b8aa",
+          "destination_wallet_id": "9f293779-536c-551a-b647-1c550a46e781",
+          "event_timestamp": "2026-06-02 14:45:57",
+          "source_wallet_id": "a31f404b-065e-5ec3-8863-add3f06fbf5b",
+          "transaction_id": "ad85d5b6-9474-54c5-8cc6-534f57f7d683"
+        },
+        {
+          "account_id": "2d269497-efdd-5814-b1a7-bf134506b8aa",
+          "destination_wallet_id": "9dad665d-7235-55a6-ab67-76643744bec7",
+          "event_timestamp": "2026-06-02 09:57:04",
+          "source_wallet_id": "a31f404b-065e-5ec3-8863-add3f06fbf5b",
+          "transaction_id": "ab515946-50dd-5ff4-b57a-bbfcf5a608bd"
+        },
+        {
+          "account_id": "2d269497-efdd-5814-b1a7-bf134506b8aa",
+          "destination_wallet_id": "8e4df79f-5480-5b10-b3bb-1efe8b129e88",
+          "event_timestamp": "2026-06-01 23:00:25",
+          "source_wallet_id": "a31f404b-065e-5ec3-8863-add3f06fbf5b",
+          "transaction_id": "c1a0a6ec-7a4a-5ab7-83bd-c0ff55b72f2f"
+        },
+        {
+          "account_id": "2d269497-efdd-5814-b1a7-bf134506b8aa",
+          "destination_wallet_id": "cf7bccd4-fdd9-5681-aa3d-2b6d3c36de0f",
+          "event_timestamp": "2026-06-01 20:04:14",
+          "source_wallet_id": "a31f404b-065e-5ec3-8863-add3f06fbf5b",
+          "transaction_id": "528fe4b2-5f28-58ce-a849-5ad844a8496f"
+        },
+        {
+          "account_id": "2d269497-efdd-5814-b1a7-bf134506b8aa",
+          "destination_wallet_id": "fb8a3696-c5de-5878-8b4f-839844a6684d",
+          "event_timestamp": "2026-06-01 13:00:59",
+          "source_wallet_id": "a31f404b-065e-5ec3-8863-add3f06fbf5b",
+          "transaction_id": "2a07ec6d-2f2c-54d6-8d8f-a75f4c994da9"
+        }
+      ],
+      "prior_transaction_events_24h": [
+        {
+          "account_id": "2d269497-efdd-5814-b1a7-bf134506b8aa",
+          "destination_wallet_id": "a31f404b-065e-5ec3-8863-add3f06fbf5b",
+          "event_timestamp": "2026-06-06 01:45:03",
+          "source_wallet_id": null,
+          "transaction_id": "1f7cc41d-060a-59fc-8fa5-7f0da982458d"
+        },
+        {
+          "account_id": "2d269497-efdd-5814-b1a7-bf134506b8aa",
+          "destination_wallet_id": "1b4ac813-f263-53fa-90ba-a1420fd98ee1",
+          "event_timestamp": "2026-06-05 17:56:16",
+          "source_wallet_id": "a31f404b-065e-5ec3-8863-add3f06fbf5b",
+          "transaction_id": "460e0dec-8cbd-5d47-a10f-0cf6974e2921"
+        },
+        {
+          "account_id": "2d269497-efdd-5814-b1a7-bf134506b8aa",
+          "destination_wallet_id": "3f21cade-cc02-5fd7-bd16-373dd52a50e2",
+          "event_timestamp": "2026-06-05 14:26:13",
+          "source_wallet_id": "a31f404b-065e-5ec3-8863-add3f06fbf5b",
+          "transaction_id": "806cee8a-ecbb-54b0-91f4-0668cd43b155"
+        },
+        {
+          "account_id": "2d269497-efdd-5814-b1a7-bf134506b8aa",
+          "destination_wallet_id": "bc92c5c5-3f79-5657-ae9a-95e54fadaea3",
+          "event_timestamp": "2026-06-05 14:00:27",
+          "source_wallet_id": "a31f404b-065e-5ec3-8863-add3f06fbf5b",
+          "transaction_id": "8999a5a5-2e98-5b75-b01f-09f0de79108a"
+        },
+        {
+          "account_id": "2d269497-efdd-5814-b1a7-bf134506b8aa",
+          "destination_wallet_id": "b67a457c-10ea-528f-9458-ec663f53cbc2",
+          "event_timestamp": "2026-06-05 09:29:57",
+          "source_wallet_id": "a31f404b-065e-5ec3-8863-add3f06fbf5b",
+          "transaction_id": "45c4fa97-485d-587d-b3f4-0944e19c0dcd"
+        }
+      ],
+      "transaction_id": "000b32f8-9f35-5c58-8a2c-561f52ce50a5",
+      "window_boundaries": {
+        "authentication_10m_start_exclusive_current": "2026-06-06 08:42:27",
+        "one_hour_start_exclusive_current": "2026-06-06 07:52:27",
+        "transaction_5m_start_exclusive_current": "2026-06-06 08:47:27",
+        "twenty_four_hour_start_exclusive_current": "2026-06-05 08:52:27"
+      }
+    },
+    {
+      "calculated_feature_values": {
+        "account_age_days": 196,
+        "account_id": "efb26e2a-eb3d-5b0f-83bf-3ee4e04ac3f7",
+        "account_profile_available": 1,
+        "amount_above_normal_usd": 39.75000885999998,
+        "amount_to_normal_ratio": 1.1442517377703585,
+        "asset": "ETH",
+        "country": "US",
+        "crypto_quantity": 0.15759118,
+        "customer_risk_tier": "MEDIUM",
+        "destination_wallet_age_hours": 4628.364444444444,
+        "destination_wallet_applicable": 1,
+        "destination_wallet_first_seen_available": 1,
+        "destination_wallet_id": "a9c0d4f6-be26-58c7-8fb9-348c85044771",
+        "device_age_days": 238.84851851851852,
+        "device_age_hours": 5732.364444444444,
+        "device_distinct_account_count_1h": 0,
+        "device_failed_auth_count_10m": 0,
+        "device_id": "b7552d8b-92bf-53f8-bf39-f7f263681f1f",
+        "device_profile_available": 1,
+        "device_successful_auth_count_1h": 0,
+        "event_date": "2026-06-01",
+        "failed_auth_count_10m": 0,
+        "failed_auth_count_1h": 0,
+        "feature_timestamp": "2026-06-01 20:21:52",
+        "has_previous_successful_auth": 1,
+        "has_previous_transaction": 1,
+        "has_prior_tx_24h": 1,
+        "is_new_destination_wallet": 0,
+        "is_new_device_24h": 0,
+        "is_night_transaction_utc": 0,
+        "is_weekend_utc": 0,
+        "latest_market_candle_end_timestamp": "2026-06-01 20:21:00",
+        "latest_market_close_usd": 2000.81,
+        "market_data_available": 1,
+        "market_data_freshness_seconds": 52,
+        "market_price_usd": 2000.81,
+        "market_product_id": "ETH-USD",
+        "market_return_1h": 0.0046496447490647075,
+        "market_return_5m": 0.0006151291771272493,
+        "market_volatility_1h": 0.0005132220288169512,
+        "market_volume_sum_1h": 6315.169269779999,
+        "normal_transaction_amount_available": 1,
+        "normal_transaction_amount_usd": 275.56,
+        "prior_destination_wallet_tx_count": 3,
+        "prior_source_wallet_tx_count": 2,
+        "prior_tx_amount_avg_24h": 186.41999983333335,
+        "prior_tx_amount_max_24h": 230.59000505,
+        "prior_tx_amount_sum_1h": 0.0,
+        "prior_tx_amount_sum_24h": 559.2599995,
+        "prior_tx_count_1h": 0,
+        "prior_tx_count_24h": 3,
+        "prior_tx_count_5m": 0,
+        "recent_auth_failure_flag_10m": 0,
+        "seconds_since_last_successful_auth": 14034,
+        "seconds_since_previous_tx": 15030,
+        "source_wallet_applicable": 1,
+        "source_wallet_id": "63a06d33-17e2-5f2c-b696-79e666df9fd3",
+        "successful_auth_count_1h": 0,
+        "transaction_amount_usd": 315.31000886,
+        "transaction_country_mismatch_home_country": 0,
+        "transaction_day_of_week_utc": 1,
+        "transaction_hour_utc": 20,
+        "transaction_id": "000c2a49-84a7-5730-bb2f-3a919835b5e4",
+        "transaction_type": "WITHDRAWAL"
+      },
+      "category_tags": [
+        "normal_transaction"
+      ],
+      "feature_timestamp": "2026-06-01 20:21:52",
+      "latest_market_candle_end_timestamp": "2026-06-01 20:21:00",
+      "no_future_event_used": {
+        "authentication_events": true,
+        "destination_wallet_history": true,
+        "device_authentication_events": true,
+        "market_candle": true,
+        "source_wallet_history": true,
+        "transactions": true
+      },
+      "prior_authentication_events_1h": [],
+      "prior_destination_wallet_transactions": [],
+      "prior_device_authentication_events_1h": [],
+      "prior_source_wallet_transactions": [
+        {
+          "account_id": "efb26e2a-eb3d-5b0f-83bf-3ee4e04ac3f7",
+          "destination_wallet_id": "fb8a3696-c5de-5878-8b4f-839844a6684d",
+          "event_timestamp": "2026-06-01 16:11:22",
+          "source_wallet_id": "63a06d33-17e2-5f2c-b696-79e666df9fd3",
+          "transaction_id": "607fa548-aab0-55d5-97ad-e9c5994ad8bb"
+        },
+        {
+          "account_id": "efb26e2a-eb3d-5b0f-83bf-3ee4e04ac3f7",
+          "destination_wallet_id": "7aba96a6-3f62-5fcb-8466-0730ae9dd7aa",
+          "event_timestamp": "2026-06-01 05:10:28",
+          "source_wallet_id": "63a06d33-17e2-5f2c-b696-79e666df9fd3",
+          "transaction_id": "118fc716-82f2-52d8-aa9f-804e8e26919d"
+        }
+      ],
+      "prior_transaction_events_24h": [
+        {
+          "account_id": "efb26e2a-eb3d-5b0f-83bf-3ee4e04ac3f7",
+          "destination_wallet_id": "fb8a3696-c5de-5878-8b4f-839844a6684d",
+          "event_timestamp": "2026-06-01 16:11:22",
+          "source_wallet_id": "63a06d33-17e2-5f2c-b696-79e666df9fd3",
+          "transaction_id": "607fa548-aab0-55d5-97ad-e9c5994ad8bb"
+        },
+        {
+          "account_id": "efb26e2a-eb3d-5b0f-83bf-3ee4e04ac3f7",
+          "destination_wallet_id": "7aba96a6-3f62-5fcb-8466-0730ae9dd7aa",
+          "event_timestamp": "2026-06-01 05:10:28",
+          "source_wallet_id": "63a06d33-17e2-5f2c-b696-79e666df9fd3",
+          "transaction_id": "118fc716-82f2-52d8-aa9f-804e8e26919d"
+        },
+        {
+          "account_id": "efb26e2a-eb3d-5b0f-83bf-3ee4e04ac3f7",
+          "destination_wallet_id": "63a06d33-17e2-5f2c-b696-79e666df9fd3",
+          "event_timestamp": "2026-06-01 02:17:01",
+          "source_wallet_id": null,
+          "transaction_id": "b6d5dccd-6dd2-51f3-9a9d-8ed90ecb762b"
+        }
+      ],
+      "transaction_id": "000c2a49-84a7-5730-bb2f-3a919835b5e4",
+      "window_boundaries": {
+        "authentication_10m_start_exclusive_current": "2026-06-01 20:11:52",
+        "one_hour_start_exclusive_current": "2026-06-01 19:21:52",
+        "transaction_5m_start_exclusive_current": "2026-06-01 20:16:52",
+        "twenty_four_hour_start_exclusive_current": "2026-05-31 20:21:52"
+      }
+    },
+    {
+      "calculated_feature_values": {
+        "account_age_days": 234,
+        "account_id": "f440c1b4-0007-5a94-a9f8-b9e36173eaa0",
+        "account_profile_available": 1,
+        "amount_above_normal_usd": 38.42984156,
+        "amount_to_normal_ratio": 1.2642679243570347,
+        "asset": "BTC",
+        "country": "US",
+        "crypto_quantity": 0.00300733,
+        "customer_risk_tier": "LOW",
+        "destination_wallet_age_hours": 6624.431388888889,
+        "destination_wallet_applicable": 1,
+        "destination_wallet_first_seen_available": 1,
+        "destination_wallet_id": "e905f9d8-d499-50bf-a87a-f89eaecbc46b",
+        "device_age_days": 176.01797453703705,
+        "device_age_hours": 4224.431388888889,
+        "device_distinct_account_count_1h": 0,
+        "device_failed_auth_count_10m": 0,
+        "device_id": "fdce103d-7dc3-5b69-80bb-9a5f94f5a8fb",
+        "device_profile_available": 1,
+        "device_successful_auth_count_1h": 0,
+        "event_date": "2026-06-06",
+        "failed_auth_count_10m": 0,
+        "failed_auth_count_1h": 0,
+        "feature_timestamp": "2026-06-06 00:25:53",
+        "has_previous_successful_auth": 1,
+        "has_previous_transaction": 1,
+        "has_prior_tx_24h": 1,
+        "is_new_destination_wallet": 0,
+        "is_new_device_24h": 0,
+        "is_night_transaction_utc": 1,
+        "is_weekend_utc": 1,
+        "latest_market_candle_end_timestamp": "2026-06-06 00:25:00",
+        "latest_market_close_usd": 61133.91,
+        "market_data_available": 1,
+        "market_data_freshness_seconds": 53,
+        "market_price_usd": 61133.91,
+        "market_product_id": "BTC-USD",
+        "market_return_1h": 0.0031656853621839787,
+        "market_return_5m": -0.002266259547267002,
+        "market_volatility_1h": 0.0012125666696536916,
+        "market_volume_sum_1h": 519.3980046000003,
+        "normal_transaction_amount_available": 1,
+        "normal_transaction_amount_usd": 145.42,
+        "prior_destination_wallet_tx_count": 8,
+        "prior_source_wallet_tx_count": 0,
+        "prior_tx_amount_avg_24h": 123.70590793599999,
+        "prior_tx_amount_max_24h": 187.61976728,
+        "prior_tx_amount_sum_1h": 141.78972158,
+        "prior_tx_amount_sum_24h": 618.52953968,
+        "prior_tx_count_1h": 1,
+        "prior_tx_count_24h": 5,
+        "prior_tx_count_5m": 0,
+        "recent_auth_failure_flag_10m": 0,
+        "seconds_since_last_successful_auth": 56276,
+        "seconds_since_previous_tx": 2345,
+        "source_wallet_applicable": 0,
+        "source_wallet_id": null,
+        "successful_auth_count_1h": 0,
+        "transaction_amount_usd": 183.84984156,
+        "transaction_country_mismatch_home_country": 0,
+        "transaction_day_of_week_utc": 6,
+        "transaction_hour_utc": 0,
+        "transaction_id": "001b0161-192b-5c7e-a433-30ad5f6e2ffe",
+        "transaction_type": "DEPOSIT"
+      },
+      "category_tags": [
+        "BTC"
+      ],
+      "feature_timestamp": "2026-06-06 00:25:53",
+      "latest_market_candle_end_timestamp": "2026-06-06 00:25:00",
+      "no_future_event_used": {
+        "authentication_events": true,
+        "destination_wallet_history": true,
+        "device_authentication_events": true,
+        "market_candle": true,
+        "source_wallet_history": true,
+        "transactions": true
+      },
+      "prior_authentication_events_1h": [],
+      "prior_destination_wallet_transactions": [
+        {
+          "account_id": "f440c1b4-0007-5a94-a9f8-b9e36173eaa0",
+          "destination_wallet_id": "e905f9d8-d499-50bf-a87a-f89eaecbc46b",
+          "event_timestamp": "2026-06-05 10:13:08",
+          "source_wallet_id": null,
+          "transaction_id": "270cc119-1304-59b3-a412-779cf09db317"
+        },
+        {
+          "account_id": "f440c1b4-0007-5a94-a9f8-b9e36173eaa0",
+          "destination_wallet_id": "e905f9d8-d499-50bf-a87a-f89eaecbc46b",
+          "event_timestamp": "2026-06-04 11:23:54",
+          "source_wallet_id": null,
+          "transaction_id": "ea4669cd-5433-523f-b377-d98bbf600c7a"
+        },
+        {
+          "account_id": "f440c1b4-0007-5a94-a9f8-b9e36173eaa0",
+          "destination_wallet_id": "e905f9d8-d499-50bf-a87a-f89eaecbc46b",
+          "event_timestamp": "2026-06-04 05:23:43",
+          "source_wallet_id": null,
+          "transaction_id": "a82e076a-8597-5524-8647-9d68eb55a78b"
+        },
+        {
+          "account_id": "f440c1b4-0007-5a94-a9f8-b9e36173eaa0",
+          "destination_wallet_id": "e905f9d8-d499-50bf-a87a-f89eaecbc46b",
+          "event_timestamp": "2026-06-02 20:24:30",
+          "source_wallet_id": null,
+          "transaction_id": "793cb357-b228-50f1-9a95-f990661ad89e"
+        },
+        {
+          "account_id": "f440c1b4-0007-5a94-a9f8-b9e36173eaa0",
+          "destination_wallet_id": "e905f9d8-d499-50bf-a87a-f89eaecbc46b",
+          "event_timestamp": "2026-06-02 10:22:27",
+          "source_wallet_id": null,
+          "transaction_id": "4a26e48b-9d0e-529d-b006-3425774cb0d2"
+        },
+        {
+          "account_id": "f440c1b4-0007-5a94-a9f8-b9e36173eaa0",
+          "destination_wallet_id": "e905f9d8-d499-50bf-a87a-f89eaecbc46b",
+          "event_timestamp": "2026-06-02 03:00:20",
+          "source_wallet_id": null,
+          "transaction_id": "33f98408-c43f-5a9f-b4bf-0aeecb1cfe76"
+        },
+        {
+          "account_id": "f440c1b4-0007-5a94-a9f8-b9e36173eaa0",
+          "destination_wallet_id": "e905f9d8-d499-50bf-a87a-f89eaecbc46b",
+          "event_timestamp": "2026-06-01 21:44:47",
+          "source_wallet_id": null,
+          "transaction_id": "cb3b8dd4-6578-520c-bf5a-e03b1c02f24d"
+        },
+        {
+          "account_id": "f440c1b4-0007-5a94-a9f8-b9e36173eaa0",
+          "destination_wallet_id": "e905f9d8-d499-50bf-a87a-f89eaecbc46b",
+          "event_timestamp": "2026-06-01 09:26:48",
+          "source_wallet_id": null,
+          "transaction_id": "0f8690a6-61d3-5aab-977d-1f69faad59ad"
+        }
+      ],
+      "prior_device_authentication_events_1h": [],
+      "prior_source_wallet_transactions": [],
+      "prior_transaction_events_24h": [
+        {
+          "account_id": "f440c1b4-0007-5a94-a9f8-b9e36173eaa0",
+          "destination_wallet_id": "680689a1-d810-51d2-a579-b4f0ab9384ef",
+          "event_timestamp": "2026-06-05 23:46:48",
+          "source_wallet_id": "e905f9d8-d499-50bf-a87a-f89eaecbc46b",
+          "transaction_id": "7c0ac61b-35e2-55c6-b8dd-e1913ae845c1"
+        },
+        {
+          "account_id": "f440c1b4-0007-5a94-a9f8-b9e36173eaa0",
+          "destination_wallet_id": "70fbdeaf-2474-5c76-ac92-971cc109132d",
+          "event_timestamp": "2026-06-05 21:09:02",
+          "source_wallet_id": "e905f9d8-d499-50bf-a87a-f89eaecbc46b",
+          "transaction_id": "88db23e3-f8ad-5301-aacd-c487bcc7b3a7"
+        },
+        {
+          "account_id": "f440c1b4-0007-5a94-a9f8-b9e36173eaa0",
+          "destination_wallet_id": "4d7dfb81-539d-5187-bfc0-1e89fa60b484",
+          "event_timestamp": "2026-06-05 20:39:28",
+          "source_wallet_id": "e905f9d8-d499-50bf-a87a-f89eaecbc46b",
+          "transaction_id": "73f33b1e-8a7a-51bb-8c50-e36260fac8fc"
+        },
+        {
+          "account_id": "f440c1b4-0007-5a94-a9f8-b9e36173eaa0",
+          "destination_wallet_id": "19831b9f-b8b2-5d6c-876a-6d6bf8a50789",
+          "event_timestamp": "2026-06-05 18:04:54",
+          "source_wallet_id": "e905f9d8-d499-50bf-a87a-f89eaecbc46b",
+          "transaction_id": "384a7731-7da2-5f8f-b710-27b21ed30242"
+        },
+        {
+          "account_id": "f440c1b4-0007-5a94-a9f8-b9e36173eaa0",
+          "destination_wallet_id": "e905f9d8-d499-50bf-a87a-f89eaecbc46b",
+          "event_timestamp": "2026-06-05 10:13:08",
+          "source_wallet_id": null,
+          "transaction_id": "270cc119-1304-59b3-a412-779cf09db317"
+        }
+      ],
+      "transaction_id": "001b0161-192b-5c7e-a433-30ad5f6e2ffe",
+      "window_boundaries": {
+        "authentication_10m_start_exclusive_current": "2026-06-06 00:15:53",
+        "one_hour_start_exclusive_current": "2026-06-05 23:25:53",
+        "transaction_5m_start_exclusive_current": "2026-06-06 00:20:53",
+        "twenty_four_hour_start_exclusive_current": "2026-06-05 00:25:53"
+      }
+    },
+    {
+      "calculated_feature_values": {
+        "account_age_days": 159,
+        "account_id": "dc580d82-b80f-57d4-ae53-ab616d76f728",
+        "account_profile_available": 1,
+        "amount_above_normal_usd": 15.290027229999993,
+        "amount_to_normal_ratio": 1.1168694277306428,
+        "asset": "BTC",
+        "country": "NL",
+        "crypto_quantity": 0.00198047,
+        "customer_risk_tier": "LOW",
+        "destination_wallet_age_hours": 5163.252777777778,
+        "destination_wallet_applicable": 1,
+        "destination_wallet_first_seen_available": 1,
+        "destination_wallet_id": "552e046f-428a-5357-b9aa-8fd87ed9b616",
+        "device_age_days": 214.1355324074074,
+        "device_age_hours": 5139.252777777778,
+        "device_distinct_account_count_1h": 0,
+        "device_failed_auth_count_10m": 0,
+        "device_id": "0a4eec86-50db-5094-bc97-a5732be24d56",
+        "device_profile_available": 1,
+        "device_successful_auth_count_1h": 0,
+        "event_date": "2026-06-01",
+        "failed_auth_count_10m": 0,
+        "failed_auth_count_1h": 0,
+        "feature_timestamp": "2026-06-01 03:15:10",
+        "has_previous_successful_auth": 0,
+        "has_previous_transaction": 1,
+        "has_prior_tx_24h": 1,
+        "is_new_destination_wallet": 1,
+        "is_new_device_24h": 0,
+        "is_night_transaction_utc": 1,
+        "is_weekend_utc": 0,
+        "latest_market_candle_end_timestamp": "2026-06-01 03:15:00",
+        "latest_market_close_usd": 73780.48,
+        "market_data_available": 1,
+        "market_data_freshness_seconds": 10,
+        "market_price_usd": 73780.48,
+        "market_product_id": "BTC-USD",
+        "market_return_1h": 0.0045302959628164,
+        "market_return_5m": -0.0011699421527098242,
+        "market_volatility_1h": 0.0005753509775061527,
+        "market_volume_sum_1h": 163.17530847999996,
+        "normal_transaction_amount_available": 1,
+        "normal_transaction_amount_usd": 130.83,
+        "prior_destination_wallet_tx_count": 0,
+        "prior_source_wallet_tx_count": 0,
+        "prior_tx_amount_avg_24h": 185.5499965,
+        "prior_tx_amount_max_24h": 185.5499965,
+        "prior_tx_amount_sum_1h": 185.5499965,
+        "prior_tx_amount_sum_24h": 185.5499965,
+        "prior_tx_count_1h": 1,
+        "prior_tx_count_24h": 1,
+        "prior_tx_count_5m": 0,
+        "recent_auth_failure_flag_10m": 0,
+        "seconds_since_last_successful_auth": null,
+        "seconds_since_previous_tx": 3023,
+        "source_wallet_applicable": 0,
+        "source_wallet_id": null,
+        "successful_auth_count_1h": 0,
+        "transaction_amount_usd": 146.12002723,
+        "transaction_country_mismatch_home_country": 0,
+        "transaction_day_of_week_utc": 1,
+        "transaction_hour_utc": 3,
+        "transaction_id": "001d3513-148d-5f9a-8bed-cf00c8633128",
+        "transaction_type": "DEPOSIT"
+      },
+      "category_tags": [
+        "new_device_or_wallet"
+      ],
+      "feature_timestamp": "2026-06-01 03:15:10",
+      "latest_market_candle_end_timestamp": "2026-06-01 03:15:00",
+      "no_future_event_used": {
+        "authentication_events": true,
+        "destination_wallet_history": true,
+        "device_authentication_events": true,
+        "market_candle": true,
+        "source_wallet_history": true,
+        "transactions": true
+      },
+      "prior_authentication_events_1h": [],
+      "prior_destination_wallet_transactions": [],
+      "prior_device_authentication_events_1h": [],
+      "prior_source_wallet_transactions": [],
+      "prior_transaction_events_24h": [
+        {
+          "account_id": "dc580d82-b80f-57d4-ae53-ab616d76f728",
+          "destination_wallet_id": "3b8267c4-6259-5db5-928a-7b76d97f612c",
+          "event_timestamp": "2026-06-01 02:24:47",
+          "source_wallet_id": null,
+          "transaction_id": "43cf13c3-e603-579d-8572-78e8b3c7e620"
+        }
+      ],
+      "transaction_id": "001d3513-148d-5f9a-8bed-cf00c8633128",
+      "window_boundaries": {
+        "authentication_10m_start_exclusive_current": "2026-06-01 03:05:10",
+        "one_hour_start_exclusive_current": "2026-06-01 02:15:10",
+        "transaction_5m_start_exclusive_current": "2026-06-01 03:10:10",
+        "twenty_four_hour_start_exclusive_current": "2026-05-31 03:15:10"
+      }
+    },
+    {
+      "calculated_feature_values": {
+        "account_age_days": 460,
+        "account_id": "cf409008-a31b-5e70-94e4-96ca566e7940",
+        "account_profile_available": 1,
+        "amount_above_normal_usd": 72.36999757000001,
+        "amount_to_normal_ratio": 1.5821267500804377,
+        "asset": "ETH",
+        "country": "US",
+        "crypto_quantity": 0.09926669,
+        "customer_risk_tier": "LOW",
+        "destination_wallet_age_hours": 6467.221111111111,
+        "destination_wallet_applicable": 1,
+        "destination_wallet_first_seen_available": 1,
+        "destination_wallet_id": "72fd2790-bf22-55c7-8a71-0c8dfdb52b9e",
+        "device_age_days": 127.46754629629629,
+        "device_age_hours": 3059.221111111111,
+        "device_distinct_account_count_1h": 0,
+        "device_failed_auth_count_10m": 0,
+        "device_id": "57f8160e-0cbe-5888-9f41-5e928b49c545",
+        "device_profile_available": 1,
+        "device_successful_auth_count_1h": 0,
+        "event_date": "2026-06-01",
+        "failed_auth_count_10m": 0,
+        "failed_auth_count_1h": 0,
+        "feature_timestamp": "2026-06-01 11:13:16",
+        "has_previous_successful_auth": 0,
+        "has_previous_transaction": 1,
+        "has_prior_tx_24h": 1,
+        "is_new_destination_wallet": 1,
+        "is_new_device_24h": 0,
+        "is_night_transaction_utc": 0,
+        "is_weekend_utc": 0,
+        "latest_market_candle_end_timestamp": "2026-06-01 11:13:00",
+        "latest_market_close_usd": 1981.43,
+        "market_data_available": 1,
+        "market_data_freshness_seconds": 16,
+        "market_price_usd": 1981.43,
+        "market_product_id": "ETH-USD",
+        "market_return_1h": -0.000459053441891788,
+        "market_return_5m": 0.00025745613149452673,
+        "market_volatility_1h": 0.0004446263867234602,
+        "market_volume_sum_1h": 1669.0554518600004,
+        "normal_transaction_amount_available": 1,
+        "normal_transaction_amount_usd": 124.32,
+        "prior_destination_wallet_tx_count": 0,
+        "prior_source_wallet_tx_count": 0,
+        "prior_tx_amount_avg_24h": 159.24498423,
+        "prior_tx_amount_max_24h": 181.16000638,
+        "prior_tx_amount_sum_1h": 0.0,
+        "prior_tx_amount_sum_24h": 318.48996846,
+        "prior_tx_count_1h": 0,
+        "prior_tx_count_24h": 2,
+        "prior_tx_count_5m": 0,
+        "recent_auth_failure_flag_10m": 0,
+        "seconds_since_last_successful_auth": null,
+        "seconds_since_previous_tx": 31197,
+        "source_wallet_applicable": 0,
+        "source_wallet_id": null,
+        "successful_auth_count_1h": 0,
+        "transaction_amount_usd": 196.68999757,
+        "transaction_country_mismatch_home_country": 0,
+        "transaction_day_of_week_utc": 1,
+        "transaction_hour_utc": 11,
+        "transaction_id": "02058018-2e62-5777-b1d8-bd903785c194",
+        "transaction_type": "DEPOSIT"
+      },
+      "category_tags": [
+        "new_device_or_wallet"
+      ],
+      "feature_timestamp": "2026-06-01 11:13:16",
+      "latest_market_candle_end_timestamp": "2026-06-01 11:13:00",
+      "no_future_event_used": {
+        "authentication_events": true,
+        "destination_wallet_history": true,
+        "device_authentication_events": true,
+        "market_candle": true,
+        "source_wallet_history": true,
+        "transactions": true
+      },
+      "prior_authentication_events_1h": [],
+      "prior_destination_wallet_transactions": [],
+      "prior_device_authentication_events_1h": [],
+      "prior_source_wallet_transactions": [],
+      "prior_transaction_events_24h": [
+        {
+          "account_id": "cf409008-a31b-5e70-94e4-96ca566e7940",
+          "destination_wallet_id": "cf303de6-84e5-5bea-b60b-7dd2f1008f5c",
+          "event_timestamp": "2026-06-01 02:33:19",
+          "source_wallet_id": null,
+          "transaction_id": "8049886c-2fd8-55b3-9be9-2081592576c7"
+        },
+        {
+          "account_id": "cf409008-a31b-5e70-94e4-96ca566e7940",
+          "destination_wallet_id": "8e4df79f-5480-5b10-b3bb-1efe8b129e88",
+          "event_timestamp": "2026-06-01 01:25:57",
+          "source_wallet_id": "72fd2790-bf22-55c7-8a71-0c8dfdb52b9e",
+          "transaction_id": "d49f3ef4-d1a9-5426-8362-02b8706a6865"
+        }
+      ],
+      "transaction_id": "02058018-2e62-5777-b1d8-bd903785c194",
+      "window_boundaries": {
+        "authentication_10m_start_exclusive_current": "2026-06-01 11:03:16",
+        "one_hour_start_exclusive_current": "2026-06-01 10:13:16",
+        "transaction_5m_start_exclusive_current": "2026-06-01 11:08:16",
+        "twenty_four_hour_start_exclusive_current": "2026-05-31 11:13:16"
+      }
+    },
+    {
+      "calculated_feature_values": {
+        "account_age_days": 215,
+        "account_id": "ac6b319c-3b07-5986-962c-fc7b4d732444",
+        "account_profile_available": 1,
+        "amount_above_normal_usd": -105.21000676,
+        "amount_to_normal_ratio": 0.6725489985683162,
+        "asset": "ETH",
+        "country": "US",
+        "crypto_quantity": 0.10753742,
+        "customer_risk_tier": "LOW",
+        "destination_wallet_age_hours": 99.76916666666666,
+        "destination_wallet_applicable": 1,
+        "destination_wallet_first_seen_available": 1,
+        "destination_wallet_id": "9dad665d-7235-55a6-ab67-76643744bec7",
+        "device_age_days": 343.1570486111111,
+        "device_age_hours": 8235.769166666667,
+        "device_distinct_account_count_1h": 0,
+        "device_failed_auth_count_10m": 0,
+        "device_id": "a4b5fdc8-3409-5e69-a3e6-22fd9a32539d",
+        "device_profile_available": 1,
+        "device_successful_auth_count_1h": 0,
+        "event_date": "2026-06-01",
+        "failed_auth_count_10m": 0,
+        "failed_auth_count_1h": 0,
+        "feature_timestamp": "2026-06-01 03:46:09",
+        "has_previous_successful_auth": 0,
+        "has_previous_transaction": 0,
+        "has_prior_tx_24h": 0,
+        "is_new_destination_wallet": 1,
+        "is_new_device_24h": 0,
+        "is_night_transaction_utc": 1,
+        "is_weekend_utc": 0,
+        "latest_market_candle_end_timestamp": "2026-06-01 03:46:00",
+        "latest_market_close_usd": 2009.44,
+        "market_data_available": 1,
+        "market_data_freshness_seconds": 9,
+        "market_price_usd": 2009.44,
+        "market_product_id": "ETH-USD",
+        "market_return_1h": -0.0006763477222995196,
+        "market_return_5m": -7.464209117280518e-05,
+        "market_volatility_1h": 0.0004977248300704225,
+        "market_volume_sum_1h": 3776.085375800001,
+        "normal_transaction_amount_available": 1,
+        "normal_transaction_amount_usd": 321.3,
+        "prior_destination_wallet_tx_count": 0,
+        "prior_source_wallet_tx_count": 0,
+        "prior_tx_amount_avg_24h": null,
+        "prior_tx_amount_max_24h": null,
+        "prior_tx_amount_sum_1h": 0.0,
+        "prior_tx_amount_sum_24h": 0.0,
+        "prior_tx_count_1h": 0,
+        "prior_tx_count_24h": 0,
+        "prior_tx_count_5m": 0,
+        "recent_auth_failure_flag_10m": 0,
+        "seconds_since_last_successful_auth": null,
+        "seconds_since_previous_tx": null,
+        "source_wallet_applicable": 1,
+        "source_wallet_id": "5b895136-b1ad-5654-b433-991620f9fe20",
+        "successful_auth_count_1h": 0,
+        "transaction_amount_usd": 216.08999324,
+        "transaction_country_mismatch_home_country": 0,
+        "transaction_day_of_week_utc": 1,
+        "transaction_hour_utc": 3,
+        "transaction_id": "025fb8ee-3929-5d88-8c61-0b6097c5d8cb",
+        "transaction_type": "WITHDRAWAL"
+      },
+      "category_tags": [
+        "no_prior_history"
+      ],
+      "feature_timestamp": "2026-06-01 03:46:09",
+      "latest_market_candle_end_timestamp": "2026-06-01 03:46:00",
+      "no_future_event_used": {
+        "authentication_events": true,
+        "destination_wallet_history": true,
+        "device_authentication_events": true,
+        "market_candle": true,
+        "source_wallet_history": true,
+        "transactions": true
+      },
+      "prior_authentication_events_1h": [],
+      "prior_destination_wallet_transactions": [],
+      "prior_device_authentication_events_1h": [],
+      "prior_source_wallet_transactions": [],
+      "prior_transaction_events_24h": [],
+      "transaction_id": "025fb8ee-3929-5d88-8c61-0b6097c5d8cb",
+      "window_boundaries": {
+        "authentication_10m_start_exclusive_current": "2026-06-01 03:36:09",
+        "one_hour_start_exclusive_current": "2026-06-01 02:46:09",
+        "transaction_5m_start_exclusive_current": "2026-06-01 03:41:09",
+        "twenty_four_hour_start_exclusive_current": "2026-05-31 03:46:09"
+      }
+    },
+    {
+      "calculated_feature_values": {
+        "account_age_days": 40,
+        "account_id": "8b2f2ece-6311-555b-9e89-96a8e8cc227b",
+        "account_profile_available": 1,
+        "amount_above_normal_usd": -126.03000424000001,
+        "amount_to_normal_ratio": 0.6550525393037004,
+        "asset": "ETH",
+        "country": "AU",
+        "crypto_quantity": 0.11887094,
+        "customer_risk_tier": "LOW",
+        "destination_wallet_age_hours": 1872.7419444444445,
+        "destination_wallet_applicable": 1,
+        "destination_wallet_first_seen_available": 1,
+        "destination_wallet_id": "71c67e9d-3b03-5af2-9195-c873fa681336",
+        "device_age_days": 137.03091435185186,
+        "device_age_hours": 3288.7419444444445,
+        "device_distinct_account_count_1h": 0,
+        "device_failed_auth_count_10m": 0,
+        "device_id": "9f1f0a80-e30a-5e93-b5ae-2c568395911d",
+        "device_profile_available": 1,
+        "device_successful_auth_count_1h": 0,
+        "event_date": "2026-06-01",
+        "failed_auth_count_10m": 0,
+        "failed_auth_count_1h": 0,
+        "feature_timestamp": "2026-06-01 00:44:31",
+        "has_previous_successful_auth": 0,
+        "has_previous_transaction": 0,
+        "has_prior_tx_24h": 0,
+        "is_new_destination_wallet": 0,
+        "is_new_device_24h": 0,
+        "is_night_transaction_utc": 1,
+        "is_weekend_utc": 0,
+        "latest_market_candle_end_timestamp": "2026-06-01 00:44:00",
+        "latest_market_close_usd": 2013.36,
+        "market_data_available": 1,
+        "market_data_freshness_seconds": 31,
+        "market_price_usd": 2013.36,
+        "market_product_id": "ETH-USD",
+        "market_return_1h": null,
+        "market_return_5m": 0.0006112925109211798,
+        "market_volatility_1h": 0.000720180052324059,
+        "market_volume_sum_1h": 3605.3216991599984,
+        "normal_transaction_amount_available": 1,
+        "normal_transaction_amount_usd": 365.36,
+        "prior_destination_wallet_tx_count": 1,
+        "prior_source_wallet_tx_count": 0,
+        "prior_tx_amount_avg_24h": null,
+        "prior_tx_amount_max_24h": null,
+        "prior_tx_amount_sum_1h": 0.0,
+        "prior_tx_amount_sum_24h": 0.0,
+        "prior_tx_count_1h": 0,
+        "prior_tx_count_24h": 0,
+        "prior_tx_count_5m": 0,
+        "recent_auth_failure_flag_10m": 0,
+        "seconds_since_last_successful_auth": null,
+        "seconds_since_previous_tx": null,
+        "source_wallet_applicable": 1,
+        "source_wallet_id": "5682dcfb-9fcd-583e-be86-06810cc27f67",
+        "successful_auth_count_1h": 0,
+        "transaction_amount_usd": 239.32999576,
+        "transaction_country_mismatch_home_country": 0,
+        "transaction_day_of_week_utc": 1,
+        "transaction_hour_utc": 0,
+        "transaction_id": "02750607-6cae-5cfe-bac6-ca8c7e8ecbd3",
+        "transaction_type": "WITHDRAWAL"
+      },
+      "category_tags": [
+        "no_prior_history"
+      ],
+      "feature_timestamp": "2026-06-01 00:44:31",
+      "latest_market_candle_end_timestamp": "2026-06-01 00:44:00",
+      "no_future_event_used": {
+        "authentication_events": true,
+        "destination_wallet_history": true,
+        "device_authentication_events": true,
+        "market_candle": true,
+        "source_wallet_history": true,
+        "transactions": true
+      },
+      "prior_authentication_events_1h": [],
+      "prior_destination_wallet_transactions": [],
+      "prior_device_authentication_events_1h": [],
+      "prior_source_wallet_transactions": [],
+      "prior_transaction_events_24h": [],
+      "transaction_id": "02750607-6cae-5cfe-bac6-ca8c7e8ecbd3",
+      "window_boundaries": {
+        "authentication_10m_start_exclusive_current": "2026-06-01 00:34:31",
+        "one_hour_start_exclusive_current": "2026-05-31 23:44:31",
+        "transaction_5m_start_exclusive_current": "2026-06-01 00:39:31",
+        "twenty_four_hour_start_exclusive_current": "2026-05-31 00:44:31"
+      }
+    },
+    {
+      "calculated_feature_values": {
+        "account_age_days": 120,
+        "account_id": "6f56c6c3-33fe-5e48-9a57-a1fc14f78b84",
+        "account_profile_available": 1,
+        "amount_above_normal_usd": 30.853025650000006,
+        "amount_to_normal_ratio": 1.1498519872261888,
+        "asset": "BTC",
+        "country": "BR",
+        "crypto_quantity": 0.00368573,
+        "customer_risk_tier": "LOW",
+        "destination_wallet_age_hours": 3432.1852777777776,
+        "destination_wallet_applicable": 1,
+        "destination_wallet_first_seen_available": 1,
+        "destination_wallet_id": "2cfb42f8-6137-59d1-a3c7-efbeb294698b",
+        "device_age_days": 37.007719907407406,
+        "device_age_hours": 888.1852777777777,
+        "device_distinct_account_count_1h": 0,
+        "device_failed_auth_count_10m": 0,
+        "device_id": "dbc631ae-0502-581f-b319-03fe9198b0dc",
+        "device_profile_available": 1,
+        "device_successful_auth_count_1h": 0,
+        "event_date": "2026-06-04",
+        "failed_auth_count_10m": 0,
+        "failed_auth_count_1h": 0,
+        "feature_timestamp": "2026-06-04 00:11:07",
+        "has_previous_successful_auth": 1,
+        "has_previous_transaction": 1,
+        "has_prior_tx_24h": 1,
+        "is_new_destination_wallet": 0,
+        "is_new_device_24h": 0,
+        "is_night_transaction_utc": 1,
+        "is_weekend_utc": 0,
+        "latest_market_candle_end_timestamp": "2026-06-04 00:11:00",
+        "latest_market_close_usd": 64232.33,
+        "market_data_available": 1,
+        "market_data_freshness_seconds": 7,
+        "market_price_usd": 64232.33,
+        "market_product_id": "BTC-USD",
+        "market_return_1h": -0.0015373559622596789,
+        "market_return_5m": 0.0006477568808589407,
+        "market_volatility_1h": 0.0010518085654374256,
+        "market_volume_sum_1h": 923.56995662,
+        "normal_transaction_amount_available": 1,
+        "normal_transaction_amount_usd": 205.89,
+        "prior_destination_wallet_tx_count": 9,
+        "prior_source_wallet_tx_count": 18,
+        "prior_tx_amount_avg_24h": 226.57870587142858,
+        "prior_tx_amount_max_24h": 433.35008963,
+        "prior_tx_amount_sum_1h": 0.0,
+        "prior_tx_amount_sum_24h": 1586.0509411,
+        "prior_tx_count_1h": 0,
+        "prior_tx_count_24h": 7,
+        "prior_tx_count_5m": 0,
+        "recent_auth_failure_flag_10m": 0,
+        "seconds_since_last_successful_auth": 17198,
+        "seconds_since_previous_tx": 10767,
+        "source_wallet_applicable": 1,
+        "source_wallet_id": "a3dabbef-7b5e-5752-8a01-2874d8a63547",
+        "successful_auth_count_1h": 0,
+        "transaction_amount_usd": 236.74302565,
+        "transaction_country_mismatch_home_country": 0,
+        "transaction_day_of_week_utc": 4,
+        "transaction_hour_utc": 0,
+        "transaction_id": "0e31cd2a-c0cc-5e8e-a8ac-512bf0c5ee3e",
+        "transaction_type": "WITHDRAWAL"
+      },
+      "category_tags": [
+        "fraud_transaction"
+      ],
+      "feature_timestamp": "2026-06-04 00:11:07",
+      "latest_market_candle_end_timestamp": "2026-06-04 00:11:00",
+      "no_future_event_used": {
+        "authentication_events": true,
+        "destination_wallet_history": true,
+        "device_authentication_events": true,
+        "market_candle": true,
+        "source_wallet_history": true,
+        "transactions": true
+      },
+      "prior_authentication_events_1h": [],
+      "prior_destination_wallet_transactions": [],
+      "prior_device_authentication_events_1h": [],
+      "prior_source_wallet_transactions": [
+        {
+          "account_id": "6f56c6c3-33fe-5e48-9a57-a1fc14f78b84",
+          "destination_wallet_id": "053949ab-150f-53f4-8795-d18c8cb2dd88",
+          "event_timestamp": "2026-06-03 17:48:50",
+          "source_wallet_id": "a3dabbef-7b5e-5752-8a01-2874d8a63547",
+          "transaction_id": "6bdbcb6e-b370-55cd-bbde-00c5f518ec64"
+        },
+        {
+          "account_id": "6f56c6c3-33fe-5e48-9a57-a1fc14f78b84",
+          "destination_wallet_id": "08de2a72-a08e-5f2c-a5de-1935617287a7",
+          "event_timestamp": "2026-06-03 09:23:17",
+          "source_wallet_id": "a3dabbef-7b5e-5752-8a01-2874d8a63547",
+          "transaction_id": "8b75019d-a133-53e3-a8be-2b6134097e53"
+        },
+        {
+          "account_id": "6f56c6c3-33fe-5e48-9a57-a1fc14f78b84",
+          "destination_wallet_id": "cb36a056-948f-5957-935a-06a4ff6ed8b2",
+          "event_timestamp": "2026-06-03 02:30:03",
+          "source_wallet_id": "a3dabbef-7b5e-5752-8a01-2874d8a63547",
+          "transaction_id": "474558a2-d6b6-51e8-8aae-dfb743af8e62"
+        },
+        {
+          "account_id": "6f56c6c3-33fe-5e48-9a57-a1fc14f78b84",
+          "destination_wallet_id": "f2105f43-9200-5516-bd1f-847062b476c8",
+          "event_timestamp": "2026-06-02 18:02:50",
+          "source_wallet_id": "a3dabbef-7b5e-5752-8a01-2874d8a63547",
+          "transaction_id": "ae112be6-2c63-5ca7-816c-2d29f70406db"
+        },
+        {
+          "account_id": "6f56c6c3-33fe-5e48-9a57-a1fc14f78b84",
+          "destination_wallet_id": "19831b9f-b8b2-5d6c-876a-6d6bf8a50789",
+          "event_timestamp": "2026-06-02 16:20:51",
+          "source_wallet_id": "a3dabbef-7b5e-5752-8a01-2874d8a63547",
+          "transaction_id": "a5a13d6d-55a8-50ed-8111-18ebc16bfc3e"
+        },
+        {
+          "account_id": "6f56c6c3-33fe-5e48-9a57-a1fc14f78b84",
+          "destination_wallet_id": "f332e6cf-1a98-5966-b202-79fa97a9a98b",
+          "event_timestamp": "2026-06-02 15:45:58",
+          "source_wallet_id": "a3dabbef-7b5e-5752-8a01-2874d8a63547",
+          "transaction_id": "b6e76590-8119-5f9c-b316-fd1ae4c4c26b"
+        },
+        {
+          "account_id": "6f56c6c3-33fe-5e48-9a57-a1fc14f78b84",
+          "destination_wallet_id": "8fc9bb47-9db0-5f35-94bf-2b6e403e3f31",
+          "event_timestamp": "2026-06-02 13:56:25",
+          "source_wallet_id": "a3dabbef-7b5e-5752-8a01-2874d8a63547",
+          "transaction_id": "3b3c3973-fd00-54b0-a464-3f67e95e5546"
+        },
+        {
+          "account_id": "6f56c6c3-33fe-5e48-9a57-a1fc14f78b84",
+          "destination_wallet_id": "65bbb21f-83f8-55f2-93dc-f98f32c4e33b",
+          "event_timestamp": "2026-06-02 13:51:02",
+          "source_wallet_id": "a3dabbef-7b5e-5752-8a01-2874d8a63547",
+          "transaction_id": "239afbd6-187a-5a2d-91da-fc93a949fbf4"
+        },
+        {
+          "account_id": "6f56c6c3-33fe-5e48-9a57-a1fc14f78b84",
+          "destination_wallet_id": "680689a1-d810-51d2-a579-b4f0ab9384ef",
+          "event_timestamp": "2026-06-02 13:13:47",
+          "source_wallet_id": "a3dabbef-7b5e-5752-8a01-2874d8a63547",
+          "transaction_id": "47b68932-7f16-5594-a24f-73849473a9d6"
+        },
+        {
+          "account_id": "6f56c6c3-33fe-5e48-9a57-a1fc14f78b84",
+          "destination_wallet_id": "f332e6cf-1a98-5966-b202-79fa97a9a98b",
+          "event_timestamp": "2026-06-02 12:44:32",
+          "source_wallet_id": "a3dabbef-7b5e-5752-8a01-2874d8a63547",
+          "transaction_id": "4567094f-b40d-5849-b7ff-444e8cd3d2eb"
+        },
+        {
+          "account_id": "6f56c6c3-33fe-5e48-9a57-a1fc14f78b84",
+          "destination_wallet_id": "88836e24-b0f6-56e9-8389-5b6b53519dc7",
+          "event_timestamp": "2026-06-02 08:46:20",
+          "source_wallet_id": "a3dabbef-7b5e-5752-8a01-2874d8a63547",
+          "transaction_id": "adf9c9e0-7292-5b46-963b-17f5fc04baec"
+        },
+        {
+          "account_id": "6f56c6c3-33fe-5e48-9a57-a1fc14f78b84",
+          "destination_wallet_id": "57d28fef-e5a3-5b15-a928-1d1599a9086a",
+          "event_timestamp": "2026-06-02 01:39:14",
+          "source_wallet_id": "a3dabbef-7b5e-5752-8a01-2874d8a63547",
+          "transaction_id": "53422cf5-b2c8-5306-a031-c512f419d029"
+        },
+        {
+          "account_id": "6f56c6c3-33fe-5e48-9a57-a1fc14f78b84",
+          "destination_wallet_id": "ac9fcb9a-618b-555a-a313-dab2972e8f2f",
+          "event_timestamp": "2026-06-01 23:45:37",
+          "source_wallet_id": "a3dabbef-7b5e-5752-8a01-2874d8a63547",
+          "transaction_id": "c7e65035-357f-5af9-a02a-c2e20407f900"
+        },
+        {
+          "account_id": "6f56c6c3-33fe-5e48-9a57-a1fc14f78b84",
+          "destination_wallet_id": "a939483d-b8e7-5897-9247-6e6d39f13798",
+          "event_timestamp": "2026-06-01 23:19:02",
+          "source_wallet_id": "a3dabbef-7b5e-5752-8a01-2874d8a63547",
+          "transaction_id": "8c81d1e4-fb97-5d49-903b-ad7274b050c3"
+        },
+        {
+          "account_id": "6f56c6c3-33fe-5e48-9a57-a1fc14f78b84",
+          "destination_wallet_id": "3e35568f-d28b-56aa-b1d1-c7acca16faab",
+          "event_timestamp": "2026-06-01 07:50:45",
+          "source_wallet_id": "a3dabbef-7b5e-5752-8a01-2874d8a63547",
+          "transaction_id": "31e37273-d11e-57c7-b5c4-8281c173787e"
+        },
+        {
+          "account_id": "6f56c6c3-33fe-5e48-9a57-a1fc14f78b84",
+          "destination_wallet_id": "b9c1b0b0-a5ee-5d50-a363-285960a860ae",
+          "event_timestamp": "2026-06-01 05:09:52",
+          "source_wallet_id": "a3dabbef-7b5e-5752-8a01-2874d8a63547",
+          "transaction_id": "55cdb322-b754-5afd-a513-9b76e00f5c5a"
+        },
+        {
+          "account_id": "6f56c6c3-33fe-5e48-9a57-a1fc14f78b84",
+          "destination_wallet_id": "950c7c3f-ae06-5dc9-a71f-c0b492687664",
+          "event_timestamp": "2026-06-01 02:56:45",
+          "source_wallet_id": "a3dabbef-7b5e-5752-8a01-2874d8a63547",
+          "transaction_id": "a772b6fc-3600-5a80-ba2f-b31f4d0390e5"
+        },
+        {
+          "account_id": "6f56c6c3-33fe-5e48-9a57-a1fc14f78b84",
+          "destination_wallet_id": "2ad59e37-b099-50ad-b507-866da91dd198",
+          "event_timestamp": "2026-06-01 02:23:42",
+          "source_wallet_id": "a3dabbef-7b5e-5752-8a01-2874d8a63547",
+          "transaction_id": "93ab484e-c92e-5d2d-ba01-245e6c928693"
+        }
+      ],
+      "prior_transaction_events_24h": [
+        {
+          "account_id": "6f56c6c3-33fe-5e48-9a57-a1fc14f78b84",
+          "destination_wallet_id": "a3dabbef-7b5e-5752-8a01-2874d8a63547",
+          "event_timestamp": "2026-06-03 21:11:40",
+          "source_wallet_id": null,
+          "transaction_id": "05ba413d-847e-5de4-97cf-6433abe8dabb"
+        },
+        {
+          "account_id": "6f56c6c3-33fe-5e48-9a57-a1fc14f78b84",
+          "destination_wallet_id": "a3dabbef-7b5e-5752-8a01-2874d8a63547",
+          "event_timestamp": "2026-06-03 20:01:30",
+          "source_wallet_id": null,
+          "transaction_id": "e8634574-29ac-5339-807d-805a70e82a2b"
+        },
+        {
+          "account_id": "6f56c6c3-33fe-5e48-9a57-a1fc14f78b84",
+          "destination_wallet_id": "053949ab-150f-53f4-8795-d18c8cb2dd88",
+          "event_timestamp": "2026-06-03 17:48:50",
+          "source_wallet_id": "a3dabbef-7b5e-5752-8a01-2874d8a63547",
+          "transaction_id": "6bdbcb6e-b370-55cd-bbde-00c5f518ec64"
+        },
+        {
+          "account_id": "6f56c6c3-33fe-5e48-9a57-a1fc14f78b84",
+          "destination_wallet_id": "a3dabbef-7b5e-5752-8a01-2874d8a63547",
+          "event_timestamp": "2026-06-03 13:37:28",
+          "source_wallet_id": null,
+          "transaction_id": "34201e15-e161-527a-8a9e-5fb912d4a5c1"
+        },
+        {
+          "account_id": "6f56c6c3-33fe-5e48-9a57-a1fc14f78b84",
+          "destination_wallet_id": "08de2a72-a08e-5f2c-a5de-1935617287a7",
+          "event_timestamp": "2026-06-03 09:23:17",
+          "source_wallet_id": "a3dabbef-7b5e-5752-8a01-2874d8a63547",
+          "transaction_id": "8b75019d-a133-53e3-a8be-2b6134097e53"
+        },
+        {
+          "account_id": "6f56c6c3-33fe-5e48-9a57-a1fc14f78b84",
+          "destination_wallet_id": "a3dabbef-7b5e-5752-8a01-2874d8a63547",
+          "event_timestamp": "2026-06-03 05:46:36",
+          "source_wallet_id": null,
+          "transaction_id": "85fc6d0b-6245-5db0-9757-6596bb575f06"
+        },
+        {
+          "account_id": "6f56c6c3-33fe-5e48-9a57-a1fc14f78b84",
+          "destination_wallet_id": "cb36a056-948f-5957-935a-06a4ff6ed8b2",
+          "event_timestamp": "2026-06-03 02:30:03",
+          "source_wallet_id": "a3dabbef-7b5e-5752-8a01-2874d8a63547",
+          "transaction_id": "474558a2-d6b6-51e8-8aae-dfb743af8e62"
+        }
+      ],
+      "transaction_id": "0e31cd2a-c0cc-5e8e-a8ac-512bf0c5ee3e",
+      "window_boundaries": {
+        "authentication_10m_start_exclusive_current": "2026-06-04 00:01:07",
+        "one_hour_start_exclusive_current": "2026-06-03 23:11:07",
+        "transaction_5m_start_exclusive_current": "2026-06-04 00:06:07",
+        "twenty_four_hour_start_exclusive_current": "2026-06-03 00:11:07"
+      }
+    },
+    {
+      "calculated_feature_values": {
+        "account_age_days": 493,
+        "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+        "account_profile_available": 1,
+        "amount_above_normal_usd": 728.55630866,
+        "amount_to_normal_ratio": 8.012091517420597,
+        "asset": "ETH",
+        "country": "BR",
+        "crypto_quantity": 0.52539134,
+        "customer_risk_tier": "MEDIUM",
+        "destination_wallet_age_hours": 4058.8625,
+        "destination_wallet_applicable": 1,
+        "destination_wallet_first_seen_available": 1,
+        "destination_wallet_id": "f3c50635-4321-5647-8f9c-f6bd7e8dc2f8",
+        "device_age_days": 16.119270833333335,
+        "device_age_hours": 386.8625,
+        "device_distinct_account_count_1h": 2,
+        "device_failed_auth_count_10m": 2,
+        "device_id": "3c9b8b9e-1c1b-563b-aaf0-778a7f4cca38",
+        "device_profile_available": 1,
+        "device_successful_auth_count_1h": 2,
+        "event_date": "2026-06-06",
+        "failed_auth_count_10m": 2,
+        "failed_auth_count_1h": 2,
+        "feature_timestamp": "2026-06-06 02:51:45",
+        "has_previous_successful_auth": 1,
+        "has_previous_transaction": 1,
+        "has_prior_tx_24h": 1,
+        "is_new_destination_wallet": 0,
+        "is_new_device_24h": 0,
+        "is_night_transaction_utc": 1,
+        "is_weekend_utc": 1,
+        "latest_market_candle_end_timestamp": "2026-06-06 02:51:00",
+        "latest_market_close_usd": 1584.45,
+        "market_data_available": 1,
+        "market_data_freshness_seconds": 45,
+        "market_price_usd": 1584.45,
+        "market_product_id": "ETH-USD",
+        "market_return_1h": 0.0022582359192349077,
+        "market_return_5m": 0.004482115913730267,
+        "market_volatility_1h": 0.0011582936249252395,
+        "market_volume_sum_1h": 5072.7156743000005,
+        "normal_transaction_amount_available": 1,
+        "normal_transaction_amount_usd": 103.9,
+        "prior_destination_wallet_tx_count": 8,
+        "prior_source_wallet_tx_count": 27,
+        "prior_tx_amount_avg_24h": 96.22285723857144,
+        "prior_tx_amount_max_24h": 157.49000738,
+        "prior_tx_amount_sum_1h": 0.0,
+        "prior_tx_amount_sum_24h": 673.56000067,
+        "prior_tx_count_1h": 0,
+        "prior_tx_count_24h": 7,
+        "prior_tx_count_5m": 0,
+        "recent_auth_failure_flag_10m": 1,
+        "seconds_since_last_successful_auth": 60,
+        "seconds_since_previous_tx": 4307,
+        "source_wallet_applicable": 1,
+        "source_wallet_id": "64c250fc-5a76-50b2-86fc-09d450af28b6",
+        "successful_auth_count_1h": 1,
+        "transaction_amount_usd": 832.45630866,
+        "transaction_country_mismatch_home_country": 1,
+        "transaction_day_of_week_utc": 6,
+        "transaction_hour_utc": 2,
+        "transaction_id": "0efa1bdb-d819-5219-9da7-84bde8b7f60c",
+        "transaction_type": "WITHDRAWAL"
+      },
+      "category_tags": [
+        "fraud_transaction",
+        "recent_auth_failure"
+      ],
+      "feature_timestamp": "2026-06-06 02:51:45",
+      "latest_market_candle_end_timestamp": "2026-06-06 02:51:00",
+      "no_future_event_used": {
+        "authentication_events": true,
+        "destination_wallet_history": true,
+        "device_authentication_events": true,
+        "market_candle": true,
+        "source_wallet_history": true,
+        "transactions": true
+      },
+      "prior_authentication_events_1h": [
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "device_id": "3c9b8b9e-1c1b-563b-aaf0-778a7f4cca38",
+          "event_id": "87c47603-5a2d-58fb-90d1-3bc8a046e168",
+          "event_timestamp": "2026-06-06 02:50:45",
+          "login_success": true
+        },
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "device_id": "3c9b8b9e-1c1b-563b-aaf0-778a7f4cca38",
+          "event_id": "f01a7a7e-8991-58a6-8a23-d5b5f394258c",
+          "event_timestamp": "2026-06-06 02:46:45",
+          "login_success": false
+        },
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "device_id": "3c9b8b9e-1c1b-563b-aaf0-778a7f4cca38",
+          "event_id": "f8f38640-7612-5cf7-8d5e-95378b471526",
+          "event_timestamp": "2026-06-06 02:45:45",
+          "login_success": false
+        }
+      ],
+      "prior_destination_wallet_transactions": [],
+      "prior_device_authentication_events_1h": [
+        {
+          "account_id": "28811b5d-6376-5e08-8d60-37721890fa29",
+          "device_id": "3c9b8b9e-1c1b-563b-aaf0-778a7f4cca38",
+          "event_id": "5294be00-109a-5145-9e32-ecaa662260d0",
+          "event_timestamp": "2026-06-06 02:51:08",
+          "login_success": true
+        },
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "device_id": "3c9b8b9e-1c1b-563b-aaf0-778a7f4cca38",
+          "event_id": "87c47603-5a2d-58fb-90d1-3bc8a046e168",
+          "event_timestamp": "2026-06-06 02:50:45",
+          "login_success": true
+        },
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "device_id": "3c9b8b9e-1c1b-563b-aaf0-778a7f4cca38",
+          "event_id": "f01a7a7e-8991-58a6-8a23-d5b5f394258c",
+          "event_timestamp": "2026-06-06 02:46:45",
+          "login_success": false
+        },
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "device_id": "3c9b8b9e-1c1b-563b-aaf0-778a7f4cca38",
+          "event_id": "f8f38640-7612-5cf7-8d5e-95378b471526",
+          "event_timestamp": "2026-06-06 02:45:45",
+          "login_success": false
+        }
+      ],
+      "prior_source_wallet_transactions": [
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "destination_wallet_id": "b7133ebf-3864-58e7-a0a2-62f09b61cc3b",
+          "event_timestamp": "2026-06-05 20:03:22",
+          "source_wallet_id": "64c250fc-5a76-50b2-86fc-09d450af28b6",
+          "transaction_id": "0260e3fa-6161-5ba7-87ee-6b1f7263873f"
+        },
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "destination_wallet_id": "e2cdd8e9-481c-56c0-8de5-f4312290d429",
+          "event_timestamp": "2026-06-05 19:42:29",
+          "source_wallet_id": "64c250fc-5a76-50b2-86fc-09d450af28b6",
+          "transaction_id": "a43b3a5c-2652-5483-a016-2332c56a9639"
+        },
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "destination_wallet_id": "ac581d3e-c49a-50c3-a64e-d5b999f74bc6",
+          "event_timestamp": "2026-06-05 15:52:41",
+          "source_wallet_id": "64c250fc-5a76-50b2-86fc-09d450af28b6",
+          "transaction_id": "6f7c2028-5bda-50f7-9a94-31e79f3ecfae"
+        },
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "destination_wallet_id": "cb10f248-d04b-5de4-b0ca-9bdfa456b5e9",
+          "event_timestamp": "2026-06-05 15:18:24",
+          "source_wallet_id": "64c250fc-5a76-50b2-86fc-09d450af28b6",
+          "transaction_id": "5402f1c8-c6b7-5aba-92ee-09293d90d095"
+        },
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "destination_wallet_id": "d67abba1-0bda-561c-9a01-5a433add65c1",
+          "event_timestamp": "2026-06-05 02:16:12",
+          "source_wallet_id": "64c250fc-5a76-50b2-86fc-09d450af28b6",
+          "transaction_id": "36f15c7b-96c8-57e7-a2a5-03b2e15500e9"
+        },
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "destination_wallet_id": "a2d32933-4ad8-5993-b35c-2edf51a22241",
+          "event_timestamp": "2026-06-04 23:33:04",
+          "source_wallet_id": "64c250fc-5a76-50b2-86fc-09d450af28b6",
+          "transaction_id": "46e01a82-2954-58d6-90ec-39d73c3a2230"
+        },
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "destination_wallet_id": "feb5cb7c-911b-54c2-aeb0-827467b4f5fc",
+          "event_timestamp": "2026-06-04 21:43:20",
+          "source_wallet_id": "64c250fc-5a76-50b2-86fc-09d450af28b6",
+          "transaction_id": "6e9d5c28-e18c-58db-9d84-84128474f2ec"
+        },
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "destination_wallet_id": "83533160-81a6-5c45-972c-fad106ed8988",
+          "event_timestamp": "2026-06-04 12:22:22",
+          "source_wallet_id": "64c250fc-5a76-50b2-86fc-09d450af28b6",
+          "transaction_id": "69215b0e-9594-51d7-84c5-e9fcaf497f56"
+        },
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "destination_wallet_id": "601d1ce4-31e8-5b47-a8a9-a546dee1f147",
+          "event_timestamp": "2026-06-04 10:05:47",
+          "source_wallet_id": "64c250fc-5a76-50b2-86fc-09d450af28b6",
+          "transaction_id": "cb7b2b2e-7348-5a07-b938-7a8c24dadae1"
+        },
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "destination_wallet_id": "8e4df79f-5480-5b10-b3bb-1efe8b129e88",
+          "event_timestamp": "2026-06-04 07:38:22",
+          "source_wallet_id": "64c250fc-5a76-50b2-86fc-09d450af28b6",
+          "transaction_id": "349b2fb7-2044-5b4a-8c6f-eec9ac307800"
+        },
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "destination_wallet_id": "b7133ebf-3864-58e7-a0a2-62f09b61cc3b",
+          "event_timestamp": "2026-06-04 07:12:06",
+          "source_wallet_id": "64c250fc-5a76-50b2-86fc-09d450af28b6",
+          "transaction_id": "3a72d94c-dd59-5bf6-bbd9-a5c7e969b142"
+        },
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "destination_wallet_id": "eb5adc8b-529f-5e18-8d2e-fdd46d6feadc",
+          "event_timestamp": "2026-06-04 03:58:14",
+          "source_wallet_id": "64c250fc-5a76-50b2-86fc-09d450af28b6",
+          "transaction_id": "bd652215-8970-5391-8cb6-c95866269e5f"
+        },
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "destination_wallet_id": "83533160-81a6-5c45-972c-fad106ed8988",
+          "event_timestamp": "2026-06-04 01:25:00",
+          "source_wallet_id": "64c250fc-5a76-50b2-86fc-09d450af28b6",
+          "transaction_id": "18c97cac-c433-5136-9204-e9aa75eaad3c"
+        },
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "destination_wallet_id": "8ad8ee31-11f1-5f4d-b7c5-ed4dcaea56ff",
+          "event_timestamp": "2026-06-03 23:29:48",
+          "source_wallet_id": "64c250fc-5a76-50b2-86fc-09d450af28b6",
+          "transaction_id": "7e3a9cd7-69d5-5228-ad07-37432904a1b9"
+        },
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "destination_wallet_id": "b14250e2-7b1e-5dc6-a152-20ecd142f09d",
+          "event_timestamp": "2026-06-03 22:26:40",
+          "source_wallet_id": "64c250fc-5a76-50b2-86fc-09d450af28b6",
+          "transaction_id": "d7db39b9-0a92-54e6-a42e-e9810b15819e"
+        },
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "destination_wallet_id": "0c1e0bdf-39d3-561b-8172-513d8ffe0642",
+          "event_timestamp": "2026-06-03 18:06:06",
+          "source_wallet_id": "64c250fc-5a76-50b2-86fc-09d450af28b6",
+          "transaction_id": "fe752353-4bff-5f5f-9e99-af7cd0618ae6"
+        },
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "destination_wallet_id": "408c62e7-11b5-5013-ac80-dd2e0d21c633",
+          "event_timestamp": "2026-06-03 17:51:54",
+          "source_wallet_id": "64c250fc-5a76-50b2-86fc-09d450af28b6",
+          "transaction_id": "1defe507-1d2b-5f63-9fca-f572aeac2d3b"
+        },
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "destination_wallet_id": "e550d62c-3427-52a5-9bba-b2f5ba96def6",
+          "event_timestamp": "2026-06-03 14:25:31",
+          "source_wallet_id": "64c250fc-5a76-50b2-86fc-09d450af28b6",
+          "transaction_id": "ebd8ff3f-6e0d-5be1-b49b-1bde957d09ea"
+        },
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "destination_wallet_id": "d8119a55-ba57-5041-8da8-026a2d40a48b",
+          "event_timestamp": "2026-06-03 13:02:40",
+          "source_wallet_id": "64c250fc-5a76-50b2-86fc-09d450af28b6",
+          "transaction_id": "1dc83327-54af-5ecb-9717-d2300e5ed311"
+        },
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "destination_wallet_id": "9f083e53-bd3a-51cd-9583-41fa92b86a64",
+          "event_timestamp": "2026-06-03 09:56:08",
+          "source_wallet_id": "64c250fc-5a76-50b2-86fc-09d450af28b6",
+          "transaction_id": "b7bb4730-5f17-5374-902f-6a1ee39f4a60"
+        }
+      ],
+      "prior_transaction_events_24h": [
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "destination_wallet_id": "64c250fc-5a76-50b2-86fc-09d450af28b6",
+          "event_timestamp": "2026-06-06 01:39:58",
+          "source_wallet_id": null,
+          "transaction_id": "181c0b4b-7af0-50ad-816d-d1f3cead8125"
+        },
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "destination_wallet_id": "b7133ebf-3864-58e7-a0a2-62f09b61cc3b",
+          "event_timestamp": "2026-06-05 20:03:22",
+          "source_wallet_id": "64c250fc-5a76-50b2-86fc-09d450af28b6",
+          "transaction_id": "0260e3fa-6161-5ba7-87ee-6b1f7263873f"
+        },
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "destination_wallet_id": "64c250fc-5a76-50b2-86fc-09d450af28b6",
+          "event_timestamp": "2026-06-05 19:53:44",
+          "source_wallet_id": null,
+          "transaction_id": "c64c5527-8a0a-5994-95f0-7cf7c8e74cbd"
+        },
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "destination_wallet_id": "e2cdd8e9-481c-56c0-8de5-f4312290d429",
+          "event_timestamp": "2026-06-05 19:42:29",
+          "source_wallet_id": "64c250fc-5a76-50b2-86fc-09d450af28b6",
+          "transaction_id": "a43b3a5c-2652-5483-a016-2332c56a9639"
+        },
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "destination_wallet_id": "64c250fc-5a76-50b2-86fc-09d450af28b6",
+          "event_timestamp": "2026-06-05 17:48:21",
+          "source_wallet_id": null,
+          "transaction_id": "1b94bbd1-f1b9-5dc4-8294-910b6a85dbb7"
+        },
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "destination_wallet_id": "ac581d3e-c49a-50c3-a64e-d5b999f74bc6",
+          "event_timestamp": "2026-06-05 15:52:41",
+          "source_wallet_id": "64c250fc-5a76-50b2-86fc-09d450af28b6",
+          "transaction_id": "6f7c2028-5bda-50f7-9a94-31e79f3ecfae"
+        },
+        {
+          "account_id": "b1edf465-ea54-5fac-99ee-a71bd1aa877e",
+          "destination_wallet_id": "cb10f248-d04b-5de4-b0ca-9bdfa456b5e9",
+          "event_timestamp": "2026-06-05 15:18:24",
+          "source_wallet_id": "64c250fc-5a76-50b2-86fc-09d450af28b6",
+          "transaction_id": "5402f1c8-c6b7-5aba-92ee-09293d90d095"
+        }
+      ],
+      "transaction_id": "0efa1bdb-d819-5219-9da7-84bde8b7f60c",
+      "window_boundaries": {
+        "authentication_10m_start_exclusive_current": "2026-06-06 02:41:45",
+        "one_hour_start_exclusive_current": "2026-06-06 01:51:45",
+        "transaction_5m_start_exclusive_current": "2026-06-06 02:46:45",
+        "twenty_four_hour_start_exclusive_current": "2026-06-05 02:51:45"
+      }
+    },
+    {
+      "calculated_feature_values": {
+        "account_age_days": 187,
+        "account_id": "1c3010a6-6dcc-5c81-9dd8-40be8e85a992",
+        "account_profile_available": 1,
+        "amount_above_normal_usd": -37.309995360000016,
+        "amount_to_normal_ratio": 0.9282610456852791,
+        "asset": "ETH",
+        "country": "DE",
+        "crypto_quantity": 0.301686,
+        "customer_risk_tier": "LOW",
+        "destination_wallet_age_hours": 7840.4719444444445,
+        "destination_wallet_applicable": 1,
+        "destination_wallet_first_seen_available": 1,
+        "destination_wallet_id": "54bee991-951e-5f94-a780-9b6ee3b48ea7",
+        "device_age_days": 336.6863310185185,
+        "device_age_hours": 8080.4719444444445,
+        "device_distinct_account_count_1h": 0,
+        "device_failed_auth_count_10m": 0,
+        "device_id": "e42b5725-8cd6-530e-919a-388c412c6718",
+        "device_profile_available": 1,
+        "device_successful_auth_count_1h": 0,
+        "event_date": "2026-06-05",
+        "failed_auth_count_10m": 2,
+        "failed_auth_count_1h": 2,
+        "feature_timestamp": "2026-06-05 16:28:19",
+        "has_previous_successful_auth": 1,
+        "has_previous_transaction": 1,
+        "has_prior_tx_24h": 1,
+        "is_new_destination_wallet": 0,
+        "is_new_device_24h": 0,
+        "is_night_transaction_utc": 0,
+        "is_weekend_utc": 0,
+        "latest_market_candle_end_timestamp": "2026-06-05 16:28:00",
+        "latest_market_close_usd": 1600.24,
+        "market_data_available": 1,
+        "market_data_freshness_seconds": 19,
+        "market_price_usd": 1600.24,
+        "market_product_id": "ETH-USD",
+        "market_return_1h": 0.002141756741523837,
+        "market_return_5m": -0.002549350819345042,
+        "market_volatility_1h": 0.003396459328124825,
+        "market_volume_sum_1h": 53046.07882742001,
+        "normal_transaction_amount_available": 1,
+        "normal_transaction_amount_usd": 520.08,
+        "prior_destination_wallet_tx_count": 10,
+        "prior_source_wallet_tx_count": 0,
+        "prior_tx_amount_avg_24h": 516.7099982780001,
+        "prior_tx_amount_max_24h": 677.50000473,
+        "prior_tx_amount_sum_1h": 0.0,
+        "prior_tx_amount_sum_24h": 2583.5499913900003,
+        "prior_tx_count_1h": 0,
+        "prior_tx_count_24h": 5,
+        "prior_tx_count_5m": 0,
+        "recent_auth_failure_flag_10m": 1,
+        "seconds_since_last_successful_auth": 5747,
+        "seconds_since_previous_tx": 5329,
+        "source_wallet_applicable": 0,
+        "source_wallet_id": null,
+        "successful_auth_count_1h": 0,
+        "transaction_amount_usd": 482.77000464,
+        "transaction_country_mismatch_home_country": 0,
+        "transaction_day_of_week_utc": 5,
+        "transaction_hour_utc": 16,
+        "transaction_id": "26b6ad49-6213-5b5d-9419-ae2842b5072d",
+        "transaction_type": "DEPOSIT"
+      },
+      "category_tags": [
+        "recent_auth_failure"
+      ],
+      "feature_timestamp": "2026-06-05 16:28:19",
+      "latest_market_candle_end_timestamp": "2026-06-05 16:28:00",
+      "no_future_event_used": {
+        "authentication_events": true,
+        "destination_wallet_history": true,
+        "device_authentication_events": true,
+        "market_candle": true,
+        "source_wallet_history": true,
+        "transactions": true
+      },
+      "prior_authentication_events_1h": [
+        {
+          "account_id": "1c3010a6-6dcc-5c81-9dd8-40be8e85a992",
+          "device_id": "3c9b8b9e-1c1b-563b-aaf0-778a7f4cca38",
+          "event_id": "497f8b51-bc3e-54ab-a7b0-faeed8944ac0",
+          "event_timestamp": "2026-06-05 16:28:10",
+          "login_success": false
+        },
+        {
+          "account_id": "1c3010a6-6dcc-5c81-9dd8-40be8e85a992",
+          "device_id": "3c9b8b9e-1c1b-563b-aaf0-778a7f4cca38",
+          "event_id": "16b67c30-54ee-51c2-873b-61b9fd37b837",
+          "event_timestamp": "2026-06-05 16:27:10",
+          "login_success": false
+        }
+      ],
+      "prior_destination_wallet_transactions": [
+        {
+          "account_id": "1c3010a6-6dcc-5c81-9dd8-40be8e85a992",
+          "destination_wallet_id": "54bee991-951e-5f94-a780-9b6ee3b48ea7",
+          "event_timestamp": "2026-06-05 14:59:30",
+          "source_wallet_id": null,
+          "transaction_id": "84badb4c-71b4-5bf3-8204-6cbc2e2fa88a"
+        },
+        {
+          "account_id": "1c3010a6-6dcc-5c81-9dd8-40be8e85a992",
+          "destination_wallet_id": "54bee991-951e-5f94-a780-9b6ee3b48ea7",
+          "event_timestamp": "2026-06-05 04:08:01",
+          "source_wallet_id": null,
+          "transaction_id": "cf77796a-98ce-5f44-9600-51d98032b97e"
+        },
+        {
+          "account_id": "1c3010a6-6dcc-5c81-9dd8-40be8e85a992",
+          "destination_wallet_id": "54bee991-951e-5f94-a780-9b6ee3b48ea7",
+          "event_timestamp": "2026-06-04 02:42:59",
+          "source_wallet_id": null,
+          "transaction_id": "cb9e3523-35d9-5668-a00a-84cae9c4e062"
+        },
+        {
+          "account_id": "1c3010a6-6dcc-5c81-9dd8-40be8e85a992",
+          "destination_wallet_id": "54bee991-951e-5f94-a780-9b6ee3b48ea7",
+          "event_timestamp": "2026-06-03 16:24:00",
+          "source_wallet_id": null,
+          "transaction_id": "8b6a60d5-a6dd-566e-9267-dca7616dda89"
+        },
+        {
+          "account_id": "1c3010a6-6dcc-5c81-9dd8-40be8e85a992",
+          "destination_wallet_id": "54bee991-951e-5f94-a780-9b6ee3b48ea7",
+          "event_timestamp": "2026-06-03 07:37:45",
+          "source_wallet_id": null,
+          "transaction_id": "5ba60469-8d12-5682-be94-17609e60e789"
+        },
+        {
+          "account_id": "1c3010a6-6dcc-5c81-9dd8-40be8e85a992",
+          "destination_wallet_id": "54bee991-951e-5f94-a780-9b6ee3b48ea7",
+          "event_timestamp": "2026-06-02 15:17:19",
+          "source_wallet_id": null,
+          "transaction_id": "f5d57735-b016-56c9-b11d-505cafd1e364"
+        },
+        {
+          "account_id": "1c3010a6-6dcc-5c81-9dd8-40be8e85a992",
+          "destination_wallet_id": "54bee991-951e-5f94-a780-9b6ee3b48ea7",
+          "event_timestamp": "2026-06-02 13:33:27",
+          "source_wallet_id": null,
+          "transaction_id": "de83ff78-c3db-533f-956f-4f9be176246e"
+        },
+        {
+          "account_id": "1c3010a6-6dcc-5c81-9dd8-40be8e85a992",
+          "destination_wallet_id": "54bee991-951e-5f94-a780-9b6ee3b48ea7",
+          "event_timestamp": "2026-06-02 08:20:51",
+          "source_wallet_id": null,
+          "transaction_id": "3a5629c1-bdd5-5d4a-9294-220c6cfb1619"
+        },
+        {
+          "account_id": "1c3010a6-6dcc-5c81-9dd8-40be8e85a992",
+          "destination_wallet_id": "54bee991-951e-5f94-a780-9b6ee3b48ea7",
+          "event_timestamp": "2026-06-02 00:56:18",
+          "source_wallet_id": null,
+          "transaction_id": "08f67cc3-c68f-528c-a871-1e7a96df6592"
+        },
+        {
+          "account_id": "1c3010a6-6dcc-5c81-9dd8-40be8e85a992",
+          "destination_wallet_id": "54bee991-951e-5f94-a780-9b6ee3b48ea7",
+          "event_timestamp": "2026-06-01 03:00:54",
+          "source_wallet_id": null,
+          "transaction_id": "27828d0e-3e73-5506-95f1-96e0f5cbce3a"
+        }
+      ],
+      "prior_device_authentication_events_1h": [],
+      "prior_source_wallet_transactions": [],
+      "prior_transaction_events_24h": [
+        {
+          "account_id": "1c3010a6-6dcc-5c81-9dd8-40be8e85a992",
+          "destination_wallet_id": "54bee991-951e-5f94-a780-9b6ee3b48ea7",
+          "event_timestamp": "2026-06-05 14:59:30",
+          "source_wallet_id": null,
+          "transaction_id": "84badb4c-71b4-5bf3-8204-6cbc2e2fa88a"
+        },
+        {
+          "account_id": "1c3010a6-6dcc-5c81-9dd8-40be8e85a992",
+          "destination_wallet_id": "b67a457c-10ea-528f-9458-ec663f53cbc2",
+          "event_timestamp": "2026-06-05 07:33:03",
+          "source_wallet_id": "54bee991-951e-5f94-a780-9b6ee3b48ea7",
+          "transaction_id": "696f063d-c18a-5016-b6a1-75503fba8a18"
+        },
+        {
+          "account_id": "1c3010a6-6dcc-5c81-9dd8-40be8e85a992",
+          "destination_wallet_id": "54bee991-951e-5f94-a780-9b6ee3b48ea7",
+          "event_timestamp": "2026-06-05 04:08:01",
+          "source_wallet_id": null,
+          "transaction_id": "cf77796a-98ce-5f44-9600-51d98032b97e"
+        },
+        {
+          "account_id": "1c3010a6-6dcc-5c81-9dd8-40be8e85a992",
+          "destination_wallet_id": "ac581d3e-c49a-50c3-a64e-d5b999f74bc6",
+          "event_timestamp": "2026-06-05 00:49:07",
+          "source_wallet_id": "54bee991-951e-5f94-a780-9b6ee3b48ea7",
+          "transaction_id": "b1d27e6a-1f2b-5dd4-bdfd-8acb128adb81"
+        },
+        {
+          "account_id": "1c3010a6-6dcc-5c81-9dd8-40be8e85a992",
+          "destination_wallet_id": "d1b2d7e8-2f8c-59fb-a790-651cfadee8ae",
+          "event_timestamp": "2026-06-04 19:07:07",
+          "source_wallet_id": "54bee991-951e-5f94-a780-9b6ee3b48ea7",
+          "transaction_id": "0998108e-d353-5c31-8d51-3fa8918aeb5f"
+        }
+      ],
+      "transaction_id": "26b6ad49-6213-5b5d-9419-ae2842b5072d",
+      "window_boundaries": {
+        "authentication_10m_start_exclusive_current": "2026-06-05 16:18:19",
+        "one_hour_start_exclusive_current": "2026-06-05 15:28:19",
+        "transaction_5m_start_exclusive_current": "2026-06-05 16:23:19",
+        "twenty_four_hour_start_exclusive_current": "2026-06-04 16:28:19"
+      }
+    }
+  ],
+  "strict_timestamp_policy": "Historical events are included only when event_timestamp < feature_timestamp. Identical timestamps are excluded."
+}

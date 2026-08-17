@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.crypto-fraud-platform.local/fraud-decision.schema.json",
+  "title": "Fraud Decision Event",
+  "description": "Real-time model scoring decision contract emitted after transaction scoring and before delayed investigation labels arrive.",
+  "type": "object",
+  "properties": {
+    "event_id": {
+      "$ref": "https://schemas.crypto-fraud-platform.local/common-event.schema.json#/$defs/uuid"
+    },
+    "event_type": {
+      "type": "string",
+      "const": "fraud_decision"
+    },
+    "schema_version": {
+      "$ref": "https://schemas.crypto-fraud-platform.local/common-event.schema.json#/$defs/schema_version"
+    },
+    "source": {
+      "type": "string",
+      "const": "realtime_scoring_pipeline"
+    },
+    "event_timestamp": {
+      "$ref": "https://schemas.crypto-fraud-platform.local/common-event.schema.json#/$defs/utc_date_time"
+    },
+    "source_timestamp": {
+      "$ref": "https://schemas.crypto-fraud-platform.local/common-event.schema.json#/$defs/utc_date_time"
+    },
+    "ingestion_timestamp": {
+      "$ref": "https://schemas.crypto-fraud-platform.local/common-event.schema.json#/$defs/utc_date_time"
+    },
+    "transaction_id": {
+      "$ref": "https://schemas.crypto-fraud-platform.local/common-event.schema.json#/$defs/uuid"
+    },
+    "asset": {
+      "type": "string",
+      "enum": [
+        "BTC",
+        "ETH"
+      ]
+    },
+    "country": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 2
+    },
+    "transaction_amount_usd": {
+      "type": "number",
+      "minimum": 0
+    },
+    "risk_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "fraud_probability": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "predicted_fraud": {
+      "type": "boolean"
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "ALLOW",
+        "REVIEW",
+        "BLOCK"
+      ]
+    },
+    "reason_codes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "NEW_DEVICE",
+          "NEW_COUNTRY",
+          "HIGH_TRANSACTION_VELOCITY",
+          "UNUSUAL_AMOUNT",
+          "NEW_DESTINATION_WALLET",
+          "FAILED_LOGIN_ACTIVITY",
+          "HIGH_MARKET_VOLATILITY",
+          "SUSPICIOUS_SHARED_DEVICE"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "model_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "model_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "prediction_timestamp": {
+      "$ref": "https://schemas.crypto-fraud-platform.local/common-event.schema.json#/$defs/utc_date_time"
+    },
+    "processing_latency_ms": {
+      "type": "number",
+      "minimum": 0
+    },
+    "threshold_policy_version": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "event_id",
+    "event_type",
+    "schema_version",
+    "source",
+    "event_timestamp",
+    "source_timestamp",
+    "ingestion_timestamp",
+    "transaction_id",
+    "risk_score",
+    "decision",
+    "reason_codes",
+    "model_name",
+    "model_version",
+    "prediction_timestamp",
+    "processing_latency_ms",
+    "threshold_policy_version"
+  ],
+  "additionalProperties": false,
+  "examples": [
+    {
+      "event_id": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+      "event_type": "fraud_decision",
+      "schema_version": "1.0",
+      "source": "realtime_scoring_pipeline",
+      "event_timestamp": "2026-01-15T12:00:03Z",
+      "source_timestamp": "2026-01-15T12:00:03Z",
+      "ingestion_timestamp": "2026-01-15T12:00:04Z",
+      "transaction_id": "77777777-7777-4777-8777-777777777777",
+      "risk_score": 0.82,
+      "decision": "REVIEW",
+      "reason_codes": [
+        "NEW_DESTINATION_WALLET",
+        "UNUSUAL_AMOUNT"
+      ],
+      "model_name": "xgboost_fraud_model",
+      "model_version": "1",
+      "prediction_timestamp": "2026-01-15T12:00:03Z",
+      "processing_latency_ms": 42.5,
+      "threshold_policy_version": "policy-1.0"
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+scenario_id: account_takeover
+scenario_version: "1.0"
+display_name: "Account takeover"
+description: "An attacker gains access to an existing account and initiates a suspicious withdrawal to a new external destination wallet."
+enabled: true
+fraud_type: ACCOUNT_TAKEOVER
+reason_codes:
+  - NEW_DEVICE
+  - NEW_COUNTRY
+  - FAILED_LOGIN_ACTIVITY
+  - UNUSUAL_AMOUNT
+  - NEW_DESTINATION_WALLET
+affected_entities:
+  - account
+  - device
+  - wallet
+  - authentication_event
+  - customer_transaction
+  - fraud_decision
+  - fraud_label
+affected_event_types:
+  - authentication_event
+  - customer_transaction
+  - fraud_decision
+  - fraud_label
+prerequisites:
+  - "Existing active account with normal transaction amount, normal frequency, home country, and at least one known device."
+  - "Customer wallet exists for source funds."
+  - "External destination wallet can be new or newly observed for the account."
+trigger_logic:
+  profile_relative_rules:
+    withdrawal_amount_multiplier_vs_normal:
+      min: 4
+      max: 12
+    failed_login_attempts:
+      min: 2
+      max: 6
+    mfa_failure_attempts:
+      min: 1
+      max: 4
+  controlled_variation:
+    - "Not every generated case must include password reset."
+    - "Some cases use a new device, while others use an untrusted previously observed device."
+    - "Country changes can compare against home_country or recent login country history."
+event_sequence:
+  - step: 1
+    event_type: authentication_event
+    description: "Multiple failed login attempts occur close together."
+    transaction_event_contains_label: false
+  - step: 2
+    event_type: authentication_event
+    description: "A new or untrusted device appears from a country different from normal activity."
+    transaction_event_contains_label: false
+  - step: 3
+    event_type: authentication_event
+    description: "Optional password reset occurs before a successful login or bypass simulation."
+    transaction_event_contains_label: false
+  - step: 4
+    event_type: customer_transaction
+    description: "A large withdrawal occurs relative to the account profile and uses a new external destination wallet."
+    transaction_event_contains_label: false
+  - step: 5
+    event_type: fraud_decision
+    description: "Model scoring records reason codes from observable signals only."
+    transaction_event_contains_label: false
+  - step: 6
+    event_type: fraud_label
+    description: "Delayed simulated investigation confirms the withdrawal as account takeover fraud."
+    transaction_event_contains_label: false
+timing_rules:
+  prerequisite_history_days:
+    min: 14
+    max: 180
+  failed_login_window_minutes:
+    min: 2
+    max: 10
+  password_reset_to_transaction_minutes:
+    min: 1
+    max: 30
+  authentication_to_transaction_minutes:
+    min: 1
+    max: 20
+  maximum_scenario_duration_hours:
+    min: 1
+    max: 6
+  label_delay_hours:
+    min: 12
+    max: 72
+  late_or_out_of_order_variants_later: true
+  can_overlap_with_another_scenario: false
+expected_feature_signals:
+  - name: failed_logins_last_10_minutes
+    source: prior_authentication_events
+    availability: before_prediction
+  - name: mfa_failures_last_10_minutes
+    source: prior_authentication_events
+    availability: before_prediction
+  - name: is_new_device
+    source: prior_authentication_events
+    availability: before_prediction
+  - name: is_new_country
+    source: historical_account_profile
+    availability: before_prediction
+  - name: password_reset_before_transaction
+    source: prior_authentication_events
+    availability: before_prediction
+  - name: amount_vs_customer_average
+    source: historical_account_profile
+    availability: at_prediction
+  - name: destination_wallet_is_new
+    source: prior_wallet_activity
+    availability: before_prediction
+  - name: time_since_previous_transaction
+    source: prior_transaction_events
+    availability: before_prediction
+label_rules:
+  labeled_transaction_selection: "Only the suspicious withdrawal transaction_id receives the confirmed fraud label."
+  multiple_labels_can_relate_to_same_scenario: false
+  label_delay_hours:
+    min: 12
+    max: 72
+  fraud_type: ACCOUNT_TAKEOVER
+  investigation_status: CONFIRMED_FRAUD
+  is_fraud: true
+  label_source: SIMULATED_INVESTIGATION
+  normal_control_records_generated: true
+  cleared_control_label:
+    investigation_status: CLEARED
+    is_fraud: false
+    fraud_type: null
+difficulty: MEDIUM
+false_positive_risk:
+  level: MEDIUM
+  examples:
+    - "Legitimate travel from a new country."
+    - "Customer replacing a phone before making a large withdrawal."
+normal_control_cases:
+  - "Legitimate travel with successful MFA and normal transaction size."
+  - "New trusted device enrollment followed by normal activity."
+  - "High-value customer withdrawal consistent with normal_transaction_amount_usd."
+validation_rules:
+  - "Customer transaction records must not contain label fields."
+  - "Fraud label event_timestamp must equal label_timestamp and occur after the transaction event_timestamp."
+  - "All transaction amounts must be relative to the customer profile, not a single fixed amount."
+notes:
+  - "This scenario is designed with controlled variation so the model does not learn a single deterministic pattern."

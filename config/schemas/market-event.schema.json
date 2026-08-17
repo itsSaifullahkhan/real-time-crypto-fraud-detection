@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.crypto-fraud-platform.local/market-event.schema.json",
+  "title": "Market Event",
+  "description": "Coinbase public market trade event contract used for market enrichment. These records are not customer transactions and do not contain fraud labels.",
+  "type": "object",
+  "properties": {
+    "event_id": {
+      "$ref": "https://schemas.crypto-fraud-platform.local/common-event.schema.json#/$defs/uuid"
+    },
+    "event_type": {
+      "type": "string",
+      "const": "market_event"
+    },
+    "schema_version": {
+      "$ref": "https://schemas.crypto-fraud-platform.local/common-event.schema.json#/$defs/schema_version"
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "coinbase_rest_api",
+        "coinbase_websocket"
+      ]
+    },
+    "event_timestamp": {
+      "$ref": "https://schemas.crypto-fraud-platform.local/common-event.schema.json#/$defs/utc_date_time"
+    },
+    "source_timestamp": {
+      "$ref": "https://schemas.crypto-fraud-platform.local/common-event.schema.json#/$defs/utc_date_time"
+    },
+    "ingestion_timestamp": {
+      "$ref": "https://schemas.crypto-fraud-platform.local/common-event.schema.json#/$defs/utc_date_time"
+    },
+    "product_id": {
+      "$ref": "https://schemas.crypto-fraud-platform.local/common-event.schema.json#/$defs/product_id"
+    },
+    "trade_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "price_usd": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "size": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "side": {
+      "type": "string",
+      "enum": [
+        "BUY",
+        "SELL"
+      ]
+    },
+    "trade_timestamp": {
+      "$ref": "https://schemas.crypto-fraud-platform.local/common-event.schema.json#/$defs/utc_date_time"
+    },
+    "message_timestamp": {
+      "$ref": "https://schemas.crypto-fraud-platform.local/common-event.schema.json#/$defs/utc_date_time"
+    },
+    "sequence_number": {
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "required": [
+    "event_id",
+    "event_type",
+    "schema_version",
+    "source",
+    "event_timestamp",
+    "source_timestamp",
+    "ingestion_timestamp",
+    "product_id",
+    "trade_id",
+    "price_usd",
+    "size",
+    "side",
+    "trade_timestamp",
+    "message_timestamp",
+    "sequence_number"
+  ],
+  "additionalProperties": false,
+  "examples": [
+    {
+      "event_id": "99999999-9999-4999-8999-999999999999",
+      "event_type": "market_event",
+      "schema_version": "1.0",
+      "source": "coinbase_websocket",
+      "event_timestamp": "2026-01-15T12:00:00Z",
+      "source_timestamp": "2026-01-15T12:00:00Z",
+      "ingestion_timestamp": "2026-01-15T12:00:01Z",
+      "product_id": "BTC-USD",
+      "trade_id": "coinbase-trade-1001",
+      "price_usd": 40000.0,
+      "size": 0.25,
+      "side": "BUY",
+      "trade_timestamp": "2026-01-15T12:00:00Z",
+      "message_timestamp": "2026-01-15T12:00:00Z",
+      "sequence_number": 1001
+    }
+  ]
+}

@@ -1,0 +1,360 @@
+{
+  "coefficient_interpretation_warning": "Coefficients represent associations learned from synthetic training data and do not establish causation.",
+  "largest_negative_coefficients": [
+    {
+      "absolute_coefficient": 2.638832738184138,
+      "coefficient": -2.638832738184138,
+      "transformed_feature_name": "categorical__asset_BTC"
+    },
+    {
+      "absolute_coefficient": 2.5492418779219737,
+      "coefficient": -2.5492418779219737,
+      "transformed_feature_name": "categorical__customer_risk_tier_MEDIUM"
+    },
+    {
+      "absolute_coefficient": 2.525472607705038,
+      "coefficient": -2.525472607705038,
+      "transformed_feature_name": "categorical__transaction_type_TRANSFER"
+    },
+    {
+      "absolute_coefficient": 1.8047773939822158,
+      "coefficient": -1.8047773939822158,
+      "transformed_feature_name": "numeric__prior_tx_amount_sum_24h"
+    },
+    {
+      "absolute_coefficient": 1.266477990602636,
+      "coefficient": -1.266477990602636,
+      "transformed_feature_name": "categorical__country_NL"
+    },
+    {
+      "absolute_coefficient": 1.234545063195985,
+      "coefficient": -1.234545063195985,
+      "transformed_feature_name": "categorical__transaction_type_DEPOSIT"
+    },
+    {
+      "absolute_coefficient": 1.2062126581112373,
+      "coefficient": -1.2062126581112373,
+      "transformed_feature_name": "categorical__customer_risk_tier_LOW"
+    },
+    {
+      "absolute_coefficient": 1.1521993275602307,
+      "coefficient": -1.1521993275602307,
+      "transformed_feature_name": "categorical__asset_ETH"
+    },
+    {
+      "absolute_coefficient": 1.1022023251028785,
+      "coefficient": -1.1022023251028785,
+      "transformed_feature_name": "numeric__successful_auth_count_1h"
+    },
+    {
+      "absolute_coefficient": 1.0799671150835377,
+      "coefficient": -1.0799671150835377,
+      "transformed_feature_name": "categorical__country_JP"
+    },
+    {
+      "absolute_coefficient": 1.019285194186093,
+      "coefficient": -1.019285194186093,
+      "transformed_feature_name": "numeric__crypto_quantity"
+    },
+    {
+      "absolute_coefficient": 1.0092433398305054,
+      "coefficient": -1.0092433398305054,
+      "transformed_feature_name": "categorical__country_SG"
+    },
+    {
+      "absolute_coefficient": 0.9868719288776033,
+      "coefficient": -0.9868719288776033,
+      "transformed_feature_name": "numeric__transaction_day_of_week_utc"
+    },
+    {
+      "absolute_coefficient": 0.9454682883484488,
+      "coefficient": -0.9454682883484488,
+      "transformed_feature_name": "numeric__market_data_freshness_seconds"
+    },
+    {
+      "absolute_coefficient": 0.8970783973445848,
+      "coefficient": -0.8970783973445848,
+      "transformed_feature_name": "numeric__is_new_destination_wallet"
+    },
+    {
+      "absolute_coefficient": 0.8957571707759351,
+      "coefficient": -0.8957571707759351,
+      "transformed_feature_name": "numeric__destination_wallet_age_hours"
+    },
+    {
+      "absolute_coefficient": 0.845718309266044,
+      "coefficient": -0.845718309266044,
+      "transformed_feature_name": "numeric__prior_destination_wallet_tx_count"
+    },
+    {
+      "absolute_coefficient": 0.7248744566011273,
+      "coefficient": -0.7248744566011273,
+      "transformed_feature_name": "numeric__market_volume_sum_1h"
+    },
+    {
+      "absolute_coefficient": 0.7166244759724151,
+      "coefficient": -0.7166244759724151,
+      "transformed_feature_name": "numeric__recent_auth_failure_flag_10m"
+    },
+    {
+      "absolute_coefficient": 0.715233433710372,
+      "coefficient": -0.715233433710372,
+      "transformed_feature_name": "numeric__normal_transaction_amount_usd"
+    }
+  ],
+  "largest_positive_coefficients": [
+    {
+      "absolute_coefficient": 2.901270918743046,
+      "coefficient": 2.901270918743046,
+      "transformed_feature_name": "numeric__amount_to_normal_ratio"
+    },
+    {
+      "absolute_coefficient": 2.53061023706025,
+      "coefficient": 2.53061023706025,
+      "transformed_feature_name": "numeric__device_failed_auth_count_10m"
+    },
+    {
+      "absolute_coefficient": 2.4683538530120233,
+      "coefficient": 2.4683538530120233,
+      "transformed_feature_name": "categorical__country_BR"
+    },
+    {
+      "absolute_coefficient": 2.428131656130414,
+      "coefficient": 2.428131656130414,
+      "transformed_feature_name": "numeric__prior_source_wallet_tx_count"
+    },
+    {
+      "absolute_coefficient": 1.012977085687035,
+      "coefficient": 1.012977085687035,
+      "transformed_feature_name": "numeric__prior_tx_count_5m"
+    },
+    {
+      "absolute_coefficient": 0.9367842514238274,
+      "coefficient": 0.9367842514238274,
+      "transformed_feature_name": "numeric__has_previous_successful_auth"
+    },
+    {
+      "absolute_coefficient": 0.7327620752135373,
+      "coefficient": 0.7327620752135373,
+      "transformed_feature_name": "numeric__device_distinct_account_count_1h"
+    },
+    {
+      "absolute_coefficient": 0.446937641970039,
+      "coefficient": 0.446937641970039,
+      "transformed_feature_name": "numeric__is_night_transaction_utc"
+    },
+    {
+      "absolute_coefficient": 0.2835241345400765,
+      "coefficient": 0.2835241345400765,
+      "transformed_feature_name": "numeric__prior_tx_amount_max_24h"
+    },
+    {
+      "absolute_coefficient": 0.10706759455641969,
+      "coefficient": 0.10706759455641969,
+      "transformed_feature_name": "numeric__transaction_hour_utc"
+    },
+    {
+      "absolute_coefficient": 0.05263716013889712,
+      "coefficient": 0.05263716013889712,
+      "transformed_feature_name": "numeric__seconds_since_last_successful_auth"
+    },
+    {
+      "absolute_coefficient": 0.045034413410873345,
+      "coefficient": 0.045034413410873345,
+      "transformed_feature_name": "numeric__device_age_days"
+    },
+    {
+      "absolute_coefficient": 0.04503441341087322,
+      "coefficient": 0.04503441341087322,
+      "transformed_feature_name": "numeric__device_age_hours"
+    },
+    {
+      "absolute_coefficient": 0.04009042271973045,
+      "coefficient": 0.04009042271973045,
+      "transformed_feature_name": "numeric__prior_tx_count_1h"
+    },
+    {
+      "absolute_coefficient": 0.018859017980742392,
+      "coefficient": 0.018859017980742392,
+      "transformed_feature_name": "numeric__market_return_5m"
+    },
+    {
+      "absolute_coefficient": 0.0,
+      "coefficient": 0.0,
+      "transformed_feature_name": "numeric__account_profile_available"
+    },
+    {
+      "absolute_coefficient": 0.0,
+      "coefficient": 0.0,
+      "transformed_feature_name": "numeric__destination_wallet_applicable"
+    },
+    {
+      "absolute_coefficient": 0.0,
+      "coefficient": 0.0,
+      "transformed_feature_name": "numeric__destination_wallet_first_seen_available"
+    },
+    {
+      "absolute_coefficient": 0.0,
+      "coefficient": 0.0,
+      "transformed_feature_name": "numeric__device_profile_available"
+    },
+    {
+      "absolute_coefficient": 0.0,
+      "coefficient": 0.0,
+      "transformed_feature_name": "numeric__is_new_device_24h"
+    }
+  ],
+  "model_name": "logistic_regression_balanced_v1",
+  "top_absolute_coefficients": [
+    {
+      "absolute_coefficient": 2.901270918743046,
+      "coefficient": 2.901270918743046,
+      "transformed_feature_name": "numeric__amount_to_normal_ratio"
+    },
+    {
+      "absolute_coefficient": 2.638832738184138,
+      "coefficient": -2.638832738184138,
+      "transformed_feature_name": "categorical__asset_BTC"
+    },
+    {
+      "absolute_coefficient": 2.5492418779219737,
+      "coefficient": -2.5492418779219737,
+      "transformed_feature_name": "categorical__customer_risk_tier_MEDIUM"
+    },
+    {
+      "absolute_coefficient": 2.53061023706025,
+      "coefficient": 2.53061023706025,
+      "transformed_feature_name": "numeric__device_failed_auth_count_10m"
+    },
+    {
+      "absolute_coefficient": 2.525472607705038,
+      "coefficient": -2.525472607705038,
+      "transformed_feature_name": "categorical__transaction_type_TRANSFER"
+    },
+    {
+      "absolute_coefficient": 2.4683538530120233,
+      "coefficient": 2.4683538530120233,
+      "transformed_feature_name": "categorical__country_BR"
+    },
+    {
+      "absolute_coefficient": 2.428131656130414,
+      "coefficient": 2.428131656130414,
+      "transformed_feature_name": "numeric__prior_source_wallet_tx_count"
+    },
+    {
+      "absolute_coefficient": 1.8047773939822158,
+      "coefficient": -1.8047773939822158,
+      "transformed_feature_name": "numeric__prior_tx_amount_sum_24h"
+    },
+    {
+      "absolute_coefficient": 1.266477990602636,
+      "coefficient": -1.266477990602636,
+      "transformed_feature_name": "categorical__country_NL"
+    },
+    {
+      "absolute_coefficient": 1.234545063195985,
+      "coefficient": -1.234545063195985,
+      "transformed_feature_name": "categorical__transaction_type_DEPOSIT"
+    },
+    {
+      "absolute_coefficient": 1.2062126581112373,
+      "coefficient": -1.2062126581112373,
+      "transformed_feature_name": "categorical__customer_risk_tier_LOW"
+    },
+    {
+      "absolute_coefficient": 1.1521993275602307,
+      "coefficient": -1.1521993275602307,
+      "transformed_feature_name": "categorical__asset_ETH"
+    },
+    {
+      "absolute_coefficient": 1.1022023251028785,
+      "coefficient": -1.1022023251028785,
+      "transformed_feature_name": "numeric__successful_auth_count_1h"
+    },
+    {
+      "absolute_coefficient": 1.0799671150835377,
+      "coefficient": -1.0799671150835377,
+      "transformed_feature_name": "categorical__country_JP"
+    },
+    {
+      "absolute_coefficient": 1.019285194186093,
+      "coefficient": -1.019285194186093,
+      "transformed_feature_name": "numeric__crypto_quantity"
+    },
+    {
+      "absolute_coefficient": 1.012977085687035,
+      "coefficient": 1.012977085687035,
+      "transformed_feature_name": "numeric__prior_tx_count_5m"
+    },
+    {
+      "absolute_coefficient": 1.0092433398305054,
+      "coefficient": -1.0092433398305054,
+      "transformed_feature_name": "categorical__country_SG"
+    },
+    {
+      "absolute_coefficient": 0.9868719288776033,
+      "coefficient": -0.9868719288776033,
+      "transformed_feature_name": "numeric__transaction_day_of_week_utc"
+    },
+    {
+      "absolute_coefficient": 0.9454682883484488,
+      "coefficient": -0.9454682883484488,
+      "transformed_feature_name": "numeric__market_data_freshness_seconds"
+    },
+    {
+      "absolute_coefficient": 0.9367842514238274,
+      "coefficient": 0.9367842514238274,
+      "transformed_feature_name": "numeric__has_previous_successful_auth"
+    },
+    {
+      "absolute_coefficient": 0.8970783973445848,
+      "coefficient": -0.8970783973445848,
+      "transformed_feature_name": "numeric__is_new_destination_wallet"
+    },
+    {
+      "absolute_coefficient": 0.8957571707759351,
+      "coefficient": -0.8957571707759351,
+      "transformed_feature_name": "numeric__destination_wallet_age_hours"
+    },
+    {
+      "absolute_coefficient": 0.845718309266044,
+      "coefficient": -0.845718309266044,
+      "transformed_feature_name": "numeric__prior_destination_wallet_tx_count"
+    },
+    {
+      "absolute_coefficient": 0.7327620752135373,
+      "coefficient": 0.7327620752135373,
+      "transformed_feature_name": "numeric__device_distinct_account_count_1h"
+    },
+    {
+      "absolute_coefficient": 0.7248744566011273,
+      "coefficient": -0.7248744566011273,
+      "transformed_feature_name": "numeric__market_volume_sum_1h"
+    },
+    {
+      "absolute_coefficient": 0.7166244759724151,
+      "coefficient": -0.7166244759724151,
+      "transformed_feature_name": "numeric__recent_auth_failure_flag_10m"
+    },
+    {
+      "absolute_coefficient": 0.715233433710372,
+      "coefficient": -0.715233433710372,
+      "transformed_feature_name": "numeric__normal_transaction_amount_usd"
+    },
+    {
+      "absolute_coefficient": 0.6659571199274693,
+      "coefficient": -0.6659571199274693,
+      "transformed_feature_name": "categorical__country_US"
+    },
+    {
+      "absolute_coefficient": 0.6389183960510336,
+      "coefficient": -0.6389183960510336,
+      "transformed_feature_name": "numeric__device_successful_auth_count_1h"
+    },
+    {
+      "absolute_coefficient": 0.6020726235188995,
+      "coefficient": -0.6020726235188995,
+      "transformed_feature_name": "categorical__country_AU"
+    }
+  ]
+}

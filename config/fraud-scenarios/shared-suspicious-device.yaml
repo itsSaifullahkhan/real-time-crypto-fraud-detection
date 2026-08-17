@@ -1,0 +1,123 @@
+scenario_id: shared_suspicious_device
+scenario_version: "1.0"
+display_name: "Shared suspicious device"
+description: "One device is used across several unrelated customer accounts, followed by suspicious transactions."
+enabled: true
+fraud_type: SHARED_SUSPICIOUS_DEVICE
+reason_codes:
+  - SUSPICIOUS_SHARED_DEVICE
+  - NEW_DEVICE
+  - FAILED_LOGIN_ACTIVITY
+affected_entities:
+  - account
+  - device
+  - authentication_event
+  - customer_transaction
+  - fraud_decision
+  - fraud_label
+affected_event_types:
+  - authentication_event
+  - customer_transaction
+  - fraud_decision
+  - fraud_label
+prerequisites:
+  - "Multiple unrelated accounts exist."
+  - "A single device_id can appear in authentication events for multiple accounts."
+  - "Device master data remains compatible with one primary_account_id while authentication usage spans accounts."
+trigger_logic:
+  device_relative_rules:
+    distinct_accounts_on_device:
+      min: 3
+      max: 8
+    failed_login_attempts:
+      min: 1
+      max: 5
+  geography_pattern: "Suspicious country changes or impossible account-to-device history may appear."
+event_sequence:
+  - step: 1
+    event_type: authentication_event
+    description: "The same device_id appears in login attempts for multiple unrelated accounts."
+    transaction_event_contains_label: false
+  - step: 2
+    event_type: authentication_event
+    description: "Some attempts include failed login or MFA activity from suspicious geography."
+    transaction_event_contains_label: false
+  - step: 3
+    event_type: customer_transaction
+    description: "One or more accounts transact after using the shared suspicious device."
+    transaction_event_contains_label: false
+  - step: 4
+    event_type: fraud_decision
+    description: "Model scoring can use device-account-count and authentication-window features."
+    transaction_event_contains_label: false
+  - step: 5
+    event_type: fraud_label
+    description: "Delayed investigation labels documented transactions from compromised shared-device accounts."
+    transaction_event_contains_label: false
+timing_rules:
+  prerequisite_history_days:
+    min: 14
+    max: 180
+  shared_device_login_window_hours:
+    min: 1
+    max: 12
+  authentication_to_transaction_minutes:
+    min: 1
+    max: 60
+  maximum_scenario_duration_hours:
+    min: 2
+    max: 24
+  label_delay_hours:
+    min: 12
+    max: 72
+  late_or_out_of_order_variants_later: true
+  can_overlap_with_another_scenario: false
+expected_feature_signals:
+  - name: accounts_connected_to_device
+    source: prior_authentication_events
+    availability: before_prediction
+  - name: device_account_count_recent
+    source: prior_authentication_events
+    availability: before_prediction
+  - name: is_new_device
+    source: prior_authentication_events
+    availability: before_prediction
+  - name: failed_logins_last_10_minutes
+    source: prior_authentication_events
+    availability: before_prediction
+  - name: country_change_flag
+    source: prior_authentication_events
+    availability: before_prediction
+  - name: device_change_flag
+    source: prior_authentication_events
+    availability: before_prediction
+label_rules:
+  labeled_transaction_selection: "Transactions following suspicious shared-device authentication receive confirmed fraud labels."
+  multiple_labels_can_relate_to_same_scenario: true
+  label_delay_hours:
+    min: 12
+    max: 72
+  fraud_type: SHARED_SUSPICIOUS_DEVICE
+  investigation_status: CONFIRMED_FRAUD
+  is_fraud: true
+  label_source: SIMULATED_INVESTIGATION
+  normal_control_records_generated: true
+  cleared_control_label:
+    investigation_status: CLEARED
+    is_fraud: false
+    fraud_type: null
+difficulty: HARD
+false_positive_risk:
+  level: HIGH
+  examples:
+    - "Shared family device used by approved users."
+    - "Corporate or kiosk device used by authorized employees."
+normal_control_cases:
+  - "Family device with known accounts and normal geography."
+  - "Corporate device with approved multi-account usage and no failed-login cluster."
+validation_rules:
+  - "The device schema must not be changed to force only one account per device."
+  - "Feature windows must use authentication events before the transaction prediction point."
+  - "Transaction events must not contain scenario or label fields."
+notes:
+  - "This scenario relies on authentication-event usage, not a many-account field on the device master record."

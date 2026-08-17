@@ -1,0 +1,17 @@
+{
+  "event_id": "99999999-9999-4999-8999-999999999999",
+  "event_type": "market_event",
+  "schema_version": "1.0",
+  "source": "coinbase_websocket",
+  "event_timestamp": "2026-01-15T12:00:00Z",
+  "source_timestamp": "2026-01-15T12:00:00Z",
+  "ingestion_timestamp": "2026-01-15T12:00:01Z",
+  "product_id": "BTC-USD",
+  "trade_id": "coinbase-trade-1001",
+  "price_usd": 40000.0,
+  "size": 0.25,
+  "side": "BUY",
+  "trade_timestamp": "2026-01-15T12:00:00Z",
+  "message_timestamp": "2026-01-15T12:00:00Z",
+  "sequence_number": 1001
+}

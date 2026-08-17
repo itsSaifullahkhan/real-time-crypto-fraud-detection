@@ -1,0 +1,123 @@
+scenario_id: high_volatility_unusual_withdrawal
+scenario_version: "1.0"
+display_name: "High-volatility unusual withdrawal"
+description: "An unusual withdrawal occurs during elevated BTC or ETH market volatility."
+enabled: false
+fraud_type: HIGH_VOLATILITY_UNUSUAL_WITHDRAWAL
+reason_codes:
+  - HIGH_MARKET_VOLATILITY
+  - UNUSUAL_AMOUNT
+  - NEW_DESTINATION_WALLET
+affected_entities:
+  - account
+  - wallet
+  - market_event
+  - customer_transaction
+  - fraud_decision
+  - fraud_label
+affected_event_types:
+  - market_event
+  - customer_transaction
+  - fraud_decision
+  - fraud_label
+prerequisites:
+  - "Prior market events exist for the traded asset and product."
+  - "Account has normal_transaction_amount_usd for amount comparison."
+  - "A withdrawal destination wallet is valid under the wallet contract."
+trigger_logic:
+  market_context_rules:
+    volatility_percentile_band:
+      min: 95
+      max: 99
+    price_change_window_minutes:
+      min: 5
+      max: 15
+  profile_relative_rules:
+    amount_multiplier_vs_normal:
+      min: 4
+      max: 10
+  critical_note: "Volatility alone must never make a transaction fraudulent."
+event_sequence:
+  - step: 1
+    event_type: market_event
+    description: "Prior Coinbase market events establish elevated volatility and price movement."
+    transaction_event_contains_label: false
+  - step: 2
+    event_type: customer_transaction
+    description: "A withdrawal is unusual for the account and may use a new destination wallet."
+    transaction_event_contains_label: false
+  - step: 3
+    event_type: fraud_decision
+    description: "Model scoring can use prior market context plus current transaction features."
+    transaction_event_contains_label: false
+  - step: 4
+    event_type: fraud_label
+    description: "Delayed investigation labels the unusual withdrawal if the scenario is enabled in a later phase."
+    transaction_event_contains_label: false
+timing_rules:
+  prerequisite_history_days:
+    min: 14
+    max: 180
+  market_context_window_minutes:
+    min: 5
+    max: 15
+  market_to_transaction_seconds:
+    min: 0
+    max: 300
+  maximum_scenario_duration_hours:
+    min: 1
+    max: 3
+  label_delay_hours:
+    min: 12
+    max: 72
+  late_or_out_of_order_variants_later: true
+  can_overlap_with_another_scenario: false
+expected_feature_signals:
+  - name: market_volatility_last_5_minutes
+    source: prior_market_events
+    availability: before_prediction
+  - name: price_change_last_5_minutes
+    source: prior_market_events
+    availability: before_prediction
+  - name: market_trade_volume_last_5_minutes
+    source: prior_market_events
+    availability: before_prediction
+  - name: amount_vs_customer_average
+    source: historical_account_profile
+    availability: at_prediction
+  - name: destination_wallet_is_new
+    source: prior_wallet_activity
+    availability: before_prediction
+  - name: transaction_amount_adjusted_for_market_context
+    source: current_transaction
+    availability: at_prediction
+label_rules:
+  labeled_transaction_selection: "The unusual withdrawal transaction_id receives the confirmed fraud label only when this optional scenario is enabled."
+  multiple_labels_can_relate_to_same_scenario: false
+  label_delay_hours:
+    min: 12
+    max: 72
+  fraud_type: HIGH_VOLATILITY_UNUSUAL_WITHDRAWAL
+  investigation_status: CONFIRMED_FRAUD
+  is_fraud: true
+  label_source: SIMULATED_INVESTIGATION
+  normal_control_records_generated: true
+  cleared_control_label:
+    investigation_status: CLEARED
+    is_fraud: false
+    fraud_type: null
+difficulty: HARD
+false_positive_risk:
+  level: HIGH
+  examples:
+    - "Legitimate customer withdrawal during volatile markets."
+    - "Portfolio rebalancing or risk reduction during price movement."
+normal_control_cases:
+  - "High market volatility with otherwise normal transaction amount and known wallet."
+  - "Unusual amount outside volatile periods with strong authentication history."
+validation_rules:
+  - "This optional scenario must remain disabled by default."
+  - "Market features must be calculated from prior market events only."
+  - "Volatility alone is insufficient; account-relative amount or wallet signals must also be present."
+notes:
+  - "This scenario is reserved for later calibration after market-context feature definitions are approved."

@@ -1,0 +1,8 @@
+{
+  "approved_semantics": "target_is_fraud=True means confirmed fraud; target_is_fraud=False means cleared normal.",
+  "negative_class": 0,
+  "negative_class_name": "normal",
+  "positive_class": 1,
+  "positive_class_name": "fraud",
+  "source_target_column": "target_is_fraud"
+}

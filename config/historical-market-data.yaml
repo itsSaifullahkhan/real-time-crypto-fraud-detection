@@ -1,0 +1,62 @@
+design_version: "1.0"
+
+source:
+  provider: coinbase
+  dataset_type: historical_candles
+  source_name: coinbase_exchange_rest_api
+  endpoint_concept: "GET /products/{product_id}/candles"
+  public_market_data_only: true
+
+products:
+  - BTC-USD
+  - ETH-USD
+
+time_range:
+  start: "2026-01-01T00:00:00Z"
+  end: "2026-06-30T23:59:59Z"
+  timezone: UTC
+
+granularity:
+  seconds: 60
+  name: one_minute
+
+request_design:
+  maximum_candles_per_request: 300
+  checkpoint_enabled: true
+  retry_enabled: true
+  backoff_enabled: true
+  repeated_completed_interval_requests: avoid
+  implementation_phase: later
+
+storage:
+  format: parquet
+  partition_columns:
+    - product_id
+    - event_date
+  raw_dataset_name: historical_market_candles
+  conceptual_path: raw/historical/market_candles/
+
+quality:
+  deduplication_key:
+    - product_id
+    - candle_start_timestamp
+  missing_interval_policy: preserve_and_flag
+  future_fill_policy: do_not_use_future_values
+  duplicate_policy: remove_duplicate_product_timestamp_records
+  natural_business_key:
+    - product_id
+    - candle_start_timestamp
+
+enrichment_design:
+  asset_product_mapping:
+    BTC: BTC-USD
+    ETH: ETH-USD
+  candle_selection_rule: most_recent_completed_candle_at_or_before_transaction_timestamp
+  record_matched_candle_timestamp: true
+  record_market_data_freshness: true
+  flag_missing_prior_candle: true
+  implementation_phase: later
+
+credential_policy:
+  api_keys_required: false
+  store_credentials_in_file: false

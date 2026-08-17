@@ -1,0 +1,2348 @@
+{
+  "artifact_dbfs_sync": {
+    "dbfs": {
+      "output_dbfs_dir": "dbfs:/FileStore/crypto_fraud_phase9a/phase9a_20260805_01",
+      "reason": "Public DBFS root is disabled in this workspace; reports are exported through workspace files and MLflow artifacts.",
+      "status": "SKIPPED"
+    },
+    "status": "PASS",
+    "workspace_files": {
+      "copied_file_count": 32,
+      "copied_files": [
+        "phase9a_logistic_baseline_metrics.json",
+        "phase9a_training_data_profile.json",
+        "phase9a_excluded_columns.json",
+        "phase9a_dummy_baseline_metrics.json",
+        "phase9a_package_versions.json",
+        "phase9a_model_reload_test.json",
+        "phase9a_logistic_baseline_summary.json",
+        "phase9a_candidate_features.json",
+        "phase9a_segment_analysis.json",
+        "phase9a_target_class_mapping.json",
+        "phase9a_preprocessing_summary.json",
+        "phase9a_split_manifest.json",
+        "phase9a_split_manifest_v2.json",
+        "phase9a_logistic_coefficients.csv",
+        "phase9a_logistic_coefficient_report.json",
+        "phase9a_plots/dummy_most_frequent_v1_test_confusion_matrix.png",
+        "phase9a_plots/dummy_most_frequent_v1_validation_roc_curve.png",
+        "phase9a_plots/logistic_regression_balanced_v1_test_probability_distribution.png",
+        "phase9a_plots/dummy_most_frequent_v1_test_precision_recall_curve.png",
+        "phase9a_plots/logistic_regression_balanced_v1_test_precision_recall_curve.png",
+        "phase9a_plots/dummy_most_frequent_v1_validation_precision_recall_curve.png",
+        "phase9a_plots/dummy_most_frequent_v1_test_probability_distribution.png",
+        "phase9a_plots/dummy_most_frequent_v1_test_roc_curve.png",
+        "phase9a_plots/logistic_regression_balanced_v1_test_roc_curve.png",
+        "phase9a_plots/logistic_regression_balanced_v1_validation_probability_distribution.png",
+        "phase9a_plots/logistic_regression_balanced_v1_test_confusion_matrix.png",
+        "phase9a_plots/logistic_regression_balanced_v1_validation_precision_recall_curve.png",
+        "phase9a_plots/logistic_regression_balanced_v1_validation_roc_curve.png",
+        "phase9a_plots/logistic_regression_balanced_v1_top_coefficient_magnitudes.png",
+        "phase9a_plots/dummy_most_frequent_v1_validation_probability_distribution.png",
+        "phase9a_plots/logistic_regression_balanced_v1_validation_confusion_matrix.png",
+        "phase9a_plots/dummy_most_frequent_v1_validation_confusion_matrix.png"
+      ],
+      "status": "PASS",
+      "workspace_reports_path": "/Users/akanaskhan1506@gmail.com/phase9a_reports/phase9a_20260805_01"
+    }
+  },
+  "artifacts_created": {
+    "plots_directory": "reports/phase9a_plots/",
+    "reports": [
+      "reports/phase9a_training_data_profile.json",
+      "reports/phase9a_split_manifest.json",
+      "reports/phase9a_split_manifest_v2.json",
+      "reports/phase9a_logistic_baseline_summary.json",
+      "reports/phase9a_candidate_features.json",
+      "reports/phase9a_excluded_columns.json",
+      "reports/phase9a_preprocessing_summary.json",
+      "reports/phase9a_package_versions.json",
+      "reports/phase9a_segment_analysis.json",
+      "reports/phase9a_logistic_coefficient_report.json",
+      "reports/phase9a_logistic_coefficients.csv",
+      "reports/phase9a_model_reload_test.json",
+      "reports/phase9a_dummy_baseline_metrics.json",
+      "reports/phase9a_logistic_baseline_metrics.json",
+      "reports/phase9a_target_class_mapping.json"
+    ]
+  },
+  "candidate_feature_count": 55,
+  "cluster": {
+    "cluster_id": "0803-061312-78fw66xn",
+    "cluster_name": "crypto-fraud-dev-compute"
+  },
+  "coefficient_summary": {
+    "coefficient_interpretation_warning": "Coefficients represent associations learned from synthetic training data and do not establish causation.",
+    "largest_negative_coefficients": [
+      {
+        "absolute_coefficient": 2.638832738184138,
+        "coefficient": -2.638832738184138,
+        "transformed_feature_name": "categorical__asset_BTC"
+      },
+      {
+        "absolute_coefficient": 2.5492418779219737,
+        "coefficient": -2.5492418779219737,
+        "transformed_feature_name": "categorical__customer_risk_tier_MEDIUM"
+      },
+      {
+        "absolute_coefficient": 2.525472607705038,
+        "coefficient": -2.525472607705038,
+        "transformed_feature_name": "categorical__transaction_type_TRANSFER"
+      },
+      {
+        "absolute_coefficient": 1.8047773939822158,
+        "coefficient": -1.8047773939822158,
+        "transformed_feature_name": "numeric__prior_tx_amount_sum_24h"
+      },
+      {
+        "absolute_coefficient": 1.266477990602636,
+        "coefficient": -1.266477990602636,
+        "transformed_feature_name": "categorical__country_NL"
+      },
+      {
+        "absolute_coefficient": 1.234545063195985,
+        "coefficient": -1.234545063195985,
+        "transformed_feature_name": "categorical__transaction_type_DEPOSIT"
+      },
+      {
+        "absolute_coefficient": 1.2062126581112373,
+        "coefficient": -1.2062126581112373,
+        "transformed_feature_name": "categorical__customer_risk_tier_LOW"
+      },
+      {
+        "absolute_coefficient": 1.1521993275602307,
+        "coefficient": -1.1521993275602307,
+        "transformed_feature_name": "categorical__asset_ETH"
+      },
+      {
+        "absolute_coefficient": 1.1022023251028785,
+        "coefficient": -1.1022023251028785,
+        "transformed_feature_name": "numeric__successful_auth_count_1h"
+      },
+      {
+        "absolute_coefficient": 1.0799671150835377,
+        "coefficient": -1.0799671150835377,
+        "transformed_feature_name": "categorical__country_JP"
+      },
+      {
+        "absolute_coefficient": 1.019285194186093,
+        "coefficient": -1.019285194186093,
+        "transformed_feature_name": "numeric__crypto_quantity"
+      },
+      {
+        "absolute_coefficient": 1.0092433398305054,
+        "coefficient": -1.0092433398305054,
+        "transformed_feature_name": "categorical__country_SG"
+      },
+      {
+        "absolute_coefficient": 0.9868719288776033,
+        "coefficient": -0.9868719288776033,
+        "transformed_feature_name": "numeric__transaction_day_of_week_utc"
+      },
+      {
+        "absolute_coefficient": 0.9454682883484488,
+        "coefficient": -0.9454682883484488,
+        "transformed_feature_name": "numeric__market_data_freshness_seconds"
+      },
+      {
+        "absolute_coefficient": 0.8970783973445848,
+        "coefficient": -0.8970783973445848,
+        "transformed_feature_name": "numeric__is_new_destination_wallet"
+      },
+      {
+        "absolute_coefficient": 0.8957571707759351,
+        "coefficient": -0.8957571707759351,
+        "transformed_feature_name": "numeric__destination_wallet_age_hours"
+      },
+      {
+        "absolute_coefficient": 0.845718309266044,
+        "coefficient": -0.845718309266044,
+        "transformed_feature_name": "numeric__prior_destination_wallet_tx_count"
+      },
+      {
+        "absolute_coefficient": 0.7248744566011273,
+        "coefficient": -0.7248744566011273,
+        "transformed_feature_name": "numeric__market_volume_sum_1h"
+      },
+      {
+        "absolute_coefficient": 0.7166244759724151,
+        "coefficient": -0.7166244759724151,
+        "transformed_feature_name": "numeric__recent_auth_failure_flag_10m"
+      },
+      {
+        "absolute_coefficient": 0.715233433710372,
+        "coefficient": -0.715233433710372,
+        "transformed_feature_name": "numeric__normal_transaction_amount_usd"
+      }
+    ],
+    "largest_positive_coefficients": [
+      {
+        "absolute_coefficient": 2.901270918743046,
+        "coefficient": 2.901270918743046,
+        "transformed_feature_name": "numeric__amount_to_normal_ratio"
+      },
+      {
+        "absolute_coefficient": 2.53061023706025,
+        "coefficient": 2.53061023706025,
+        "transformed_feature_name": "numeric__device_failed_auth_count_10m"
+      },
+      {
+        "absolute_coefficient": 2.4683538530120233,
+        "coefficient": 2.4683538530120233,
+        "transformed_feature_name": "categorical__country_BR"
+      },
+      {
+        "absolute_coefficient": 2.428131656130414,
+        "coefficient": 2.428131656130414,
+        "transformed_feature_name": "numeric__prior_source_wallet_tx_count"
+      },
+      {
+        "absolute_coefficient": 1.012977085687035,
+        "coefficient": 1.012977085687035,
+        "transformed_feature_name": "numeric__prior_tx_count_5m"
+      },
+      {
+        "absolute_coefficient": 0.9367842514238274,
+        "coefficient": 0.9367842514238274,
+        "transformed_feature_name": "numeric__has_previous_successful_auth"
+      },
+      {
+        "absolute_coefficient": 0.7327620752135373,
+        "coefficient": 0.7327620752135373,
+        "transformed_feature_name": "numeric__device_distinct_account_count_1h"
+      },
+      {
+        "absolute_coefficient": 0.446937641970039,
+        "coefficient": 0.446937641970039,
+        "transformed_feature_name": "numeric__is_night_transaction_utc"
+      },
+      {
+        "absolute_coefficient": 0.2835241345400765,
+        "coefficient": 0.2835241345400765,
+        "transformed_feature_name": "numeric__prior_tx_amount_max_24h"
+      },
+      {
+        "absolute_coefficient": 0.10706759455641969,
+        "coefficient": 0.10706759455641969,
+        "transformed_feature_name": "numeric__transaction_hour_utc"
+      },
+      {
+        "absolute_coefficient": 0.05263716013889712,
+        "coefficient": 0.05263716013889712,
+        "transformed_feature_name": "numeric__seconds_since_last_successful_auth"
+      },
+      {
+        "absolute_coefficient": 0.045034413410873345,
+        "coefficient": 0.045034413410873345,
+        "transformed_feature_name": "numeric__device_age_days"
+      },
+      {
+        "absolute_coefficient": 0.04503441341087322,
+        "coefficient": 0.04503441341087322,
+        "transformed_feature_name": "numeric__device_age_hours"
+      },
+      {
+        "absolute_coefficient": 0.04009042271973045,
+        "coefficient": 0.04009042271973045,
+        "transformed_feature_name": "numeric__prior_tx_count_1h"
+      },
+      {
+        "absolute_coefficient": 0.018859017980742392,
+        "coefficient": 0.018859017980742392,
+        "transformed_feature_name": "numeric__market_return_5m"
+      },
+      {
+        "absolute_coefficient": 0.0,
+        "coefficient": 0.0,
+        "transformed_feature_name": "numeric__account_profile_available"
+      },
+      {
+        "absolute_coefficient": 0.0,
+        "coefficient": 0.0,
+        "transformed_feature_name": "numeric__destination_wallet_applicable"
+      },
+      {
+        "absolute_coefficient": 0.0,
+        "coefficient": 0.0,
+        "transformed_feature_name": "numeric__destination_wallet_first_seen_available"
+      },
+      {
+        "absolute_coefficient": 0.0,
+        "coefficient": 0.0,
+        "transformed_feature_name": "numeric__device_profile_available"
+      },
+      {
+        "absolute_coefficient": 0.0,
+        "coefficient": 0.0,
+        "transformed_feature_name": "numeric__is_new_device_24h"
+      }
+    ],
+    "model_name": "logistic_regression_balanced_v1",
+    "top_absolute_coefficients": [
+      {
+        "absolute_coefficient": 2.901270918743046,
+        "coefficient": 2.901270918743046,
+        "transformed_feature_name": "numeric__amount_to_normal_ratio"
+      },
+      {
+        "absolute_coefficient": 2.638832738184138,
+        "coefficient": -2.638832738184138,
+        "transformed_feature_name": "categorical__asset_BTC"
+      },
+      {
+        "absolute_coefficient": 2.5492418779219737,
+        "coefficient": -2.5492418779219737,
+        "transformed_feature_name": "categorical__customer_risk_tier_MEDIUM"
+      },
+      {
+        "absolute_coefficient": 2.53061023706025,
+        "coefficient": 2.53061023706025,
+        "transformed_feature_name": "numeric__device_failed_auth_count_10m"
+      },
+      {
+        "absolute_coefficient": 2.525472607705038,
+        "coefficient": -2.525472607705038,
+        "transformed_feature_name": "categorical__transaction_type_TRANSFER"
+      },
+      {
+        "absolute_coefficient": 2.4683538530120233,
+        "coefficient": 2.4683538530120233,
+        "transformed_feature_name": "categorical__country_BR"
+      },
+      {
+        "absolute_coefficient": 2.428131656130414,
+        "coefficient": 2.428131656130414,
+        "transformed_feature_name": "numeric__prior_source_wallet_tx_count"
+      },
+      {
+        "absolute_coefficient": 1.8047773939822158,
+        "coefficient": -1.8047773939822158,
+        "transformed_feature_name": "numeric__prior_tx_amount_sum_24h"
+      },
+      {
+        "absolute_coefficient": 1.266477990602636,
+        "coefficient": -1.266477990602636,
+        "transformed_feature_name": "categorical__country_NL"
+      },
+      {
+        "absolute_coefficient": 1.234545063195985,
+        "coefficient": -1.234545063195985,
+        "transformed_feature_name": "categorical__transaction_type_DEPOSIT"
+      },
+      {
+        "absolute_coefficient": 1.2062126581112373,
+        "coefficient": -1.2062126581112373,
+        "transformed_feature_name": "categorical__customer_risk_tier_LOW"
+      },
+      {
+        "absolute_coefficient": 1.1521993275602307,
+        "coefficient": -1.1521993275602307,
+        "transformed_feature_name": "categorical__asset_ETH"
+      },
+      {
+        "absolute_coefficient": 1.1022023251028785,
+        "coefficient": -1.1022023251028785,
+        "transformed_feature_name": "numeric__successful_auth_count_1h"
+      },
+      {
+        "absolute_coefficient": 1.0799671150835377,
+        "coefficient": -1.0799671150835377,
+        "transformed_feature_name": "categorical__country_JP"
+      },
+      {
+        "absolute_coefficient": 1.019285194186093,
+        "coefficient": -1.019285194186093,
+        "transformed_feature_name": "numeric__crypto_quantity"
+      },
+      {
+        "absolute_coefficient": 1.012977085687035,
+        "coefficient": 1.012977085687035,
+        "transformed_feature_name": "numeric__prior_tx_count_5m"
+      },
+      {
+        "absolute_coefficient": 1.0092433398305054,
+        "coefficient": -1.0092433398305054,
+        "transformed_feature_name": "categorical__country_SG"
+      },
+      {
+        "absolute_coefficient": 0.9868719288776033,
+        "coefficient": -0.9868719288776033,
+        "transformed_feature_name": "numeric__transaction_day_of_week_utc"
+      },
+      {
+        "absolute_coefficient": 0.9454682883484488,
+        "coefficient": -0.9454682883484488,
+        "transformed_feature_name": "numeric__market_data_freshness_seconds"
+      },
+      {
+        "absolute_coefficient": 0.9367842514238274,
+        "coefficient": 0.9367842514238274,
+        "transformed_feature_name": "numeric__has_previous_successful_auth"
+      },
+      {
+        "absolute_coefficient": 0.8970783973445848,
+        "coefficient": -0.8970783973445848,
+        "transformed_feature_name": "numeric__is_new_destination_wallet"
+      },
+      {
+        "absolute_coefficient": 0.8957571707759351,
+        "coefficient": -0.8957571707759351,
+        "transformed_feature_name": "numeric__destination_wallet_age_hours"
+      },
+      {
+        "absolute_coefficient": 0.845718309266044,
+        "coefficient": -0.845718309266044,
+        "transformed_feature_name": "numeric__prior_destination_wallet_tx_count"
+      },
+      {
+        "absolute_coefficient": 0.7327620752135373,
+        "coefficient": 0.7327620752135373,
+        "transformed_feature_name": "numeric__device_distinct_account_count_1h"
+      },
+      {
+        "absolute_coefficient": 0.7248744566011273,
+        "coefficient": -0.7248744566011273,
+        "transformed_feature_name": "numeric__market_volume_sum_1h"
+      },
+      {
+        "absolute_coefficient": 0.7166244759724151,
+        "coefficient": -0.7166244759724151,
+        "transformed_feature_name": "numeric__recent_auth_failure_flag_10m"
+      },
+      {
+        "absolute_coefficient": 0.715233433710372,
+        "coefficient": -0.715233433710372,
+        "transformed_feature_name": "numeric__normal_transaction_amount_usd"
+      },
+      {
+        "absolute_coefficient": 0.6659571199274693,
+        "coefficient": -0.6659571199274693,
+        "transformed_feature_name": "categorical__country_US"
+      },
+      {
+        "absolute_coefficient": 0.6389183960510336,
+        "coefficient": -0.6389183960510336,
+        "transformed_feature_name": "numeric__device_successful_auth_count_1h"
+      },
+      {
+        "absolute_coefficient": 0.6020726235188995,
+        "coefficient": -0.6020726235188995,
+        "transformed_feature_name": "categorical__country_AU"
+      }
+    ]
+  },
+  "commands_executed": [
+    "databricks --profile crypto-fraud-dev current-user me",
+    "databricks --profile crypto-fraud-dev clusters get 0803-061312-78fw66xn",
+    "databricks --profile crypto-fraud-dev clusters start 0803-061312-78fw66xn",
+    "databricks --profile crypto-fraud-dev workspace import --file config/feature_definitions.json --format RAW --overwrite /Users/akanaskhan1506@gmail.com/config/feature_definitions.json",
+    "databricks --profile crypto-fraud-dev workspace import --file databricks/04_logistic_regression_baseline.py --format SOURCE --language PYTHON --overwrite /Users/akanaskhan1506@gmail.com/04_logistic_regression_baseline",
+    "databricks --profile crypto-fraud-dev jobs submit --json .tmp/phase9a_job_submit.json",
+    "databricks --profile crypto-fraud-dev workspace export /Users/akanaskhan1506@gmail.com/phase9a_reports/phase9a_20260805_01/<report>.json --file reports/<report>.json --format AUTO"
+  ],
+  "confusion_matrices": {
+    "dummy_test": {
+      "false_negative": 3,
+      "false_positive": 0,
+      "true_negative": 1206,
+      "true_positive": 0
+    },
+    "dummy_validation": {
+      "false_negative": 6,
+      "false_positive": 0,
+      "true_negative": 538,
+      "true_positive": 0
+    },
+    "logistic_test": {
+      "false_negative": 0,
+      "false_positive": 48,
+      "true_negative": 1158,
+      "true_positive": 3
+    },
+    "logistic_validation": {
+      "false_negative": 2,
+      "false_positive": 20,
+      "true_negative": 518,
+      "true_positive": 4
+    }
+  },
+  "created_at_utc": "2026-08-05T06:44:12.539254+00:00",
+  "dummy_classifier": {
+    "model_name": "dummy_most_frequent_v1",
+    "plot_paths": [
+      "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/dummy_most_frequent_v1_validation_roc_curve.png",
+      "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/dummy_most_frequent_v1_validation_confusion_matrix.png",
+      "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/dummy_most_frequent_v1_validation_precision_recall_curve.png",
+      "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/dummy_most_frequent_v1_validation_probability_distribution.png",
+      "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/dummy_most_frequent_v1_test_roc_curve.png",
+      "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/dummy_most_frequent_v1_test_confusion_matrix.png",
+      "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/dummy_most_frequent_v1_test_precision_recall_curve.png",
+      "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/dummy_most_frequent_v1_test_probability_distribution.png"
+    ],
+    "purpose": "Demonstrate why raw accuracy is misleading for this imbalanced fraud dataset.",
+    "strategy": "most_frequent",
+    "test_metrics": {
+      "accuracy": 0.9975186104218362,
+      "average_precision": 0.0024813895781637717,
+      "balanced_accuracy": 0.5,
+      "confusion_matrix": {
+        "false_negative": 3,
+        "false_positive": 0,
+        "true_negative": 1206,
+        "true_positive": 0
+      },
+      "false_negative_rate": 1.0,
+      "false_negatives": 3,
+      "false_positive_rate": 0.0,
+      "false_positives": 0,
+      "fraud_count": 3,
+      "fraud_f1": 0.0,
+      "fraud_precision": 0.0,
+      "fraud_recall": 0.0,
+      "normal_count": 1206,
+      "predicted_fraud_count": 0,
+      "predicted_normal_count": 1209,
+      "roc_auc": 0.5,
+      "row_count": 1209,
+      "specificity": 1.0,
+      "threshold": 0.5,
+      "true_negatives": 1206,
+      "true_positives": 0
+    },
+    "validation_metrics": {
+      "accuracy": 0.9889705882352942,
+      "average_precision": 0.011029411764705883,
+      "balanced_accuracy": 0.5,
+      "confusion_matrix": {
+        "false_negative": 6,
+        "false_positive": 0,
+        "true_negative": 538,
+        "true_positive": 0
+      },
+      "false_negative_rate": 1.0,
+      "false_negatives": 6,
+      "false_positive_rate": 0.0,
+      "false_positives": 0,
+      "fraud_count": 6,
+      "fraud_f1": 0.0,
+      "fraud_precision": 0.0,
+      "fraud_recall": 0.0,
+      "normal_count": 538,
+      "predicted_fraud_count": 0,
+      "predicted_normal_count": 544,
+      "roc_auc": 0.5,
+      "row_count": 544,
+      "specificity": 1.0,
+      "threshold": 0.5,
+      "true_negatives": 538,
+      "true_positives": 0
+    }
+  },
+  "dummy_classifier_run_id": "f176c9c935a440b394cc5cc2fc38016e",
+  "excluded_column_count": 22,
+  "excluded_columns": [
+    "_feature_generated_at",
+    "_feature_hash",
+    "_feature_version",
+    "_source_silver_label_event_id",
+    "_source_silver_label_hash",
+    "_source_silver_transaction_hash",
+    "_training_generated_at",
+    "_training_row_hash",
+    "account_id",
+    "destination_wallet_id",
+    "device_id",
+    "event_date",
+    "feature_timestamp",
+    "fraud_type",
+    "investigation_status",
+    "label_source",
+    "label_timestamp",
+    "latest_market_candle_end_timestamp",
+    "market_product_id",
+    "source_wallet_id",
+    "target_is_fraud",
+    "transaction_id"
+  ],
+  "failed_checks": [],
+  "feature_list": [
+    "account_age_days",
+    "account_profile_available",
+    "amount_above_normal_usd",
+    "amount_to_normal_ratio",
+    "asset",
+    "country",
+    "crypto_quantity",
+    "customer_risk_tier",
+    "destination_wallet_age_hours",
+    "destination_wallet_applicable",
+    "destination_wallet_first_seen_available",
+    "device_age_days",
+    "device_age_hours",
+    "device_distinct_account_count_1h",
+    "device_failed_auth_count_10m",
+    "device_profile_available",
+    "device_successful_auth_count_1h",
+    "failed_auth_count_10m",
+    "failed_auth_count_1h",
+    "has_previous_successful_auth",
+    "has_previous_transaction",
+    "has_prior_tx_24h",
+    "is_new_destination_wallet",
+    "is_new_device_24h",
+    "is_night_transaction_utc",
+    "is_weekend_utc",
+    "latest_market_close_usd",
+    "market_data_available",
+    "market_data_freshness_seconds",
+    "market_price_usd",
+    "market_return_1h",
+    "market_return_5m",
+    "market_volatility_1h",
+    "market_volume_sum_1h",
+    "normal_transaction_amount_available",
+    "normal_transaction_amount_usd",
+    "prior_destination_wallet_tx_count",
+    "prior_source_wallet_tx_count",
+    "prior_tx_amount_avg_24h",
+    "prior_tx_amount_max_24h",
+    "prior_tx_amount_sum_1h",
+    "prior_tx_amount_sum_24h",
+    "prior_tx_count_1h",
+    "prior_tx_count_24h",
+    "prior_tx_count_5m",
+    "recent_auth_failure_flag_10m",
+    "seconds_since_last_successful_auth",
+    "seconds_since_previous_tx",
+    "source_wallet_applicable",
+    "successful_auth_count_1h",
+    "transaction_amount_usd",
+    "transaction_country_mismatch_home_country",
+    "transaction_day_of_week_utc",
+    "transaction_hour_utc",
+    "transaction_type"
+  ],
+  "implementation_defects_and_fixes": [],
+  "local_notebook_path": "databricks/04_logistic_regression_baseline.py",
+  "logged_logistic_regression_model_uri": "runs:/9f89dbd9ce374008974f1b6e8562aa57/model",
+  "logistic_regression": {
+    "fixed_configuration": {
+      "class_weight": "balanced",
+      "max_iter": 1000,
+      "random_state": 42,
+      "solver": "liblinear",
+      "threshold": 0.5
+    },
+    "model_name": "logistic_regression_balanced_v1",
+    "plot_paths": [
+      "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/logistic_regression_balanced_v1_validation_roc_curve.png",
+      "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/logistic_regression_balanced_v1_validation_confusion_matrix.png",
+      "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/logistic_regression_balanced_v1_validation_precision_recall_curve.png",
+      "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/logistic_regression_balanced_v1_validation_probability_distribution.png",
+      "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/logistic_regression_balanced_v1_test_roc_curve.png",
+      "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/logistic_regression_balanced_v1_test_confusion_matrix.png",
+      "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/logistic_regression_balanced_v1_test_precision_recall_curve.png",
+      "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/logistic_regression_balanced_v1_test_probability_distribution.png",
+      "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/logistic_regression_balanced_v1_top_coefficient_magnitudes.png"
+    ],
+    "test_metrics": {
+      "accuracy": 0.9602977667493796,
+      "average_precision": 0.7192982456140351,
+      "balanced_accuracy": 0.9800995024875622,
+      "confusion_matrix": {
+        "false_negative": 0,
+        "false_positive": 48,
+        "true_negative": 1158,
+        "true_positive": 3
+      },
+      "false_negative_rate": 0.0,
+      "false_negatives": 0,
+      "false_positive_rate": 0.03980099502487562,
+      "false_positives": 48,
+      "fraud_count": 3,
+      "fraud_f1": 0.1111111111111111,
+      "fraud_precision": 0.058823529411764705,
+      "fraud_recall": 1.0,
+      "normal_count": 1206,
+      "predicted_fraud_count": 51,
+      "predicted_normal_count": 1158,
+      "roc_auc": 0.9955776672194582,
+      "row_count": 1209,
+      "specificity": 0.9601990049751243,
+      "threshold": 0.5,
+      "true_negatives": 1158,
+      "true_positives": 3
+    },
+    "validation_metrics": {
+      "accuracy": 0.9595588235294118,
+      "average_precision": 0.6758012820512821,
+      "balanced_accuracy": 0.8147459727385378,
+      "confusion_matrix": {
+        "false_negative": 2,
+        "false_positive": 20,
+        "true_negative": 518,
+        "true_positive": 4
+      },
+      "false_negative_rate": 0.3333333333333333,
+      "false_negatives": 2,
+      "false_positive_rate": 0.03717472118959108,
+      "false_positives": 20,
+      "fraud_count": 6,
+      "fraud_f1": 0.26666666666666666,
+      "fraud_precision": 0.16666666666666666,
+      "fraud_recall": 0.6666666666666666,
+      "normal_count": 538,
+      "predicted_fraud_count": 24,
+      "predicted_normal_count": 520,
+      "roc_auc": 0.9653035935563817,
+      "row_count": 544,
+      "specificity": 0.9628252788104089,
+      "threshold": 0.5,
+      "true_negatives": 518,
+      "true_positives": 4
+    }
+  },
+  "logistic_regression_run_id": "9f89dbd9ce374008974f1b6e8562aa57",
+  "mlflow_experiment_path": "/Users/akanaskhan1506@gmail.com/crypto-fraud-phase9a",
+  "notebook": "04_logistic_regression_baseline",
+  "original_time_split_v1_result": {
+    "classification_threshold": 0.5,
+    "deterministic_ordering": [
+      "feature_timestamp ascending",
+      "transaction_id ascending"
+    ],
+    "entity_counts": {
+      "test": {
+        "unique_account_count": 96,
+        "unique_device_count": 128
+      },
+      "train": {
+        "unique_account_count": 96,
+        "unique_device_count": 134
+      },
+      "validation": {
+        "unique_account_count": 96,
+        "unique_device_count": 130
+      }
+    },
+    "failed_checks": [
+      "test_split_zero_fraud"
+    ],
+    "fraud_normal_counts": {
+      "test": {
+        "fraud_count": 0,
+        "fraud_rate": 0.0,
+        "normal_count": 672
+      },
+      "train": {
+        "fraud_count": 36,
+        "fraud_rate": 0.011483253588516746,
+        "normal_count": 3099
+      },
+      "validation": {
+        "fraud_count": 4,
+        "fraud_rate": 0.005952380952380952,
+        "normal_count": 668
+      }
+    },
+    "ordering_columns": [
+      "feature_timestamp ascending",
+      "transaction_id ascending"
+    ],
+    "overlap_checks": {
+      "all_transactions_assigned_once": 1,
+      "train_test_overlap_count": 0,
+      "train_validation_overlap_count": 0,
+      "validation_test_overlap_count": 0
+    },
+    "percentages": {
+      "test": 0.15003348961821836,
+      "train": 0.6999330207635633,
+      "validation": 0.15003348961821836
+    },
+    "phase": "9A",
+    "row_counts": {
+      "test": 672,
+      "train": 3135,
+      "validation": 672
+    },
+    "selected_time_boundaries": {
+      "test_min_timestamp": "2026-06-06T23:01:19+00:00",
+      "test_start_index": 3807,
+      "test_start_transaction_id": "106f5d52-43e0-581b-9f53-8235661610ca",
+      "train_end_index_exclusive": 3135,
+      "train_max_timestamp": "2026-06-05T21:46:14+00:00",
+      "validation_end_index_exclusive": 3807,
+      "validation_max_timestamp": "2026-06-06T22:56:59+00:00",
+      "validation_min_timestamp": "2026-06-05T21:48:32+00:00",
+      "validation_start_index": 3135,
+      "validation_start_transaction_id": "1e33e6e2-35ff-5241-ab6b-8a7073db48ce"
+    },
+    "selection_algorithm": "Fixed chronological row cut at 70 and 85 percent. This split failed because the latest 15 percent contained zero fraud cases.",
+    "source_table": "crypto_fraud.features.transaction_training_dataset",
+    "split_boundaries": {
+      "test": {
+        "duplicate_transaction_count": 0,
+        "fraud_count": 0,
+        "fraud_rate": 0.0,
+        "max_feature_timestamp": "2026-06-07T23:58:57+00:00",
+        "min_feature_timestamp": "2026-06-06T23:01:19+00:00",
+        "normal_count": 672,
+        "null_target_count": 0,
+        "percentage": 0.15003348961821836,
+        "row_count": 672,
+        "unique_account_count": 96,
+        "unique_device_count": 128
+      },
+      "train": {
+        "duplicate_transaction_count": 0,
+        "fraud_count": 36,
+        "fraud_rate": 0.011483253588516746,
+        "max_feature_timestamp": "2026-06-05T21:46:14+00:00",
+        "min_feature_timestamp": "2026-06-01T00:30:28+00:00",
+        "normal_count": 3099,
+        "null_target_count": 0,
+        "percentage": 0.6999330207635633,
+        "row_count": 3135,
+        "unique_account_count": 96,
+        "unique_device_count": 134
+      },
+      "validation": {
+        "duplicate_transaction_count": 0,
+        "fraud_count": 4,
+        "fraud_rate": 0.005952380952380952,
+        "max_feature_timestamp": "2026-06-06T22:56:59+00:00",
+        "min_feature_timestamp": "2026-06-05T21:48:32+00:00",
+        "normal_count": 668,
+        "null_target_count": 0,
+        "percentage": 0.15003348961821836,
+        "row_count": 672,
+        "unique_account_count": 96,
+        "unique_device_count": 130
+      }
+    },
+    "split_hash": "18e6650582a6b9d83870428d6a0a49df3de3febb1b57185aeaffd16a5593186b",
+    "split_policy": "oldest 70 percent train, next 15 percent validation, newest 15 percent test",
+    "split_version": "time_split_v1",
+    "time_boundary_checks": {
+      "train_max_lte_validation_min": true,
+      "validation_max_lte_test_min": true
+    },
+    "transaction_id_counts": {
+      "test": 672,
+      "train": 3135,
+      "validation": 672
+    },
+    "warnings": []
+  },
+  "output_dbfs_dir": "dbfs:/FileStore/crypto_fraud_phase9a/phase9a_20260805_01",
+  "overall_status": "PASS",
+  "package_versions": {
+    "cloudpickle": "3.0.0",
+    "matplotlib": "3.10.0",
+    "mlflow": "3.8.1",
+    "notebook_scoped_packages_installed": [],
+    "numpy": "2.1.3",
+    "package_status_after_install": {
+      "matplotlib": {
+        "available": true,
+        "module": "matplotlib",
+        "version": "3.10.0"
+      },
+      "mlflow": {
+        "available": true,
+        "module": "mlflow",
+        "version": "3.8.1"
+      },
+      "numpy": {
+        "available": true,
+        "module": "numpy",
+        "version": "2.1.3"
+      },
+      "pandas": {
+        "available": true,
+        "module": "pandas",
+        "version": "2.2.3"
+      },
+      "scikit-learn": {
+        "available": true,
+        "module": "sklearn",
+        "version": "1.6.1"
+      }
+    },
+    "package_status_before_install": {
+      "matplotlib": {
+        "available": true,
+        "module": "matplotlib",
+        "version": "3.10.0"
+      },
+      "mlflow": {
+        "available": true,
+        "module": "mlflow",
+        "version": "3.8.1"
+      },
+      "numpy": {
+        "available": true,
+        "module": "numpy",
+        "version": "2.1.3"
+      },
+      "pandas": {
+        "available": true,
+        "module": "pandas",
+        "version": "2.2.3"
+      },
+      "scikit-learn": {
+        "available": true,
+        "module": "sklearn",
+        "version": "1.6.1"
+      }
+    },
+    "pandas": "2.2.3",
+    "platform": "Linux-5.15.0-1116-azure-x86_64-with-glibc2.39",
+    "pyspark": "4.1.0",
+    "python": "3.12.3",
+    "python_full": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+    "scikit_learn": "1.6.1"
+  },
+  "phase": "9A",
+  "phase9b_scope_guardrails": {
+    "event_hubs_integration_created": false,
+    "hyperparameter_tuning_performed": false,
+    "model_registered": false,
+    "model_serving_created": false,
+    "real_time_inference_created": false,
+    "threshold_optimization_performed": false,
+    "xgboost_trained": false
+  },
+  "preprocessing_configuration": {
+    "binary_feature_count": 16,
+    "binary_features": [
+      "account_profile_available",
+      "destination_wallet_applicable",
+      "destination_wallet_first_seen_available",
+      "device_profile_available",
+      "has_previous_successful_auth",
+      "has_previous_transaction",
+      "has_prior_tx_24h",
+      "is_new_destination_wallet",
+      "is_new_device_24h",
+      "is_night_transaction_utc",
+      "is_weekend_utc",
+      "market_data_available",
+      "normal_transaction_amount_available",
+      "recent_auth_failure_flag_10m",
+      "source_wallet_applicable",
+      "transaction_country_mismatch_home_country"
+    ],
+    "categorical_feature_count": 4,
+    "categorical_features": [
+      "asset",
+      "country",
+      "customer_risk_tier",
+      "transaction_type"
+    ],
+    "continuous_numeric_features": [
+      "account_age_days",
+      "amount_above_normal_usd",
+      "amount_to_normal_ratio",
+      "crypto_quantity",
+      "destination_wallet_age_hours",
+      "device_age_days",
+      "device_age_hours",
+      "device_distinct_account_count_1h",
+      "device_failed_auth_count_10m",
+      "device_successful_auth_count_1h",
+      "failed_auth_count_10m",
+      "failed_auth_count_1h",
+      "latest_market_close_usd",
+      "market_data_freshness_seconds",
+      "market_price_usd",
+      "market_return_1h",
+      "market_return_5m",
+      "market_volatility_1h",
+      "market_volume_sum_1h",
+      "normal_transaction_amount_usd",
+      "prior_destination_wallet_tx_count",
+      "prior_source_wallet_tx_count",
+      "prior_tx_amount_avg_24h",
+      "prior_tx_amount_max_24h",
+      "prior_tx_amount_sum_1h",
+      "prior_tx_amount_sum_24h",
+      "prior_tx_count_1h",
+      "prior_tx_count_24h",
+      "prior_tx_count_5m",
+      "seconds_since_last_successful_auth",
+      "seconds_since_previous_tx",
+      "successful_auth_count_1h",
+      "transaction_amount_usd",
+      "transaction_day_of_week_utc",
+      "transaction_hour_utc"
+    ],
+    "final_transformed_feature_dimension": 71,
+    "learned_categorical_values": {
+      "asset": [
+        "BTC",
+        "ETH"
+      ],
+      "country": [
+        "AE",
+        "AU",
+        "BR",
+        "CA",
+        "DE",
+        "FR",
+        "GB",
+        "IN",
+        "JP",
+        "NL",
+        "SG",
+        "US"
+      ],
+      "customer_risk_tier": [
+        "HIGH",
+        "LOW",
+        "MEDIUM"
+      ],
+      "transaction_type": [
+        "DEPOSIT",
+        "TRANSFER",
+        "WITHDRAWAL"
+      ]
+    },
+    "null_handling_rules": {
+      "categorical": "Fill missing categorical values with __MISSING__, one-hot encode categories learned from training data only, and ignore unknown categories at validation/test/inference time.",
+      "numeric": "Coerce approved numeric inputs, reject bad non-null numeric values before fit, impute allowed nulls with training median, then standardize."
+    },
+    "numeric_conversion_issues": {
+      "account_age_days": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "account_profile_available": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "amount_above_normal_usd": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "amount_to_normal_ratio": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "crypto_quantity": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "destination_wallet_age_hours": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "destination_wallet_applicable": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "destination_wallet_first_seen_available": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "device_age_days": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "device_age_hours": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "device_distinct_account_count_1h": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "device_failed_auth_count_10m": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "device_profile_available": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "device_successful_auth_count_1h": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "failed_auth_count_10m": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "failed_auth_count_1h": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "has_previous_successful_auth": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "has_previous_transaction": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "has_prior_tx_24h": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "is_new_destination_wallet": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "is_new_device_24h": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "is_night_transaction_utc": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "is_weekend_utc": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "latest_market_close_usd": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "market_data_available": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "market_data_freshness_seconds": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "market_price_usd": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "market_return_1h": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "market_return_5m": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "market_volatility_1h": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "market_volume_sum_1h": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "normal_transaction_amount_available": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "normal_transaction_amount_usd": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "prior_destination_wallet_tx_count": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "prior_source_wallet_tx_count": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "prior_tx_amount_avg_24h": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "prior_tx_amount_max_24h": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "prior_tx_amount_sum_1h": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "prior_tx_amount_sum_24h": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "prior_tx_count_1h": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "prior_tx_count_24h": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "prior_tx_count_5m": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "recent_auth_failure_flag_10m": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "seconds_since_last_successful_auth": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "seconds_since_previous_tx": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "source_wallet_applicable": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "successful_auth_count_1h": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "transaction_amount_usd": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "transaction_country_mismatch_home_country": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "transaction_day_of_week_utc": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      },
+      "transaction_hour_utc": {
+        "test_bad_numeric_count": 0,
+        "test_infinite_count": 0,
+        "train_bad_numeric_count": 0,
+        "train_infinite_count": 0,
+        "validation_bad_numeric_count": 0,
+        "validation_infinite_count": 0
+      }
+    },
+    "numeric_feature_count": 51,
+    "numeric_features": [
+      "account_age_days",
+      "account_profile_available",
+      "amount_above_normal_usd",
+      "amount_to_normal_ratio",
+      "crypto_quantity",
+      "destination_wallet_age_hours",
+      "destination_wallet_applicable",
+      "destination_wallet_first_seen_available",
+      "device_age_days",
+      "device_age_hours",
+      "device_distinct_account_count_1h",
+      "device_failed_auth_count_10m",
+      "device_profile_available",
+      "device_successful_auth_count_1h",
+      "failed_auth_count_10m",
+      "failed_auth_count_1h",
+      "has_previous_successful_auth",
+      "has_previous_transaction",
+      "has_prior_tx_24h",
+      "is_new_destination_wallet",
+      "is_new_device_24h",
+      "is_night_transaction_utc",
+      "is_weekend_utc",
+      "latest_market_close_usd",
+      "market_data_available",
+      "market_data_freshness_seconds",
+      "market_price_usd",
+      "market_return_1h",
+      "market_return_5m",
+      "market_volatility_1h",
+      "market_volume_sum_1h",
+      "normal_transaction_amount_available",
+      "normal_transaction_amount_usd",
+      "prior_destination_wallet_tx_count",
+      "prior_source_wallet_tx_count",
+      "prior_tx_amount_avg_24h",
+      "prior_tx_amount_max_24h",
+      "prior_tx_amount_sum_1h",
+      "prior_tx_amount_sum_24h",
+      "prior_tx_count_1h",
+      "prior_tx_count_24h",
+      "prior_tx_count_5m",
+      "recent_auth_failure_flag_10m",
+      "seconds_since_last_successful_auth",
+      "seconds_since_previous_tx",
+      "source_wallet_applicable",
+      "successful_auth_count_1h",
+      "transaction_amount_usd",
+      "transaction_country_mismatch_home_country",
+      "transaction_day_of_week_utc",
+      "transaction_hour_utc"
+    ],
+    "numeric_training_all_null": [],
+    "preprocessing_fit_scope": "training split only",
+    "sklearn_pipeline": "ColumnTransformer inside fitted sklearn Pipeline"
+  },
+  "quality_gate_checks": {
+    "approved_feature_count_reconciled": true,
+    "chronological_splits_have_no_overlap": true,
+    "confusion_matrices_and_curves_saved": true,
+    "dummy_classifier_run_logged": true,
+    "logistic_regression_model_artifact_logged": true,
+    "logistic_regression_run_logged": true,
+    "model_registered": false,
+    "model_reload_predictions_match": true,
+    "no_identity_or_label_leakage_columns_used": true,
+    "preprocessing_fit_on_training_only": true,
+    "real_time_work_started": false,
+    "required_target_classes_available_in_splits": true,
+    "source_delta_tables_remain_unchanged": true,
+    "source_training_dataset_validation_passes": true,
+    "validation_and_test_metrics_produced": true,
+    "xgboost_model_trained": false
+  },
+  "rare_event_aware_time_split_v2_result": {
+    "candidate_count_at_latest_test_start": 135,
+    "classification_threshold": 0.5,
+    "comparison_with_failed_time_split_v1": {
+      "failed_checks": [
+        "test_split_zero_fraud"
+      ],
+      "fraud_normal_counts": {
+        "test": {
+          "fraud_count": 0,
+          "fraud_rate": 0.0,
+          "normal_count": 672
+        },
+        "train": {
+          "fraud_count": 36,
+          "fraud_rate": 0.011483253588516746,
+          "normal_count": 3099
+        },
+        "validation": {
+          "fraud_count": 4,
+          "fraud_rate": 0.005952380952380952,
+          "normal_count": 668
+        }
+      },
+      "row_counts": {
+        "test": 672,
+        "train": 3135,
+        "validation": 672
+      },
+      "split_hash": "18e6650582a6b9d83870428d6a0a49df3de3febb1b57185aeaffd16a5593186b",
+      "split_version": "time_split_v1"
+    },
+    "deterministic_ordering": [
+      "feature_timestamp ascending",
+      "transaction_id ascending"
+    ],
+    "entity_counts": {
+      "test": {
+        "unique_account_count": 96,
+        "unique_device_count": 133
+      },
+      "train": {
+        "unique_account_count": 96,
+        "unique_device_count": 134
+      },
+      "validation": {
+        "unique_account_count": 96,
+        "unique_device_count": 134
+      }
+    },
+    "failed_checks": [],
+    "fraud_normal_counts": {
+      "test": {
+        "fraud_count": 3,
+        "fraud_rate": 0.0024813895781637717,
+        "normal_count": 1206
+      },
+      "train": {
+        "fraud_count": 31,
+        "fraud_rate": 0.011371973587674248,
+        "normal_count": 2695
+      },
+      "validation": {
+        "fraud_count": 6,
+        "fraud_rate": 0.011029411764705883,
+        "normal_count": 538
+      }
+    },
+    "latest_possible_test_start_index": 3270,
+    "min_fraud_constraints": {
+      "test": 3,
+      "validation": 3
+    },
+    "min_rows": {
+      "test": 448,
+      "train": 2688,
+      "validation": 448
+    },
+    "ordering_columns": [
+      "feature_timestamp ascending",
+      "transaction_id ascending"
+    ],
+    "overlap_checks": {
+      "all_transactions_assigned_once": 1,
+      "train_test_overlap_count": 0,
+      "train_validation_overlap_count": 0,
+      "validation_test_overlap_count": 0
+    },
+    "percentages": {
+      "test": 0.26992632283991963,
+      "train": 0.6086179950881894,
+      "validation": 0.12145568207189104
+    },
+    "phase": "9A",
+    "preferred_training_fraud_count": 25,
+    "row_counts": {
+      "test": 1209,
+      "train": 2726,
+      "validation": 544
+    },
+    "selected_candidate": {
+      "proportion_distance_from_70_15_15": 0.23985264567983916,
+      "test_fraud_count": 3,
+      "test_normal_count": 1206,
+      "test_rows": 1209,
+      "test_start_timestamp": "2026-06-06T02:51:45+00:00",
+      "test_start_transaction_id": "0efa1bdb-d819-5219-9da7-84bde8b7f60c",
+      "train_end_index_exclusive": 2726,
+      "train_fraud_count": 31,
+      "train_normal_count": 2695,
+      "train_rows": 2726,
+      "training_preferred_fraud_count_met": true,
+      "validation_end_index_exclusive": 3270,
+      "validation_fraud_count": 6,
+      "validation_normal_count": 538,
+      "validation_rows": 544,
+      "validation_start_timestamp": "2026-06-05T05:09:54+00:00",
+      "validation_start_transaction_id": "1370ac11-3b65-5704-9a3b-c3cbe65ef41e"
+    },
+    "selected_time_boundaries": {
+      "test_min_timestamp": "2026-06-06T02:51:45+00:00",
+      "test_start_index": 3270,
+      "test_start_transaction_id": "0efa1bdb-d819-5219-9da7-84bde8b7f60c",
+      "train_end_index_exclusive": 2726,
+      "train_max_timestamp": "2026-06-05T05:07:36+00:00",
+      "validation_end_index_exclusive": 3270,
+      "validation_max_timestamp": "2026-06-06T02:48:30+00:00",
+      "validation_min_timestamp": "2026-06-05T05:09:54+00:00",
+      "validation_start_index": 2726,
+      "validation_start_transaction_id": "1370ac11-3b65-5704-9a3b-c3cbe65ef41e"
+    },
+    "selection_algorithm": "Sort by feature_timestamp and transaction_id, scan deterministic row boundaries, choose the latest possible test-start timestamp with at least three test fraud cases, then choose the closest candidate to 70/15/15, then transaction_id tie-breakers.",
+    "source_table": "crypto_fraud.features.transaction_training_dataset",
+    "split_boundaries": {
+      "test": {
+        "duplicate_transaction_count": 0,
+        "fraud_count": 3,
+        "fraud_rate": 0.0024813895781637717,
+        "max_feature_timestamp": "2026-06-07T23:58:57+00:00",
+        "min_feature_timestamp": "2026-06-06T02:51:45+00:00",
+        "normal_count": 1206,
+        "null_target_count": 0,
+        "percentage": 0.26992632283991963,
+        "row_count": 1209,
+        "unique_account_count": 96,
+        "unique_device_count": 133
+      },
+      "train": {
+        "duplicate_transaction_count": 0,
+        "fraud_count": 31,
+        "fraud_rate": 0.011371973587674248,
+        "max_feature_timestamp": "2026-06-05T05:07:36+00:00",
+        "min_feature_timestamp": "2026-06-01T00:30:28+00:00",
+        "normal_count": 2695,
+        "null_target_count": 0,
+        "percentage": 0.6086179950881894,
+        "row_count": 2726,
+        "unique_account_count": 96,
+        "unique_device_count": 134
+      },
+      "validation": {
+        "duplicate_transaction_count": 0,
+        "fraud_count": 6,
+        "fraud_rate": 0.011029411764705883,
+        "max_feature_timestamp": "2026-06-06T02:48:30+00:00",
+        "min_feature_timestamp": "2026-06-05T05:09:54+00:00",
+        "normal_count": 538,
+        "null_target_count": 0,
+        "percentage": 0.12145568207189104,
+        "row_count": 544,
+        "unique_account_count": 96,
+        "unique_device_count": 134
+      }
+    },
+    "split_hash": "6576d4aa251135aa3666c01396b5eeaafe3be1a741b2610262c5f4aebf7bbf01",
+    "split_policy": "rare-event-aware contiguous chronological time blocks with minimum split sizes and fraud-count constraints",
+    "split_version": "rare_event_aware_time_split_v2",
+    "target_aware_boundary_limitation": {
+      "contiguous_latest_time_test_block": true,
+      "is_target_aware": true,
+      "records_reordered": false,
+      "warning": "Labels were used only to choose valid contiguous chronological split boundaries in this small rare-event pilot. Evaluation estimates may be optimistic or unstable and are suitable for pipeline and portfolio validation only. A larger production dataset should use a pre-locked temporal test period containing naturally occurring fraud cases."
+    },
+    "time_boundary_checks": {
+      "train_max_lte_validation_min": true,
+      "validation_max_lte_test_min": true
+    },
+    "transaction_id_counts": {
+      "test": 1209,
+      "train": 2726,
+      "validation": 544
+    },
+    "warnings": []
+  },
+  "reload_test_results": {
+    "max_probability_difference": 0.0,
+    "predicted_classes_match_exactly": true,
+    "probability_tolerance": 1e-12,
+    "sample_coverage": {
+      "btc_examples": 3,
+      "eth_examples": 6,
+      "fraud_examples": 3,
+      "normal_examples": 6,
+      "transaction_types": [
+        "DEPOSIT",
+        "TRANSFER",
+        "WITHDRAWAL"
+      ]
+    },
+    "sample_row_count": 9,
+    "sample_transaction_ids": [
+      "0efa1bdb-d819-5219-9da7-84bde8b7f60c",
+      "de55f3a0-b224-52d6-84a6-f68f880c823f",
+      "84cab336-0a72-5a80-a65e-5d1fe0a8169c",
+      "7474c219-17ce-5710-9601-80077c4e927b",
+      "d5dcbbab-36dc-5ff4-b7f9-46076bf0f1e1",
+      "fc5cc8d5-d34d-56e9-a156-9209a0c10a2f",
+      "2cf46ab4-2842-538f-b7e1-5619db4fcb62",
+      "3b77b6df-c7d8-582e-95b7-1aaa21e7836e",
+      "58eaae43-70f8-5ca4-8416-10cc3552f309"
+    ],
+    "status": "PASS"
+  },
+  "remediation_applied": "rare_event_aware_time_split_v2",
+  "reports_dbfs_dir": "dbfs:/FileStore/crypto_fraud_phase9a/phase9a_20260805_01/reports",
+  "segment_results": {
+    "limitations": "Segment metrics are unstable when segment fraud counts are small.",
+    "model_name": "logistic_regression_balanced_v1",
+    "scope": "validation and locked test splits at threshold 0.5",
+    "test": {
+      "asset": [
+        {
+          "average_predicted_fraud_probability": 0.04580797975300246,
+          "fraud_count": 1,
+          "fraud_precision": 0.045454545454545456,
+          "fraud_recall": 1.0,
+          "precision_defined": true,
+          "predicted_high_risk_count_at_threshold_0_5": 22,
+          "recall_defined": true,
+          "row_count": 636,
+          "segment_name": "asset",
+          "segment_value": "BTC"
+        },
+        {
+          "average_predicted_fraud_probability": 0.06626009148257073,
+          "fraud_count": 2,
+          "fraud_precision": 0.06896551724137931,
+          "fraud_recall": 1.0,
+          "precision_defined": true,
+          "predicted_high_risk_count_at_threshold_0_5": 29,
+          "recall_defined": true,
+          "row_count": 573,
+          "segment_name": "asset",
+          "segment_value": "ETH"
+        }
+      ],
+      "cold_start_status": [
+        {
+          "average_predicted_fraud_probability": null,
+          "fraud_count": 0,
+          "fraud_precision": null,
+          "fraud_recall": null,
+          "precision_defined": false,
+          "predicted_high_risk_count_at_threshold_0_5": 0,
+          "recall_defined": false,
+          "row_count": 0,
+          "segment_name": "cold_start_status",
+          "segment_value": "cold_start"
+        },
+        {
+          "average_predicted_fraud_probability": 0.05550116422036608,
+          "fraud_count": 3,
+          "fraud_precision": 0.058823529411764705,
+          "fraud_recall": 1.0,
+          "precision_defined": true,
+          "predicted_high_risk_count_at_threshold_0_5": 51,
+          "recall_defined": true,
+          "row_count": 1209,
+          "segment_name": "cold_start_status",
+          "segment_value": "existing_history"
+        }
+      ],
+      "customer_risk_tier": [
+        {
+          "average_predicted_fraud_probability": 0.00020410621210218506,
+          "fraud_count": 0,
+          "fraud_precision": null,
+          "fraud_recall": null,
+          "precision_defined": false,
+          "predicted_high_risk_count_at_threshold_0_5": 0,
+          "recall_defined": false,
+          "row_count": 39,
+          "segment_name": "customer_risk_tier",
+          "segment_value": "HIGH"
+        },
+        {
+          "average_predicted_fraud_probability": 0.0679041529063894,
+          "fraud_count": 1,
+          "fraud_precision": 0.021739130434782608,
+          "fraud_recall": 1.0,
+          "precision_defined": true,
+          "predicted_high_risk_count_at_threshold_0_5": 46,
+          "recall_defined": true,
+          "row_count": 881,
+          "segment_name": "customer_risk_tier",
+          "segment_value": "LOW"
+        },
+        {
+          "average_predicted_fraud_probability": 0.02515359408173543,
+          "fraud_count": 2,
+          "fraud_precision": 0.4,
+          "fraud_recall": 1.0,
+          "precision_defined": true,
+          "predicted_high_risk_count_at_threshold_0_5": 5,
+          "recall_defined": true,
+          "row_count": 289,
+          "segment_name": "customer_risk_tier",
+          "segment_value": "MEDIUM"
+        }
+      ],
+      "transaction_type": [
+        {
+          "average_predicted_fraud_probability": 0.00014612939115886742,
+          "fraud_count": 0,
+          "fraud_precision": null,
+          "fraud_recall": null,
+          "precision_defined": false,
+          "predicted_high_risk_count_at_threshold_0_5": 0,
+          "recall_defined": false,
+          "row_count": 394,
+          "segment_name": "transaction_type",
+          "segment_value": "DEPOSIT"
+        },
+        {
+          "average_predicted_fraud_probability": 0.037684596356934025,
+          "fraud_count": 0,
+          "fraud_precision": 0.0,
+          "fraud_recall": null,
+          "precision_defined": true,
+          "predicted_high_risk_count_at_threshold_0_5": 7,
+          "recall_defined": false,
+          "row_count": 244,
+          "segment_name": "transaction_type",
+          "segment_value": "TRANSFER"
+        },
+        {
+          "average_predicted_fraud_probability": 0.10131049220878124,
+          "fraud_count": 3,
+          "fraud_precision": 0.06818181818181818,
+          "fraud_recall": 1.0,
+          "precision_defined": true,
+          "predicted_high_risk_count_at_threshold_0_5": 44,
+          "recall_defined": true,
+          "row_count": 571,
+          "segment_name": "transaction_type",
+          "segment_value": "WITHDRAWAL"
+        }
+      ]
+    },
+    "validation": {
+      "asset": [
+        {
+          "average_predicted_fraud_probability": 0.06427488849931566,
+          "fraud_count": 4,
+          "fraud_precision": 0.17647058823529413,
+          "fraud_recall": 0.75,
+          "precision_defined": true,
+          "predicted_high_risk_count_at_threshold_0_5": 17,
+          "recall_defined": true,
+          "row_count": 312,
+          "segment_name": "asset",
+          "segment_value": "BTC"
+        },
+        {
+          "average_predicted_fraud_probability": 0.033161045724808914,
+          "fraud_count": 2,
+          "fraud_precision": 0.14285714285714285,
+          "fraud_recall": 0.5,
+          "precision_defined": true,
+          "predicted_high_risk_count_at_threshold_0_5": 7,
+          "recall_defined": true,
+          "row_count": 232,
+          "segment_name": "asset",
+          "segment_value": "ETH"
+        }
+      ],
+      "cold_start_status": [
+        {
+          "average_predicted_fraud_probability": null,
+          "fraud_count": 0,
+          "fraud_precision": null,
+          "fraud_recall": null,
+          "precision_defined": false,
+          "predicted_high_risk_count_at_threshold_0_5": 0,
+          "recall_defined": false,
+          "row_count": 0,
+          "segment_name": "cold_start_status",
+          "segment_value": "cold_start"
+        },
+        {
+          "average_predicted_fraud_probability": 0.05100574966901132,
+          "fraud_count": 6,
+          "fraud_precision": 0.16666666666666666,
+          "fraud_recall": 0.6666666666666666,
+          "precision_defined": true,
+          "predicted_high_risk_count_at_threshold_0_5": 24,
+          "recall_defined": true,
+          "row_count": 544,
+          "segment_name": "cold_start_status",
+          "segment_value": "existing_history"
+        }
+      ],
+      "customer_risk_tier": [
+        {
+          "average_predicted_fraud_probability": 0.0011974841090765234,
+          "fraud_count": 0,
+          "fraud_precision": null,
+          "fraud_recall": null,
+          "precision_defined": false,
+          "predicted_high_risk_count_at_threshold_0_5": 0,
+          "recall_defined": false,
+          "row_count": 18,
+          "segment_name": "customer_risk_tier",
+          "segment_value": "HIGH"
+        },
+        {
+          "average_predicted_fraud_probability": 0.06258313684617954,
+          "fraud_count": 4,
+          "fraud_precision": 0.13636363636363635,
+          "fraud_recall": 0.75,
+          "precision_defined": true,
+          "predicted_high_risk_count_at_threshold_0_5": 22,
+          "recall_defined": true,
+          "row_count": 405,
+          "segment_name": "customer_risk_tier",
+          "segment_value": "LOW"
+        },
+        {
+          "average_predicted_fraud_probability": 0.019664484985752614,
+          "fraud_count": 2,
+          "fraud_precision": 0.5,
+          "fraud_recall": 0.5,
+          "precision_defined": true,
+          "predicted_high_risk_count_at_threshold_0_5": 2,
+          "recall_defined": true,
+          "row_count": 121,
+          "segment_name": "customer_risk_tier",
+          "segment_value": "MEDIUM"
+        }
+      ],
+      "transaction_type": [
+        {
+          "average_predicted_fraud_probability": 0.002038590236254233,
+          "fraud_count": 0,
+          "fraud_precision": null,
+          "fraud_recall": null,
+          "precision_defined": false,
+          "predicted_high_risk_count_at_threshold_0_5": 0,
+          "recall_defined": false,
+          "row_count": 192,
+          "segment_name": "transaction_type",
+          "segment_value": "DEPOSIT"
+        },
+        {
+          "average_predicted_fraud_probability": 0.027186949071049404,
+          "fraud_count": 2,
+          "fraud_precision": 1.0,
+          "fraud_recall": 0.5,
+          "precision_defined": true,
+          "predicted_high_risk_count_at_threshold_0_5": 1,
+          "recall_defined": true,
+          "row_count": 103,
+          "segment_name": "transaction_type",
+          "segment_value": "TRANSFER"
+        },
+        {
+          "average_predicted_fraud_probability": 0.09861631622595686,
+          "fraud_count": 4,
+          "fraud_precision": 0.13043478260869565,
+          "fraud_recall": 0.75,
+          "precision_defined": true,
+          "predicted_high_risk_count_at_threshold_0_5": 23,
+          "recall_defined": true,
+          "row_count": 249,
+          "segment_name": "transaction_type",
+          "segment_value": "WITHDRAWAL"
+        }
+      ]
+    }
+  },
+  "source_column_count": 77,
+  "source_delta_unchanged": {
+    "feature_table_after": {
+      "operation": "MERGE",
+      "timestamp": "2026-08-04T07:22:45",
+      "version": 3
+    },
+    "feature_table_before": {
+      "operation": "MERGE",
+      "timestamp": "2026-08-04T07:22:45",
+      "version": 3
+    },
+    "feature_table_version_unchanged": true,
+    "training_table_after": {
+      "operation": "MERGE",
+      "timestamp": "2026-08-04T07:23:41",
+      "version": 3
+    },
+    "training_table_before": {
+      "operation": "MERGE",
+      "timestamp": "2026-08-04T07:23:41",
+      "version": 3
+    },
+    "training_table_version_unchanged": true
+  },
+  "source_row_count": 4479,
+  "source_table": "crypto_fraud.features.transaction_training_dataset",
+  "split_statistics": {
+    "candidate_count_at_latest_test_start": 135,
+    "classification_threshold": 0.5,
+    "comparison_with_failed_time_split_v1": {
+      "failed_checks": [
+        "test_split_zero_fraud"
+      ],
+      "fraud_normal_counts": {
+        "test": {
+          "fraud_count": 0,
+          "fraud_rate": 0.0,
+          "normal_count": 672
+        },
+        "train": {
+          "fraud_count": 36,
+          "fraud_rate": 0.011483253588516746,
+          "normal_count": 3099
+        },
+        "validation": {
+          "fraud_count": 4,
+          "fraud_rate": 0.005952380952380952,
+          "normal_count": 668
+        }
+      },
+      "row_counts": {
+        "test": 672,
+        "train": 3135,
+        "validation": 672
+      },
+      "split_hash": "18e6650582a6b9d83870428d6a0a49df3de3febb1b57185aeaffd16a5593186b",
+      "split_version": "time_split_v1"
+    },
+    "deterministic_ordering": [
+      "feature_timestamp ascending",
+      "transaction_id ascending"
+    ],
+    "entity_counts": {
+      "test": {
+        "unique_account_count": 96,
+        "unique_device_count": 133
+      },
+      "train": {
+        "unique_account_count": 96,
+        "unique_device_count": 134
+      },
+      "validation": {
+        "unique_account_count": 96,
+        "unique_device_count": 134
+      }
+    },
+    "failed_checks": [],
+    "fraud_normal_counts": {
+      "test": {
+        "fraud_count": 3,
+        "fraud_rate": 0.0024813895781637717,
+        "normal_count": 1206
+      },
+      "train": {
+        "fraud_count": 31,
+        "fraud_rate": 0.011371973587674248,
+        "normal_count": 2695
+      },
+      "validation": {
+        "fraud_count": 6,
+        "fraud_rate": 0.011029411764705883,
+        "normal_count": 538
+      }
+    },
+    "latest_possible_test_start_index": 3270,
+    "min_fraud_constraints": {
+      "test": 3,
+      "validation": 3
+    },
+    "min_rows": {
+      "test": 448,
+      "train": 2688,
+      "validation": 448
+    },
+    "ordering_columns": [
+      "feature_timestamp ascending",
+      "transaction_id ascending"
+    ],
+    "overlap_checks": {
+      "all_transactions_assigned_once": 1,
+      "train_test_overlap_count": 0,
+      "train_validation_overlap_count": 0,
+      "validation_test_overlap_count": 0
+    },
+    "percentages": {
+      "test": 0.26992632283991963,
+      "train": 0.6086179950881894,
+      "validation": 0.12145568207189104
+    },
+    "phase": "9A",
+    "preferred_training_fraud_count": 25,
+    "row_counts": {
+      "test": 1209,
+      "train": 2726,
+      "validation": 544
+    },
+    "selected_candidate": {
+      "proportion_distance_from_70_15_15": 0.23985264567983916,
+      "test_fraud_count": 3,
+      "test_normal_count": 1206,
+      "test_rows": 1209,
+      "test_start_timestamp": "2026-06-06T02:51:45+00:00",
+      "test_start_transaction_id": "0efa1bdb-d819-5219-9da7-84bde8b7f60c",
+      "train_end_index_exclusive": 2726,
+      "train_fraud_count": 31,
+      "train_normal_count": 2695,
+      "train_rows": 2726,
+      "training_preferred_fraud_count_met": true,
+      "validation_end_index_exclusive": 3270,
+      "validation_fraud_count": 6,
+      "validation_normal_count": 538,
+      "validation_rows": 544,
+      "validation_start_timestamp": "2026-06-05T05:09:54+00:00",
+      "validation_start_transaction_id": "1370ac11-3b65-5704-9a3b-c3cbe65ef41e"
+    },
+    "selected_time_boundaries": {
+      "test_min_timestamp": "2026-06-06T02:51:45+00:00",
+      "test_start_index": 3270,
+      "test_start_transaction_id": "0efa1bdb-d819-5219-9da7-84bde8b7f60c",
+      "train_end_index_exclusive": 2726,
+      "train_max_timestamp": "2026-06-05T05:07:36+00:00",
+      "validation_end_index_exclusive": 3270,
+      "validation_max_timestamp": "2026-06-06T02:48:30+00:00",
+      "validation_min_timestamp": "2026-06-05T05:09:54+00:00",
+      "validation_start_index": 2726,
+      "validation_start_transaction_id": "1370ac11-3b65-5704-9a3b-c3cbe65ef41e"
+    },
+    "selection_algorithm": "Sort by feature_timestamp and transaction_id, scan deterministic row boundaries, choose the latest possible test-start timestamp with at least three test fraud cases, then choose the closest candidate to 70/15/15, then transaction_id tie-breakers.",
+    "source_table": "crypto_fraud.features.transaction_training_dataset",
+    "split_boundaries": {
+      "test": {
+        "duplicate_transaction_count": 0,
+        "fraud_count": 3,
+        "fraud_rate": 0.0024813895781637717,
+        "max_feature_timestamp": "2026-06-07T23:58:57+00:00",
+        "min_feature_timestamp": "2026-06-06T02:51:45+00:00",
+        "normal_count": 1206,
+        "null_target_count": 0,
+        "percentage": 0.26992632283991963,
+        "row_count": 1209,
+        "unique_account_count": 96,
+        "unique_device_count": 133
+      },
+      "train": {
+        "duplicate_transaction_count": 0,
+        "fraud_count": 31,
+        "fraud_rate": 0.011371973587674248,
+        "max_feature_timestamp": "2026-06-05T05:07:36+00:00",
+        "min_feature_timestamp": "2026-06-01T00:30:28+00:00",
+        "normal_count": 2695,
+        "null_target_count": 0,
+        "percentage": 0.6086179950881894,
+        "row_count": 2726,
+        "unique_account_count": 96,
+        "unique_device_count": 134
+      },
+      "validation": {
+        "duplicate_transaction_count": 0,
+        "fraud_count": 6,
+        "fraud_rate": 0.011029411764705883,
+        "max_feature_timestamp": "2026-06-06T02:48:30+00:00",
+        "min_feature_timestamp": "2026-06-05T05:09:54+00:00",
+        "normal_count": 538,
+        "null_target_count": 0,
+        "percentage": 0.12145568207189104,
+        "row_count": 544,
+        "unique_account_count": 96,
+        "unique_device_count": 134
+      }
+    },
+    "split_hash": "6576d4aa251135aa3666c01396b5eeaafe3be1a741b2610262c5f4aebf7bbf01",
+    "split_policy": "rare-event-aware contiguous chronological time blocks with minimum split sizes and fraud-count constraints",
+    "split_version": "rare_event_aware_time_split_v2",
+    "target_aware_boundary_limitation": {
+      "contiguous_latest_time_test_block": true,
+      "is_target_aware": true,
+      "records_reordered": false,
+      "warning": "Labels were used only to choose valid contiguous chronological split boundaries in this small rare-event pilot. Evaluation estimates may be optimistic or unstable and are suitable for pipeline and portfolio validation only. A larger production dataset should use a pre-locked temporal test period containing naturally occurring fraud cases."
+    },
+    "time_boundary_checks": {
+      "train_max_lte_validation_min": true,
+      "validation_max_lte_test_min": true
+    },
+    "transaction_id_counts": {
+      "test": 1209,
+      "train": 2726,
+      "validation": 544
+    },
+    "warnings": []
+  },
+  "supporting_feature_table": "crypto_fraud.features.transaction_features_offline",
+  "target_aware_boundary_warning": {
+    "contiguous_latest_time_test_block": true,
+    "is_target_aware": true,
+    "records_reordered": false,
+    "warning": "Labels were used only to choose valid contiguous chronological split boundaries in this small rare-event pilot. Evaluation estimates may be optimistic or unstable and are suitable for pipeline and portfolio validation only. A larger production dataset should use a pre-locked temporal test period containing naturally occurring fraud cases."
+  },
+  "target_column": "target_is_fraud",
+  "test_metrics": {
+    "dummy_classifier": {
+      "accuracy": 0.9975186104218362,
+      "average_precision": 0.0024813895781637717,
+      "balanced_accuracy": 0.5,
+      "confusion_matrix": {
+        "false_negative": 3,
+        "false_positive": 0,
+        "true_negative": 1206,
+        "true_positive": 0
+      },
+      "false_negative_rate": 1.0,
+      "false_negatives": 3,
+      "false_positive_rate": 0.0,
+      "false_positives": 0,
+      "fraud_count": 3,
+      "fraud_f1": 0.0,
+      "fraud_precision": 0.0,
+      "fraud_recall": 0.0,
+      "normal_count": 1206,
+      "predicted_fraud_count": 0,
+      "predicted_normal_count": 1209,
+      "roc_auc": 0.5,
+      "row_count": 1209,
+      "specificity": 1.0,
+      "threshold": 0.5,
+      "true_negatives": 1206,
+      "true_positives": 0
+    },
+    "logistic_regression": {
+      "accuracy": 0.9602977667493796,
+      "average_precision": 0.7192982456140351,
+      "balanced_accuracy": 0.9800995024875622,
+      "confusion_matrix": {
+        "false_negative": 0,
+        "false_positive": 48,
+        "true_negative": 1158,
+        "true_positive": 3
+      },
+      "false_negative_rate": 0.0,
+      "false_negatives": 0,
+      "false_positive_rate": 0.03980099502487562,
+      "false_positives": 48,
+      "fraud_count": 3,
+      "fraud_f1": 0.1111111111111111,
+      "fraud_precision": 0.058823529411764705,
+      "fraud_recall": 1.0,
+      "normal_count": 1206,
+      "predicted_fraud_count": 51,
+      "predicted_normal_count": 1158,
+      "roc_auc": 0.9955776672194582,
+      "row_count": 1209,
+      "specificity": 0.9601990049751243,
+      "threshold": 0.5,
+      "true_negatives": 1158,
+      "true_positives": 3
+    }
+  },
+  "validation_metrics": {
+    "dummy_classifier": {
+      "accuracy": 0.9889705882352942,
+      "average_precision": 0.011029411764705883,
+      "balanced_accuracy": 0.5,
+      "confusion_matrix": {
+        "false_negative": 6,
+        "false_positive": 0,
+        "true_negative": 538,
+        "true_positive": 0
+      },
+      "false_negative_rate": 1.0,
+      "false_negatives": 6,
+      "false_positive_rate": 0.0,
+      "false_positives": 0,
+      "fraud_count": 6,
+      "fraud_f1": 0.0,
+      "fraud_precision": 0.0,
+      "fraud_recall": 0.0,
+      "normal_count": 538,
+      "predicted_fraud_count": 0,
+      "predicted_normal_count": 544,
+      "roc_auc": 0.5,
+      "row_count": 544,
+      "specificity": 1.0,
+      "threshold": 0.5,
+      "true_negatives": 538,
+      "true_positives": 0
+    },
+    "logistic_regression": {
+      "accuracy": 0.9595588235294118,
+      "average_precision": 0.6758012820512821,
+      "balanced_accuracy": 0.8147459727385378,
+      "confusion_matrix": {
+        "false_negative": 2,
+        "false_positive": 20,
+        "true_negative": 518,
+        "true_positive": 4
+      },
+      "false_negative_rate": 0.3333333333333333,
+      "false_negatives": 2,
+      "false_positive_rate": 0.03717472118959108,
+      "false_positives": 20,
+      "fraud_count": 6,
+      "fraud_f1": 0.26666666666666666,
+      "fraud_precision": 0.16666666666666666,
+      "fraud_recall": 0.6666666666666666,
+      "normal_count": 538,
+      "predicted_fraud_count": 24,
+      "predicted_normal_count": 520,
+      "roc_auc": 0.9653035935563817,
+      "row_count": 544,
+      "specificity": 0.9628252788104089,
+      "threshold": 0.5,
+      "true_negatives": 518,
+      "true_positives": 4
+    }
+  },
+  "warnings_and_limitations": [
+    "The full approved dataset contains only 40 confirmed fraud examples, so validation and test metrics are unstable.",
+    "Metrics are suitable for pipeline and portfolio validation, not production-performance claims.",
+    "Accuracy is not treated as the primary fraud metric because the dataset is highly imbalanced.",
+    "Logistic Regression coefficients are associations learned from synthetic data and do not establish causation.",
+    "The classification threshold is fixed at 0.5; threshold optimization is intentionally deferred to Phase 9B.",
+    "The rare_event_aware_time_split_v2 boundary is target-aware: labels were used only to choose contiguous chronological boundaries, not to reorder individual rows.",
+    "The v2 test split remains a contiguous latest-time block, but evaluation estimates may be optimistic or unstable.",
+    "A larger production dataset should use a pre-locked temporal test period containing naturally occurring fraud cases."
+  ],
+  "workspace_notebook_path": "/Users/akanaskhan1506@gmail.com/04_logistic_regression_baseline"
+}

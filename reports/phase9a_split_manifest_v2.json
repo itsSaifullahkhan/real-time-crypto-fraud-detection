@@ -1,0 +1,194 @@
+{
+  "candidate_count_at_latest_test_start": 135,
+  "classification_threshold": 0.5,
+  "comparison_with_failed_time_split_v1": {
+    "failed_checks": [
+      "test_split_zero_fraud"
+    ],
+    "fraud_normal_counts": {
+      "test": {
+        "fraud_count": 0,
+        "fraud_rate": 0.0,
+        "normal_count": 672
+      },
+      "train": {
+        "fraud_count": 36,
+        "fraud_rate": 0.011483253588516746,
+        "normal_count": 3099
+      },
+      "validation": {
+        "fraud_count": 4,
+        "fraud_rate": 0.005952380952380952,
+        "normal_count": 668
+      }
+    },
+    "row_counts": {
+      "test": 672,
+      "train": 3135,
+      "validation": 672
+    },
+    "split_hash": "18e6650582a6b9d83870428d6a0a49df3de3febb1b57185aeaffd16a5593186b",
+    "split_version": "time_split_v1"
+  },
+  "deterministic_ordering": [
+    "feature_timestamp ascending",
+    "transaction_id ascending"
+  ],
+  "entity_counts": {
+    "test": {
+      "unique_account_count": 96,
+      "unique_device_count": 133
+    },
+    "train": {
+      "unique_account_count": 96,
+      "unique_device_count": 134
+    },
+    "validation": {
+      "unique_account_count": 96,
+      "unique_device_count": 134
+    }
+  },
+  "failed_checks": [],
+  "fraud_normal_counts": {
+    "test": {
+      "fraud_count": 3,
+      "fraud_rate": 0.0024813895781637717,
+      "normal_count": 1206
+    },
+    "train": {
+      "fraud_count": 31,
+      "fraud_rate": 0.011371973587674248,
+      "normal_count": 2695
+    },
+    "validation": {
+      "fraud_count": 6,
+      "fraud_rate": 0.011029411764705883,
+      "normal_count": 538
+    }
+  },
+  "latest_possible_test_start_index": 3270,
+  "min_fraud_constraints": {
+    "test": 3,
+    "validation": 3
+  },
+  "min_rows": {
+    "test": 448,
+    "train": 2688,
+    "validation": 448
+  },
+  "ordering_columns": [
+    "feature_timestamp ascending",
+    "transaction_id ascending"
+  ],
+  "overlap_checks": {
+    "all_transactions_assigned_once": 1,
+    "train_test_overlap_count": 0,
+    "train_validation_overlap_count": 0,
+    "validation_test_overlap_count": 0
+  },
+  "percentages": {
+    "test": 0.26992632283991963,
+    "train": 0.6086179950881894,
+    "validation": 0.12145568207189104
+  },
+  "phase": "9A",
+  "preferred_training_fraud_count": 25,
+  "row_counts": {
+    "test": 1209,
+    "train": 2726,
+    "validation": 544
+  },
+  "selected_candidate": {
+    "proportion_distance_from_70_15_15": 0.23985264567983916,
+    "test_fraud_count": 3,
+    "test_normal_count": 1206,
+    "test_rows": 1209,
+    "test_start_timestamp": "2026-06-06T02:51:45+00:00",
+    "test_start_transaction_id": "0efa1bdb-d819-5219-9da7-84bde8b7f60c",
+    "train_end_index_exclusive": 2726,
+    "train_fraud_count": 31,
+    "train_normal_count": 2695,
+    "train_rows": 2726,
+    "training_preferred_fraud_count_met": true,
+    "validation_end_index_exclusive": 3270,
+    "validation_fraud_count": 6,
+    "validation_normal_count": 538,
+    "validation_rows": 544,
+    "validation_start_timestamp": "2026-06-05T05:09:54+00:00",
+    "validation_start_transaction_id": "1370ac11-3b65-5704-9a3b-c3cbe65ef41e"
+  },
+  "selected_time_boundaries": {
+    "test_min_timestamp": "2026-06-06T02:51:45+00:00",
+    "test_start_index": 3270,
+    "test_start_transaction_id": "0efa1bdb-d819-5219-9da7-84bde8b7f60c",
+    "train_end_index_exclusive": 2726,
+    "train_max_timestamp": "2026-06-05T05:07:36+00:00",
+    "validation_end_index_exclusive": 3270,
+    "validation_max_timestamp": "2026-06-06T02:48:30+00:00",
+    "validation_min_timestamp": "2026-06-05T05:09:54+00:00",
+    "validation_start_index": 2726,
+    "validation_start_transaction_id": "1370ac11-3b65-5704-9a3b-c3cbe65ef41e"
+  },
+  "selection_algorithm": "Sort by feature_timestamp and transaction_id, scan deterministic row boundaries, choose the latest possible test-start timestamp with at least three test fraud cases, then choose the closest candidate to 70/15/15, then transaction_id tie-breakers.",
+  "source_table": "crypto_fraud.features.transaction_training_dataset",
+  "split_boundaries": {
+    "test": {
+      "duplicate_transaction_count": 0,
+      "fraud_count": 3,
+      "fraud_rate": 0.0024813895781637717,
+      "max_feature_timestamp": "2026-06-07T23:58:57+00:00",
+      "min_feature_timestamp": "2026-06-06T02:51:45+00:00",
+      "normal_count": 1206,
+      "null_target_count": 0,
+      "percentage": 0.26992632283991963,
+      "row_count": 1209,
+      "unique_account_count": 96,
+      "unique_device_count": 133
+    },
+    "train": {
+      "duplicate_transaction_count": 0,
+      "fraud_count": 31,
+      "fraud_rate": 0.011371973587674248,
+      "max_feature_timestamp": "2026-06-05T05:07:36+00:00",
+      "min_feature_timestamp": "2026-06-01T00:30:28+00:00",
+      "normal_count": 2695,
+      "null_target_count": 0,
+      "percentage": 0.6086179950881894,
+      "row_count": 2726,
+      "unique_account_count": 96,
+      "unique_device_count": 134
+    },
+    "validation": {
+      "duplicate_transaction_count": 0,
+      "fraud_count": 6,
+      "fraud_rate": 0.011029411764705883,
+      "max_feature_timestamp": "2026-06-06T02:48:30+00:00",
+      "min_feature_timestamp": "2026-06-05T05:09:54+00:00",
+      "normal_count": 538,
+      "null_target_count": 0,
+      "percentage": 0.12145568207189104,
+      "row_count": 544,
+      "unique_account_count": 96,
+      "unique_device_count": 134
+    }
+  },
+  "split_hash": "6576d4aa251135aa3666c01396b5eeaafe3be1a741b2610262c5f4aebf7bbf01",
+  "split_policy": "rare-event-aware contiguous chronological time blocks with minimum split sizes and fraud-count constraints",
+  "split_version": "rare_event_aware_time_split_v2",
+  "target_aware_boundary_limitation": {
+    "contiguous_latest_time_test_block": true,
+    "is_target_aware": true,
+    "records_reordered": false,
+    "warning": "Labels were used only to choose valid contiguous chronological split boundaries in this small rare-event pilot. Evaluation estimates may be optimistic or unstable and are suitable for pipeline and portfolio validation only. A larger production dataset should use a pre-locked temporal test period containing naturally occurring fraud cases."
+  },
+  "time_boundary_checks": {
+    "train_max_lte_validation_min": true,
+    "validation_max_lte_test_min": true
+  },
+  "transaction_id_counts": {
+    "test": 1209,
+    "train": 2726,
+    "validation": 544
+  },
+  "warnings": []
+}

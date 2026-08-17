@@ -1,0 +1,115 @@
+scenario_id: unusual_transaction_amount
+scenario_version: "1.0"
+display_name: "Unusual transaction amount"
+description: "A transaction is significantly larger than the account's normal behavioural amount."
+enabled: true
+fraud_type: UNUSUAL_TRANSACTION_AMOUNT
+reason_codes:
+  - UNUSUAL_AMOUNT
+  - NEW_DESTINATION_WALLET
+affected_entities:
+  - account
+  - wallet
+  - customer_transaction
+  - fraud_decision
+  - fraud_label
+affected_event_types:
+  - customer_transaction
+  - fraud_decision
+  - fraud_label
+prerequisites:
+  - "Account has normal_transaction_amount_usd and customer_risk_tier populated."
+  - "Prior transaction history exists for account-age and amount comparisons."
+  - "Wallet relationships are valid for the transaction type."
+trigger_logic:
+  profile_relative_rules:
+    amount_multiplier_vs_normal:
+      min: 5
+      max: 15
+    account_age_days:
+      min: 1
+      max: 365
+  controlled_variation:
+    - "Destination wallet may be known or new."
+    - "Transactions can be withdrawals or transfers; deposits are used only as controls."
+event_sequence:
+  - step: 1
+    event_type: customer_transaction
+    description: "Prior normal transactions establish the account amount profile."
+    transaction_event_contains_label: false
+  - step: 2
+    event_type: customer_transaction
+    description: "A current transaction is large relative to normal_transaction_amount_usd."
+    transaction_event_contains_label: false
+  - step: 3
+    event_type: fraud_decision
+    description: "Model scoring can use current amount and profile-relative amount features."
+    transaction_event_contains_label: false
+  - step: 4
+    event_type: fraud_label
+    description: "Delayed investigation labels the suspicious transaction."
+    transaction_event_contains_label: false
+timing_rules:
+  prerequisite_history_days:
+    min: 7
+    max: 180
+  suspicious_transaction_spacing_minutes:
+    min: 5
+    max: 240
+  maximum_scenario_duration_hours:
+    min: 1
+    max: 24
+  label_delay_hours:
+    min: 12
+    max: 72
+  late_or_out_of_order_variants_later: false
+  can_overlap_with_another_scenario: false
+expected_feature_signals:
+  - name: transaction_amount_usd
+    source: current_transaction
+    availability: at_prediction
+  - name: amount_vs_customer_average
+    source: historical_account_profile
+    availability: at_prediction
+  - name: customer_risk_tier
+    source: historical_account_profile
+    availability: before_prediction
+  - name: transaction_type
+    source: current_transaction
+    availability: at_prediction
+  - name: account_age_days
+    source: historical_account_profile
+    availability: at_prediction
+  - name: destination_wallet_is_new
+    source: prior_wallet_activity
+    availability: before_prediction
+label_rules:
+  labeled_transaction_selection: "The unusually large transaction_id receives the confirmed fraud label."
+  multiple_labels_can_relate_to_same_scenario: false
+  label_delay_hours:
+    min: 12
+    max: 72
+  fraud_type: UNUSUAL_TRANSACTION_AMOUNT
+  investigation_status: CONFIRMED_FRAUD
+  is_fraud: true
+  label_source: SIMULATED_INVESTIGATION
+  normal_control_records_generated: true
+  cleared_control_label:
+    investigation_status: CLEARED
+    is_fraud: false
+    fraud_type: null
+difficulty: MEDIUM
+false_positive_risk:
+  level: MEDIUM
+  examples:
+    - "Legitimate high-value purchase by a high-value customer."
+    - "Large transfer after a long period of saving or asset appreciation."
+normal_control_cases:
+  - "Large transaction consistent with a HIGH customer_risk_tier and historical profile."
+  - "Known destination wallet and successful authentication from a trusted device."
+validation_rules:
+  - "Suspicious amounts must be calculated relative to normal_transaction_amount_usd."
+  - "No single global amount may define this scenario."
+  - "Fraud labels must be emitted separately from customer transactions."
+notes:
+  - "Legitimate high-value transactions are expected controls so the model does not treat size alone as fraud."

@@ -1,0 +1,36 @@
+[project]
+name = "crypto-fraud-platform"
+version = "0.1.0"
+description = "Industry-style portfolio project for a real-time crypto fraud detection platform."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.mypy]
+python_version = "3.11"
+mypy_path = "src"
+packages = ["crypto_fraud_platform"]
+warn_unused_configs = true
+ignore_missing_imports = true
+
+# Type-checking strictness will be increased as implementation begins.

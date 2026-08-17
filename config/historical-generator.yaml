@@ -1,0 +1,39 @@
+generator_version: "1.0"
+
+mode: local_pilot
+random_seed: 20260729
+
+time_range:
+  start: "2026-06-01T00:00:00Z"
+  end: "2026-06-07T23:59:59Z"
+  timezone: UTC
+
+scale:
+  account_count: 100
+  target_transaction_count: 5000
+  target_authentication_event_count: 2500
+  target_fraud_rate: 0.008
+
+assets:
+  - BTC
+  - ETH
+
+market_products:
+  BTC: BTC-USD
+  ETH: ETH-USD
+
+output:
+  root_path: data/generated/historical/pilot
+  format: parquet
+  overwrite_existing: false
+
+validation:
+  validate_schema_samples: true
+  enforce_foreign_keys: true
+  enforce_unique_ids: true
+  enforce_timestamp_rules: true
+
+generation:
+  label_completed_transactions: true
+  include_failed_transactions: true
+  optional_volatility_scenario_enabled: false

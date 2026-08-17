@@ -1,0 +1,16 @@
+# Non-secret development configuration placeholders for Phase 1.
+environment: development
+timezone: UTC
+schema_version: pending
+logging:
+  level: INFO
+assets:
+  supported:
+    - BTC-USD
+    - ETH-USD
+paths:
+  data_root: data
+  raw_data: data/raw
+  generated_data: data/generated
+  sample_data: data/sample
+  docs: docs

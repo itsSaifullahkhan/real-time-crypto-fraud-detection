@@ -1,0 +1,71 @@
+{
+  "model_name": "dummy_most_frequent_v1",
+  "plot_paths": [
+    "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/dummy_most_frequent_v1_validation_roc_curve.png",
+    "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/dummy_most_frequent_v1_validation_confusion_matrix.png",
+    "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/dummy_most_frequent_v1_validation_precision_recall_curve.png",
+    "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/dummy_most_frequent_v1_validation_probability_distribution.png",
+    "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/dummy_most_frequent_v1_test_roc_curve.png",
+    "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/dummy_most_frequent_v1_test_confusion_matrix.png",
+    "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/dummy_most_frequent_v1_test_precision_recall_curve.png",
+    "/tmp/crypto_fraud_phase9a/c7c5b78b-1edd-4505-ac93-840d4ab1bb97/reports/phase9a_plots/dummy_most_frequent_v1_test_probability_distribution.png"
+  ],
+  "purpose": "Demonstrate why raw accuracy is misleading for this imbalanced fraud dataset.",
+  "strategy": "most_frequent",
+  "test_metrics": {
+    "accuracy": 0.9975186104218362,
+    "average_precision": 0.0024813895781637717,
+    "balanced_accuracy": 0.5,
+    "confusion_matrix": {
+      "false_negative": 3,
+      "false_positive": 0,
+      "true_negative": 1206,
+      "true_positive": 0
+    },
+    "false_negative_rate": 1.0,
+    "false_negatives": 3,
+    "false_positive_rate": 0.0,
+    "false_positives": 0,
+    "fraud_count": 3,
+    "fraud_f1": 0.0,
+    "fraud_precision": 0.0,
+    "fraud_recall": 0.0,
+    "normal_count": 1206,
+    "predicted_fraud_count": 0,
+    "predicted_normal_count": 1209,
+    "roc_auc": 0.5,
+    "row_count": 1209,
+    "specificity": 1.0,
+    "threshold": 0.5,
+    "true_negatives": 1206,
+    "true_positives": 0
+  },
+  "validation_metrics": {
+    "accuracy": 0.9889705882352942,
+    "average_precision": 0.011029411764705883,
+    "balanced_accuracy": 0.5,
+    "confusion_matrix": {
+      "false_negative": 6,
+      "false_positive": 0,
+      "true_negative": 538,
+      "true_positive": 0
+    },
+    "false_negative_rate": 1.0,
+    "false_negatives": 6,
+    "false_positive_rate": 0.0,
+    "false_positives": 0,
+    "fraud_count": 6,
+    "fraud_f1": 0.0,
+    "fraud_precision": 0.0,
+    "fraud_recall": 0.0,
+    "normal_count": 538,
+    "predicted_fraud_count": 0,
+    "predicted_normal_count": 544,
+    "roc_auc": 0.5,
+    "row_count": 544,
+    "specificity": 1.0,
+    "threshold": 0.5,
+    "true_negatives": 538,
+    "true_positives": 0
+  }
+}

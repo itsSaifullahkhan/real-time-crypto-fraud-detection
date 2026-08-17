@@ -1,0 +1,83 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.python-version
+.venv/
+venv/
+env/
+
+# Testing and quality tooling
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.hypothesis/
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build outputs
+build/
+dist/
+*.egg-info/
+
+# Logs and temporary files
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+
+# Generated and raw datasets
+data/raw/*
+data/generated/*
+data/sample/*
+!data/raw/.gitkeep
+!data/generated/.gitkeep
+!data/sample/.gitkeep
+*.parquet
+*.snappy.parquet
+*.delta
+_delta_log/
+
+# Spark and streaming state
+checkpoints/
+**/checkpoints/
+**/_checkpoint/
+**/_checkpoints/
+**/spark-checkpoints/
+spark-warehouse/
+metastore_db/
+derby.log
+
+# Databricks local state
+.databricks/
+databricks/.bundle/
+
+# MLflow local runs and artifacts
+mlruns/
+mlartifacts/
+
+# Keep project documentation and safe starter assets tracked
+!docs/**
+!config/**
+!**/.gitkeep
+
+.tmp/

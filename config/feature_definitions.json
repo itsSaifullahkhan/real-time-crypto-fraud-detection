@@ -1,0 +1,1582 @@
+{
+  "contract_name": "phase8_transaction_features_offline",
+  "definitions": [
+    {
+      "current_event_included": true,
+      "data_type": "string",
+      "default_or_null_policy": "required from Silver; null is a quality failure",
+      "description": "Primary business key and one-row-per-transaction grain.",
+      "entity_key": [
+        "transaction_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Read from the live transaction event at prediction time.",
+      "feature_name": "transaction_id",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Current-event lineage only; not a model input.",
+      "model_input_candidate": false,
+      "offline_calculation": "Selected directly from the current Silver transaction row.",
+      "source_tables": [
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": true,
+      "data_type": "string",
+      "default_or_null_policy": "required from Silver; null is a quality failure",
+      "description": "Transaction account lineage key.",
+      "entity_key": [
+        "transaction_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Read from the live transaction event at prediction time.",
+      "feature_name": "account_id",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Current-event lineage only; not a model input.",
+      "model_input_candidate": false,
+      "offline_calculation": "Selected directly from the current Silver transaction row.",
+      "source_tables": [
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": true,
+      "data_type": "string",
+      "default_or_null_policy": "required from Silver; null is a quality failure",
+      "description": "Transaction device lineage key.",
+      "entity_key": [
+        "transaction_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Read from the live transaction event at prediction time.",
+      "feature_name": "device_id",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Current-event lineage only; not a model input.",
+      "model_input_candidate": false,
+      "offline_calculation": "Selected directly from the current Silver transaction row.",
+      "source_tables": [
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": true,
+      "data_type": "string",
+      "default_or_null_policy": "null is permitted for deposits; model_input_candidate is false",
+      "description": "Source wallet lineage key; nullable when the transaction contract permits it.",
+      "entity_key": [
+        "transaction_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Read from the live transaction event at prediction time.",
+      "feature_name": "source_wallet_id",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Current-event lineage only; not a model input.",
+      "model_input_candidate": false,
+      "offline_calculation": "Selected directly from the current Silver transaction row.",
+      "source_tables": [
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": true,
+      "data_type": "string",
+      "default_or_null_policy": "required from Silver; null is a quality failure",
+      "description": "Destination wallet lineage key; nullable only when permitted by the transaction contract.",
+      "entity_key": [
+        "transaction_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Read from the live transaction event at prediction time.",
+      "feature_name": "destination_wallet_id",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Current-event lineage only; not a model input.",
+      "model_input_candidate": false,
+      "offline_calculation": "Selected directly from the current Silver transaction row.",
+      "source_tables": [
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": true,
+      "data_type": "timestamp",
+      "default_or_null_policy": "required from Silver; null is a quality failure",
+      "description": "Feature event timestamp equal to the transaction event timestamp.",
+      "entity_key": [
+        "transaction_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Read from the live transaction event at prediction time.",
+      "feature_name": "feature_timestamp",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Current-event lineage only; not a model input.",
+      "model_input_candidate": false,
+      "offline_calculation": "Selected directly from the current Silver transaction row.",
+      "source_tables": [
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": true,
+      "data_type": "date",
+      "default_or_null_policy": "required from Silver; null is a quality failure",
+      "description": "UTC event date retained for filtering.",
+      "entity_key": [
+        "transaction_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Read from the live transaction event at prediction time.",
+      "feature_name": "event_date",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Current-event lineage only; not a model input.",
+      "model_input_candidate": false,
+      "offline_calculation": "Selected directly from the current Silver transaction row.",
+      "source_tables": [
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": true,
+      "data_type": "string",
+      "default_or_null_policy": "required from Silver; null is a quality failure",
+      "description": "Transaction asset categorical value from the approved BTC/ETH enum.",
+      "entity_key": [
+        "transaction_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Read from the live transaction event at prediction time.",
+      "feature_name": "asset",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Current-event lineage only; not a model input.",
+      "model_input_candidate": true,
+      "offline_calculation": "Selected directly from the current Silver transaction row.",
+      "source_tables": [
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": true,
+      "data_type": "string",
+      "default_or_null_policy": "required from Silver; null is a quality failure",
+      "description": "Transaction type categorical value from the approved enum.",
+      "entity_key": [
+        "transaction_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Read from the live transaction event at prediction time.",
+      "feature_name": "transaction_type",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Current-event lineage only; not a model input.",
+      "model_input_candidate": true,
+      "offline_calculation": "Selected directly from the current Silver transaction row.",
+      "source_tables": [
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": true,
+      "data_type": "string",
+      "default_or_null_policy": "required from Silver; null is a quality failure",
+      "description": "Transaction country categorical value from the current event.",
+      "entity_key": [
+        "transaction_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Read from the live transaction event at prediction time.",
+      "feature_name": "country",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Current-event lineage only; not a model input.",
+      "model_input_candidate": true,
+      "offline_calculation": "Selected directly from the current Silver transaction row.",
+      "source_tables": [
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": true,
+      "data_type": "double",
+      "default_or_null_policy": "required from Silver; null is a quality failure",
+      "description": "Current transaction USD amount.",
+      "entity_key": [
+        "transaction_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Compute from the live transaction event at prediction time using UTC time.",
+      "feature_name": "transaction_amount_usd",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Uses only the current transaction event.",
+      "model_input_candidate": true,
+      "offline_calculation": "Cast customer_transactions.transaction_amount_usd to double.",
+      "source_tables": [
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": true,
+      "data_type": "double",
+      "default_or_null_policy": "required from Silver; null is a quality failure",
+      "description": "Current transaction crypto quantity.",
+      "entity_key": [
+        "transaction_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Compute from the live transaction event at prediction time using UTC time.",
+      "feature_name": "crypto_quantity",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Uses only the current transaction event.",
+      "model_input_candidate": true,
+      "offline_calculation": "Cast customer_transactions.crypto_quantity to double.",
+      "source_tables": [
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": true,
+      "data_type": "double",
+      "default_or_null_policy": "required from Silver; null is a quality failure",
+      "description": "Current transaction valuation price from the transaction event.",
+      "entity_key": [
+        "transaction_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Compute from the live transaction event at prediction time using UTC time.",
+      "feature_name": "market_price_usd",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Uses only the current transaction event.",
+      "model_input_candidate": true,
+      "offline_calculation": "Cast customer_transactions.market_price_usd to double.",
+      "source_tables": [
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": true,
+      "data_type": "int",
+      "default_or_null_policy": "required from Silver; null is a quality failure",
+      "description": "UTC hour of the transaction, 0-23.",
+      "entity_key": [
+        "transaction_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Compute from the live transaction event at prediction time using UTC time.",
+      "feature_name": "transaction_hour_utc",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Uses only the current transaction event.",
+      "model_input_candidate": true,
+      "offline_calculation": "hour(feature_timestamp).",
+      "source_tables": [
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": true,
+      "data_type": "int",
+      "default_or_null_policy": "required from Silver; null is a quality failure",
+      "description": "UTC day of week, Monday=1 through Sunday=7.",
+      "entity_key": [
+        "transaction_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Compute from the live transaction event at prediction time using UTC time.",
+      "feature_name": "transaction_day_of_week_utc",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Uses only the current transaction event.",
+      "model_input_candidate": true,
+      "offline_calculation": "pmod(dayofweek(feature_timestamp)+5,7)+1.",
+      "source_tables": [
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": true,
+      "data_type": "int",
+      "default_or_null_policy": "missing flag defaults to 0",
+      "description": "1 when UTC day of week is Saturday or Sunday, otherwise 0.",
+      "entity_key": [
+        "transaction_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Compute from the live transaction event at prediction time using UTC time.",
+      "feature_name": "is_weekend_utc",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Uses only the current transaction event.",
+      "model_input_candidate": true,
+      "offline_calculation": "1 when transaction_day_of_week_utc in (6,7), else 0.",
+      "source_tables": [
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": true,
+      "data_type": "int",
+      "default_or_null_policy": "missing flag defaults to 0",
+      "description": "1 when UTC hour is 00:00 through 05:59 inclusive.",
+      "entity_key": [
+        "transaction_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Compute from the live transaction event at prediction time using UTC time.",
+      "feature_name": "is_night_transaction_utc",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Uses only the current transaction event.",
+      "model_input_candidate": true,
+      "offline_calculation": "1 when transaction_hour_utc between 0 and 5 inclusive, else 0.",
+      "source_tables": [
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": true,
+      "data_type": "long",
+      "default_or_null_policy": "null if account creation is unavailable or after transaction time",
+      "description": "Whole days from account creation to transaction time.",
+      "entity_key": [
+        "account_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Lookup the account profile version available at prediction time and apply the same formula.",
+      "feature_name": "account_age_days",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Profile values are used only when account.created_at and account.updated_at are not after feature_timestamp.",
+      "model_input_candidate": true,
+      "offline_calculation": "floor((feature_timestamp - accounts.created_at) / 86400 seconds) when created_at <= feature_timestamp.",
+      "source_tables": [
+        "crypto_fraud.silver.accounts",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": false,
+      "data_type": "int",
+      "default_or_null_policy": "0 when account profile timestamps are unavailable or future",
+      "description": "1 when the account profile is available by transaction time.",
+      "entity_key": [
+        "account_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Lookup the account profile version available at prediction time and apply the same formula.",
+      "feature_name": "account_profile_available",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Profile values are used only when account.created_at and account.updated_at are not after feature_timestamp.",
+      "model_input_candidate": true,
+      "offline_calculation": "1 when created_at <= feature_timestamp and updated_at <= feature_timestamp.",
+      "source_tables": [
+        "crypto_fraud.silver.accounts",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": false,
+      "data_type": "string",
+      "default_or_null_policy": "null when account_profile_available=0",
+      "description": "Approved customer risk tier categorical profile value.",
+      "entity_key": [
+        "account_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Lookup the account profile version available at prediction time and apply the same formula.",
+      "feature_name": "customer_risk_tier",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Profile values are used only when account.created_at and account.updated_at are not after feature_timestamp.",
+      "model_input_candidate": true,
+      "offline_calculation": "Use accounts.customer_risk_tier only when account_profile_available=1.",
+      "source_tables": [
+        "crypto_fraud.silver.accounts",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": true,
+      "data_type": "double",
+      "default_or_null_policy": "null when profile unavailable",
+      "description": "Approved account normal transaction amount.",
+      "entity_key": [
+        "account_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Lookup the account profile version available at prediction time and apply the same formula.",
+      "feature_name": "normal_transaction_amount_usd",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Profile values are used only when account.created_at and account.updated_at are not after feature_timestamp.",
+      "model_input_candidate": true,
+      "offline_calculation": "Use accounts.normal_transaction_amount_usd when account_profile_available=1.",
+      "source_tables": [
+        "crypto_fraud.silver.accounts",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": true,
+      "data_type": "int",
+      "default_or_null_policy": "0 otherwise",
+      "description": "1 when normal amount is non-null, positive, and point-in-time available.",
+      "entity_key": [
+        "account_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Lookup the account profile version available at prediction time and apply the same formula.",
+      "feature_name": "normal_transaction_amount_available",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Profile values are used only when account.created_at and account.updated_at are not after feature_timestamp.",
+      "model_input_candidate": true,
+      "offline_calculation": "1 when account profile is available and normal amount > 0.",
+      "source_tables": [
+        "crypto_fraud.silver.accounts",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": true,
+      "data_type": "double",
+      "default_or_null_policy": "null when normal amount is zero, null, or unavailable",
+      "description": "Current transaction amount divided by normal account amount.",
+      "entity_key": [
+        "account_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Lookup the account profile version available at prediction time and apply the same formula.",
+      "feature_name": "amount_to_normal_ratio",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Profile values are used only when account.created_at and account.updated_at are not after feature_timestamp.",
+      "model_input_candidate": true,
+      "offline_calculation": "transaction_amount_usd / normal_transaction_amount_usd when normal amount is available and positive.",
+      "source_tables": [
+        "crypto_fraud.silver.accounts",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": true,
+      "data_type": "double",
+      "default_or_null_policy": "null when normal amount is unavailable",
+      "description": "Current transaction amount minus normal account amount.",
+      "entity_key": [
+        "account_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Lookup the account profile version available at prediction time and apply the same formula.",
+      "feature_name": "amount_above_normal_usd",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Profile values are used only when account.created_at and account.updated_at are not after feature_timestamp.",
+      "model_input_candidate": true,
+      "offline_calculation": "transaction_amount_usd - normal_transaction_amount_usd when normal amount is available.",
+      "source_tables": [
+        "crypto_fraud.silver.accounts",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": true,
+      "data_type": "int",
+      "default_or_null_policy": "null when account profile or country is unavailable",
+      "description": "1 when transaction country differs from account home_country.",
+      "entity_key": [
+        "account_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Lookup the account profile version available at prediction time and apply the same formula.",
+      "feature_name": "transaction_country_mismatch_home_country",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Profile values are used only when account.created_at and account.updated_at are not after feature_timestamp.",
+      "model_input_candidate": true,
+      "offline_calculation": "Compare current transaction country to accounts.home_country when account profile is available.",
+      "source_tables": [
+        "crypto_fraud.silver.accounts",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": false,
+      "data_type": "long",
+      "default_or_null_policy": "0 when no prior events exist",
+      "description": "Count of prior account transactions in the 5 minutes before feature_timestamp.",
+      "entity_key": [
+        "account_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Maintain event-time account transaction state with strict exclusion of the current event and identical timestamps.",
+      "feature_name": "prior_tx_count_5m",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Only prior customer transactions with event_timestamp < feature_timestamp contribute.",
+      "model_input_candidate": true,
+      "offline_calculation": "Count customer_transactions for the same account with event_timestamp >= feature_timestamp - 5 minutes and < feature_timestamp.",
+      "source_tables": [
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": "5 minutes"
+    },
+    {
+      "current_event_included": false,
+      "data_type": "long",
+      "default_or_null_policy": "0 when no prior events exist",
+      "description": "Count of prior account transactions in the 1 hour before feature_timestamp.",
+      "entity_key": [
+        "account_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Maintain event-time account transaction state with strict exclusion of the current event and identical timestamps.",
+      "feature_name": "prior_tx_count_1h",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Only prior customer transactions with event_timestamp < feature_timestamp contribute.",
+      "model_input_candidate": true,
+      "offline_calculation": "Count same-account transactions in [feature_timestamp - 1 hour, feature_timestamp).",
+      "source_tables": [
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": "1 hour"
+    },
+    {
+      "current_event_included": false,
+      "data_type": "long",
+      "default_or_null_policy": "0 when no prior events exist",
+      "description": "Count of prior account transactions in the 24 hours before feature_timestamp.",
+      "entity_key": [
+        "account_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Maintain event-time account transaction state with strict exclusion of the current event and identical timestamps.",
+      "feature_name": "prior_tx_count_24h",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Only prior customer transactions with event_timestamp < feature_timestamp contribute.",
+      "model_input_candidate": true,
+      "offline_calculation": "Count same-account transactions in [feature_timestamp - 24 hours, feature_timestamp).",
+      "source_tables": [
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": "24 hours"
+    },
+    {
+      "current_event_included": false,
+      "data_type": "double",
+      "default_or_null_policy": "0 when no prior events exist",
+      "description": "Sum of prior account transaction amounts in the 1 hour before feature_timestamp.",
+      "entity_key": [
+        "account_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Maintain event-time account transaction state with strict exclusion of the current event and identical timestamps.",
+      "feature_name": "prior_tx_amount_sum_1h",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Only prior customer transactions with event_timestamp < feature_timestamp contribute.",
+      "model_input_candidate": true,
+      "offline_calculation": "Sum transaction_amount_usd for same-account prior transactions in the 1 hour window.",
+      "source_tables": [
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": "1 hour"
+    },
+    {
+      "current_event_included": false,
+      "data_type": "double",
+      "default_or_null_policy": "0 when no prior events exist",
+      "description": "Sum of prior account transaction amounts in the 24 hours before feature_timestamp.",
+      "entity_key": [
+        "account_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Maintain event-time account transaction state with strict exclusion of the current event and identical timestamps.",
+      "feature_name": "prior_tx_amount_sum_24h",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Only prior customer transactions with event_timestamp < feature_timestamp contribute.",
+      "model_input_candidate": true,
+      "offline_calculation": "Sum transaction_amount_usd for same-account prior transactions in the 24 hour window.",
+      "source_tables": [
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": "24 hours"
+    },
+    {
+      "current_event_included": false,
+      "data_type": "double",
+      "default_or_null_policy": "null when no prior 24h transactions exist; has_prior_tx_24h indicates availability",
+      "description": "Average amount of prior account transactions in the 24 hours before feature_timestamp.",
+      "entity_key": [
+        "account_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Maintain event-time account transaction state with strict exclusion of the current event and identical timestamps.",
+      "feature_name": "prior_tx_amount_avg_24h",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Only prior customer transactions with event_timestamp < feature_timestamp contribute.",
+      "model_input_candidate": true,
+      "offline_calculation": "Average transaction_amount_usd for same-account prior transactions in the 24 hour window.",
+      "source_tables": [
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": "24 hours"
+    },
+    {
+      "current_event_included": false,
+      "data_type": "double",
+      "default_or_null_policy": "null when no prior 24h transactions exist; has_prior_tx_24h indicates availability",
+      "description": "Maximum amount of prior account transactions in the 24 hours before feature_timestamp.",
+      "entity_key": [
+        "account_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Maintain event-time account transaction state with strict exclusion of the current event and identical timestamps.",
+      "feature_name": "prior_tx_amount_max_24h",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Only prior customer transactions with event_timestamp < feature_timestamp contribute.",
+      "model_input_candidate": true,
+      "offline_calculation": "Max transaction_amount_usd for same-account prior transactions in the 24 hour window.",
+      "source_tables": [
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": "24 hours"
+    },
+    {
+      "current_event_included": false,
+      "data_type": "int",
+      "default_or_null_policy": "0 when no prior 24h transactions exist",
+      "description": "1 when at least one prior account transaction exists in the 24 hour window.",
+      "entity_key": [
+        "account_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Maintain event-time account transaction state with strict exclusion of the current event and identical timestamps.",
+      "feature_name": "has_prior_tx_24h",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Only prior customer transactions with event_timestamp < feature_timestamp contribute.",
+      "model_input_candidate": true,
+      "offline_calculation": "1 when prior_tx_count_24h > 0.",
+      "source_tables": [
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": "24 hours"
+    },
+    {
+      "current_event_included": false,
+      "data_type": "long",
+      "default_or_null_policy": "null when no prior transaction exists; has_previous_transaction indicates availability",
+      "description": "Seconds since the latest strictly prior account transaction.",
+      "entity_key": [
+        "account_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Maintain event-time account transaction state with strict exclusion of the current event and identical timestamps.",
+      "feature_name": "seconds_since_previous_tx",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Only prior customer transactions with event_timestamp < feature_timestamp contribute.",
+      "model_input_candidate": true,
+      "offline_calculation": "feature_timestamp - max(prior event_timestamp) for same-account prior transactions.",
+      "source_tables": [
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": false,
+      "data_type": "int",
+      "default_or_null_policy": "0 when no prior transaction exists",
+      "description": "1 when any strictly prior account transaction exists.",
+      "entity_key": [
+        "account_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Maintain event-time account transaction state with strict exclusion of the current event and identical timestamps.",
+      "feature_name": "has_previous_transaction",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Only prior customer transactions with event_timestamp < feature_timestamp contribute.",
+      "model_input_candidate": true,
+      "offline_calculation": "1 when max prior same-account transaction timestamp is not null.",
+      "source_tables": [
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": false,
+      "data_type": "long",
+      "default_or_null_policy": "0 when no prior failed auth exists",
+      "description": "Failed account authentication count in the 10 minutes before feature_timestamp.",
+      "entity_key": [
+        "account_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Maintain event-time authentication state keyed by the same entity with strict timestamp exclusion.",
+      "feature_name": "failed_auth_count_10m",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Only prior authentication events with event_timestamp < feature_timestamp contribute.",
+      "model_input_candidate": true,
+      "offline_calculation": "Count prior authentication_events for the transaction account where login_success=false in the 10 minute window.",
+      "source_tables": [
+        "crypto_fraud.silver.authentication_events",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": "10 minutes"
+    },
+    {
+      "current_event_included": false,
+      "data_type": "long",
+      "default_or_null_policy": "0 when no prior failed auth exists",
+      "description": "Failed account authentication count in the 1 hour before feature_timestamp.",
+      "entity_key": [
+        "account_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Maintain event-time authentication state keyed by the same entity with strict timestamp exclusion.",
+      "feature_name": "failed_auth_count_1h",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Only prior authentication events with event_timestamp < feature_timestamp contribute.",
+      "model_input_candidate": true,
+      "offline_calculation": "Count prior authentication_events for the transaction account where login_success=false in the 1 hour window.",
+      "source_tables": [
+        "crypto_fraud.silver.authentication_events",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": "1 hour"
+    },
+    {
+      "current_event_included": false,
+      "data_type": "long",
+      "default_or_null_policy": "0 when no prior successful auth exists",
+      "description": "Successful account authentication count in the 1 hour before feature_timestamp.",
+      "entity_key": [
+        "account_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Maintain event-time authentication state keyed by the same entity with strict timestamp exclusion.",
+      "feature_name": "successful_auth_count_1h",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Only prior authentication events with event_timestamp < feature_timestamp contribute.",
+      "model_input_candidate": true,
+      "offline_calculation": "Count prior authentication_events for the transaction account where login_success=true in the 1 hour window.",
+      "source_tables": [
+        "crypto_fraud.silver.authentication_events",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": "1 hour"
+    },
+    {
+      "current_event_included": false,
+      "data_type": "int",
+      "default_or_null_policy": "0 otherwise",
+      "description": "1 when failed_auth_count_10m is greater than zero.",
+      "entity_key": [
+        "account_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Maintain event-time authentication state keyed by the same entity with strict timestamp exclusion.",
+      "feature_name": "recent_auth_failure_flag_10m",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Only prior authentication events with event_timestamp < feature_timestamp contribute.",
+      "model_input_candidate": true,
+      "offline_calculation": "1 when failed_auth_count_10m > 0.",
+      "source_tables": [
+        "crypto_fraud.silver.authentication_events",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": "10 minutes"
+    },
+    {
+      "current_event_included": false,
+      "data_type": "long",
+      "default_or_null_policy": "null when no previous successful auth exists; has_previous_successful_auth indicates availability",
+      "description": "Seconds since the latest strictly prior successful account authentication.",
+      "entity_key": [
+        "account_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Maintain event-time authentication state keyed by the same entity with strict timestamp exclusion.",
+      "feature_name": "seconds_since_last_successful_auth",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Only prior authentication events with event_timestamp < feature_timestamp contribute.",
+      "model_input_candidate": true,
+      "offline_calculation": "feature_timestamp - max(prior successful authentication event_timestamp).",
+      "source_tables": [
+        "crypto_fraud.silver.authentication_events",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": false,
+      "data_type": "int",
+      "default_or_null_policy": "0 when no previous successful auth exists",
+      "description": "1 when a strictly prior successful account authentication exists.",
+      "entity_key": [
+        "account_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Maintain event-time authentication state keyed by the same entity with strict timestamp exclusion.",
+      "feature_name": "has_previous_successful_auth",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Only prior authentication events with event_timestamp < feature_timestamp contribute.",
+      "model_input_candidate": true,
+      "offline_calculation": "1 when last successful auth timestamp is not null.",
+      "source_tables": [
+        "crypto_fraud.silver.authentication_events",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": false,
+      "data_type": "long",
+      "default_or_null_policy": "0 when no prior device failures exist",
+      "description": "Failed authentication count on the transaction device in the 10 minutes before feature_timestamp.",
+      "entity_key": [
+        "device_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Maintain event-time authentication state keyed by the same entity with strict timestamp exclusion.",
+      "feature_name": "device_failed_auth_count_10m",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Only prior authentication events with event_timestamp < feature_timestamp contribute.",
+      "model_input_candidate": true,
+      "offline_calculation": "Count prior authentication_events for the transaction device where login_success=false in the 10 minute window.",
+      "source_tables": [
+        "crypto_fraud.silver.authentication_events",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": "10 minutes"
+    },
+    {
+      "current_event_included": false,
+      "data_type": "long",
+      "default_or_null_policy": "0 when no prior device successes exist",
+      "description": "Successful authentication count on the transaction device in the 1 hour before feature_timestamp.",
+      "entity_key": [
+        "device_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Maintain event-time authentication state keyed by the same entity with strict timestamp exclusion.",
+      "feature_name": "device_successful_auth_count_1h",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Only prior authentication events with event_timestamp < feature_timestamp contribute.",
+      "model_input_candidate": true,
+      "offline_calculation": "Count prior authentication_events for the transaction device where login_success=true in the 1 hour window.",
+      "source_tables": [
+        "crypto_fraud.silver.authentication_events",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": "1 hour"
+    },
+    {
+      "current_event_included": false,
+      "data_type": "long",
+      "default_or_null_policy": "0 when no prior device auth exists",
+      "description": "Distinct accounts using the transaction device in prior authentication events over 1 hour.",
+      "entity_key": [
+        "device_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Maintain event-time authentication state keyed by the same entity with strict timestamp exclusion.",
+      "feature_name": "device_distinct_account_count_1h",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Only prior authentication events with event_timestamp < feature_timestamp contribute.",
+      "model_input_candidate": true,
+      "offline_calculation": "Count distinct authentication account_id values for the same device in [feature_timestamp - 1 hour, feature_timestamp).",
+      "source_tables": [
+        "crypto_fraud.silver.authentication_events",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": "1 hour"
+    },
+    {
+      "current_event_included": false,
+      "data_type": "int",
+      "default_or_null_policy": "0 when missing or future first_seen_at",
+      "description": "1 when device first_seen_at is available by transaction time.",
+      "entity_key": [
+        "device_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Lookup the device first-seen timestamp known at prediction time and apply the same formula.",
+      "feature_name": "device_profile_available",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Device first_seen_at after feature_timestamp is treated as a quality failure and does not produce negative age.",
+      "model_input_candidate": true,
+      "offline_calculation": "1 when devices.first_seen_at <= feature_timestamp.",
+      "source_tables": [
+        "crypto_fraud.silver.devices",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": false,
+      "data_type": "double",
+      "default_or_null_policy": "null when device first_seen_at is unavailable or future",
+      "description": "Hours from device first_seen_at to transaction time.",
+      "entity_key": [
+        "device_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Lookup the device first-seen timestamp known at prediction time and apply the same formula.",
+      "feature_name": "device_age_hours",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Device first_seen_at after feature_timestamp is treated as a quality failure and does not produce negative age.",
+      "model_input_candidate": true,
+      "offline_calculation": "(feature_timestamp - devices.first_seen_at) / 3600 when first_seen_at <= feature_timestamp.",
+      "source_tables": [
+        "crypto_fraud.silver.devices",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": false,
+      "data_type": "double",
+      "default_or_null_policy": "null when device first_seen_at is unavailable or future",
+      "description": "Days from device first_seen_at to transaction time.",
+      "entity_key": [
+        "device_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Lookup the device first-seen timestamp known at prediction time and apply the same formula.",
+      "feature_name": "device_age_days",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Device first_seen_at after feature_timestamp is treated as a quality failure and does not produce negative age.",
+      "model_input_candidate": true,
+      "offline_calculation": "device_age_hours / 24.",
+      "source_tables": [
+        "crypto_fraud.silver.devices",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": false,
+      "data_type": "int",
+      "default_or_null_policy": "null when device profile unavailable",
+      "description": "1 when the device is at most 24 hours old at transaction time.",
+      "entity_key": [
+        "device_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Lookup the device first-seen timestamp known at prediction time and apply the same formula.",
+      "feature_name": "is_new_device_24h",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Device first_seen_at after feature_timestamp is treated as a quality failure and does not produce negative age.",
+      "model_input_candidate": true,
+      "offline_calculation": "1 when device_age_hours <= 24 and device_profile_available=1.",
+      "source_tables": [
+        "crypto_fraud.silver.devices",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": false,
+      "data_type": "int",
+      "default_or_null_policy": "0 when source wallet is not applicable",
+      "description": "1 when source_wallet_id is non-null for the transaction.",
+      "entity_key": [
+        "account_id",
+        "wallet_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Maintain wallet event-time state with strict timestamp exclusion and transaction-type nullability rules.",
+      "feature_name": "source_wallet_applicable",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Only prior customer transactions with event_timestamp < feature_timestamp contribute; null wallets follow applicability flags.",
+      "model_input_candidate": true,
+      "offline_calculation": "1 when current source_wallet_id is not null.",
+      "source_tables": [
+        "crypto_fraud.silver.wallets",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": false,
+      "data_type": "int",
+      "default_or_null_policy": "0 when destination wallet is not applicable",
+      "description": "1 when destination_wallet_id is non-null for the transaction.",
+      "entity_key": [
+        "account_id",
+        "wallet_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Maintain wallet event-time state with strict timestamp exclusion and transaction-type nullability rules.",
+      "feature_name": "destination_wallet_applicable",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Only prior customer transactions with event_timestamp < feature_timestamp contribute; null wallets follow applicability flags.",
+      "model_input_candidate": true,
+      "offline_calculation": "1 when current destination_wallet_id is not null.",
+      "source_tables": [
+        "crypto_fraud.silver.wallets",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": false,
+      "data_type": "int",
+      "default_or_null_policy": "0 when destination wallet is null, missing, or future",
+      "description": "1 when destination wallet first_seen_at is available by transaction time.",
+      "entity_key": [
+        "account_id",
+        "wallet_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Maintain wallet event-time state with strict timestamp exclusion and transaction-type nullability rules.",
+      "feature_name": "destination_wallet_first_seen_available",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Only prior customer transactions with event_timestamp < feature_timestamp contribute; null wallets follow applicability flags.",
+      "model_input_candidate": true,
+      "offline_calculation": "1 when wallets.first_seen_at <= feature_timestamp for destination_wallet_id.",
+      "source_tables": [
+        "crypto_fraud.silver.wallets",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": false,
+      "data_type": "double",
+      "default_or_null_policy": "null when destination wallet is unavailable or not applicable",
+      "description": "Hours from destination wallet first_seen_at to transaction time.",
+      "entity_key": [
+        "account_id",
+        "wallet_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Maintain wallet event-time state with strict timestamp exclusion and transaction-type nullability rules.",
+      "feature_name": "destination_wallet_age_hours",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Only prior customer transactions with event_timestamp < feature_timestamp contribute; null wallets follow applicability flags.",
+      "model_input_candidate": true,
+      "offline_calculation": "(feature_timestamp - destination wallet first_seen_at) / 3600 when available.",
+      "source_tables": [
+        "crypto_fraud.silver.wallets",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": false,
+      "data_type": "int",
+      "default_or_null_policy": "null when destination wallet is not applicable",
+      "description": "1 when this account has no strictly prior transaction to the same destination wallet.",
+      "entity_key": [
+        "account_id",
+        "wallet_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Maintain wallet event-time state with strict timestamp exclusion and transaction-type nullability rules.",
+      "feature_name": "is_new_destination_wallet",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Only prior customer transactions with event_timestamp < feature_timestamp contribute; null wallets follow applicability flags.",
+      "model_input_candidate": true,
+      "offline_calculation": "1 when destination_wallet_id is present and prior_destination_wallet_tx_count = 0.",
+      "source_tables": [
+        "crypto_fraud.silver.wallets",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": false,
+      "data_type": "long",
+      "default_or_null_policy": "0 when no prior matching transactions exist or destination wallet is not applicable",
+      "description": "Prior same-account transaction count to the same destination wallet.",
+      "entity_key": [
+        "account_id",
+        "wallet_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Maintain wallet event-time state with strict timestamp exclusion and transaction-type nullability rules.",
+      "feature_name": "prior_destination_wallet_tx_count",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Only prior customer transactions with event_timestamp < feature_timestamp contribute; null wallets follow applicability flags.",
+      "model_input_candidate": true,
+      "offline_calculation": "Count prior customer transactions with matching destination_wallet_id and event_timestamp < feature_timestamp.",
+      "source_tables": [
+        "crypto_fraud.silver.wallets",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": false,
+      "data_type": "long",
+      "default_or_null_policy": "0 when no prior matching transactions exist or source wallet is not applicable",
+      "description": "Prior same-account transaction count from the same source wallet.",
+      "entity_key": [
+        "account_id",
+        "wallet_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Maintain wallet event-time state with strict timestamp exclusion and transaction-type nullability rules.",
+      "feature_name": "prior_source_wallet_tx_count",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Only prior customer transactions with event_timestamp < feature_timestamp contribute; null wallets follow applicability flags.",
+      "model_input_candidate": true,
+      "offline_calculation": "Count prior customer transactions with matching source_wallet_id and event_timestamp < feature_timestamp.",
+      "source_tables": [
+        "crypto_fraud.silver.wallets",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": false,
+      "data_type": "string",
+      "default_or_null_policy": "null only for unsupported assets, which should not exist in Silver",
+      "description": "Coinbase product id mapped from approved transaction asset.",
+      "entity_key": [
+        "market_product_id"
+      ],
+      "event_timestamp_column": "candle_end_timestamp",
+      "expected_online_calculation": "Use completed live market state at or before prediction time with the same BTC/ETH to Coinbase product mapping.",
+      "feature_name": "market_product_id",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Uses only completed candles where candle_end_timestamp <= feature_timestamp; no future market data.",
+      "model_input_candidate": false,
+      "offline_calculation": "Map BTC to BTC-USD and ETH to ETH-USD using approved contracts.",
+      "source_tables": [
+        "crypto_fraud.silver.market_candles",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": false,
+      "data_type": "timestamp",
+      "default_or_null_policy": "null when no completed candle is available",
+      "description": "End timestamp of the latest completed market candle used for enrichment.",
+      "entity_key": [
+        "market_product_id"
+      ],
+      "event_timestamp_column": "candle_end_timestamp",
+      "expected_online_calculation": "Use completed live market state at or before prediction time with the same BTC/ETH to Coinbase product mapping.",
+      "feature_name": "latest_market_candle_end_timestamp",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Uses only completed candles where candle_end_timestamp <= feature_timestamp; no future market data.",
+      "model_input_candidate": false,
+      "offline_calculation": "Select max candle_end_timestamp <= feature_timestamp for the mapped market product.",
+      "source_tables": [
+        "crypto_fraud.silver.market_candles",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": false,
+      "data_type": "long",
+      "default_or_null_policy": "null when no completed candle is available",
+      "description": "Seconds between feature_timestamp and selected candle_end_timestamp.",
+      "entity_key": [
+        "market_product_id"
+      ],
+      "event_timestamp_column": "candle_end_timestamp",
+      "expected_online_calculation": "Use completed live market state at or before prediction time with the same BTC/ETH to Coinbase product mapping.",
+      "feature_name": "market_data_freshness_seconds",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Uses only completed candles where candle_end_timestamp <= feature_timestamp; no future market data.",
+      "model_input_candidate": true,
+      "offline_calculation": "feature_timestamp - selected candle_end_timestamp.",
+      "source_tables": [
+        "crypto_fraud.silver.market_candles",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": false,
+      "data_type": "double",
+      "default_or_null_policy": "null when no completed candle is available",
+      "description": "Close price of the selected completed market candle.",
+      "entity_key": [
+        "market_product_id"
+      ],
+      "event_timestamp_column": "candle_end_timestamp",
+      "expected_online_calculation": "Use completed live market state at or before prediction time with the same BTC/ETH to Coinbase product mapping.",
+      "feature_name": "latest_market_close_usd",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Uses only completed candles where candle_end_timestamp <= feature_timestamp; no future market data.",
+      "model_input_candidate": true,
+      "offline_calculation": "Use close_price_usd from the selected candle.",
+      "source_tables": [
+        "crypto_fraud.silver.market_candles",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": false,
+      "data_type": "double",
+      "default_or_null_policy": "null when baseline close is unavailable",
+      "description": "Close-to-close return over the prior 5 minute market horizon.",
+      "entity_key": [
+        "market_product_id"
+      ],
+      "event_timestamp_column": "candle_end_timestamp",
+      "expected_online_calculation": "Use completed live market state at or before prediction time with the same BTC/ETH to Coinbase product mapping.",
+      "feature_name": "market_return_5m",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Uses only completed candles where candle_end_timestamp <= feature_timestamp; no future market data.",
+      "model_input_candidate": true,
+      "offline_calculation": "selected_close / latest close at or before selected_candle_end - 5 minutes - 1.",
+      "source_tables": [
+        "crypto_fraud.silver.market_candles",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": "5 minutes"
+    },
+    {
+      "current_event_included": false,
+      "data_type": "double",
+      "default_or_null_policy": "null when baseline close is unavailable",
+      "description": "Close-to-close return over the prior 1 hour market horizon.",
+      "entity_key": [
+        "market_product_id"
+      ],
+      "event_timestamp_column": "candle_end_timestamp",
+      "expected_online_calculation": "Use completed live market state at or before prediction time with the same BTC/ETH to Coinbase product mapping.",
+      "feature_name": "market_return_1h",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Uses only completed candles where candle_end_timestamp <= feature_timestamp; no future market data.",
+      "model_input_candidate": true,
+      "offline_calculation": "selected_close / latest close at or before selected_candle_end - 1 hour - 1.",
+      "source_tables": [
+        "crypto_fraud.silver.market_candles",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": "1 hour"
+    },
+    {
+      "current_event_included": false,
+      "data_type": "double",
+      "default_or_null_policy": "null when fewer than two log returns are available",
+      "description": "Sample standard deviation of one-minute log returns over completed candles in the prior hour including the selected candle.",
+      "entity_key": [
+        "market_product_id"
+      ],
+      "event_timestamp_column": "candle_end_timestamp",
+      "expected_online_calculation": "Use completed live market state at or before prediction time with the same BTC/ETH to Coinbase product mapping.",
+      "feature_name": "market_volatility_1h",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Uses only completed candles where candle_end_timestamp <= feature_timestamp; no future market data.",
+      "model_input_candidate": true,
+      "offline_calculation": "stddev_samp(log(close/previous_close)) over candle_end_timestamp in [selected_candle_end - 1 hour, selected_candle_end].",
+      "source_tables": [
+        "crypto_fraud.silver.market_candles",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": "1 hour"
+    },
+    {
+      "current_event_included": false,
+      "data_type": "double",
+      "default_or_null_policy": "null when no completed candle is available",
+      "description": "Sum of Coinbase base-asset candle volume over completed candles in the prior hour including the selected candle.",
+      "entity_key": [
+        "market_product_id"
+      ],
+      "event_timestamp_column": "candle_end_timestamp",
+      "expected_online_calculation": "Use completed live market state at or before prediction time with the same BTC/ETH to Coinbase product mapping.",
+      "feature_name": "market_volume_sum_1h",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Uses only completed candles where candle_end_timestamp <= feature_timestamp; no future market data.",
+      "model_input_candidate": true,
+      "offline_calculation": "sum(volume) over candle_end_timestamp in [selected_candle_end - 1 hour, selected_candle_end].",
+      "source_tables": [
+        "crypto_fraud.silver.market_candles",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": "1 hour"
+    },
+    {
+      "current_event_included": false,
+      "data_type": "int",
+      "default_or_null_policy": "0 when no completed candle is available",
+      "description": "1 when a completed candle is available at or before feature_timestamp.",
+      "entity_key": [
+        "market_product_id"
+      ],
+      "event_timestamp_column": "candle_end_timestamp",
+      "expected_online_calculation": "Use completed live market state at or before prediction time with the same BTC/ETH to Coinbase product mapping.",
+      "feature_name": "market_data_available",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Uses only completed candles where candle_end_timestamp <= feature_timestamp; no future market data.",
+      "model_input_candidate": true,
+      "offline_calculation": "1 when selected candle exists; otherwise 0.",
+      "source_tables": [
+        "crypto_fraud.silver.market_candles",
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": false,
+      "data_type": "timestamp",
+      "default_or_null_policy": "set to current_timestamp at merge source generation time; excluded from _feature_hash",
+      "description": "Processing timestamp for this feature row.",
+      "entity_key": [
+        "transaction_id"
+      ],
+      "event_timestamp_column": "_feature_generated_at",
+      "expected_online_calculation": "Processing metadata only; not used online as a feature.",
+      "feature_name": "_feature_generated_at",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Processing-time metadata; not a model input.",
+      "model_input_candidate": false,
+      "offline_calculation": "current_timestamp()",
+      "source_tables": [
+        "notebook runtime"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": false,
+      "data_type": "string",
+      "default_or_null_policy": "constant v1",
+      "description": "Feature contract version.",
+      "entity_key": [
+        "transaction_id"
+      ],
+      "event_timestamp_column": "feature_timestamp",
+      "expected_online_calculation": "Use the deployed online feature-definition version.",
+      "feature_name": "_feature_version",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Version metadata; not a model input.",
+      "model_input_candidate": false,
+      "offline_calculation": "literal v1",
+      "source_tables": [
+        "config/feature_definitions.json"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": false,
+      "data_type": "string",
+      "default_or_null_policy": "non-null hash",
+      "description": "Stable SHA-256 hash of feature and identity values excluding _feature_generated_at.",
+      "entity_key": [
+        "transaction_id"
+      ],
+      "event_timestamp_column": "feature_timestamp",
+      "expected_online_calculation": "Use the same stable field ordering and serialization in online parity checks.",
+      "feature_name": "_feature_hash",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Audit metadata; not a model input.",
+      "model_input_candidate": false,
+      "offline_calculation": "sha2(to_json(struct(stable feature values)), 256)",
+      "source_tables": [
+        "crypto_fraud.features.transaction_features_offline"
+      ],
+      "window_length": null
+    },
+    {
+      "current_event_included": true,
+      "data_type": "string",
+      "default_or_null_policy": "copied from Silver _record_hash",
+      "description": "Silver customer transaction record hash used for lineage.",
+      "entity_key": [
+        "transaction_id"
+      ],
+      "event_timestamp_column": "event_timestamp",
+      "expected_online_calculation": "Carry source transaction event hash or equivalent event checksum.",
+      "feature_name": "_source_silver_transaction_hash",
+      "feature_version": "v1",
+      "future_events_allowed": false,
+      "leakage_notes": "Lineage metadata; not a model input.",
+      "model_input_candidate": false,
+      "offline_calculation": "Select _record_hash from the source Silver transaction.",
+      "source_tables": [
+        "crypto_fraud.silver.customer_transactions"
+      ],
+      "window_length": null
+    }
+  ],
+  "feature_table": "crypto_fraud.features.transaction_features_offline",
+  "feature_version": "v1",
+  "grain": "one row per Silver customer transaction",
+  "label_attachment_policy": {
+    "eligible_statuses": [
+      "CONFIRMED_FRAUD",
+      "CLEARED"
+    ],
+    "labels_are_excluded_from_feature_table": true,
+    "multiple_label_rule": "latest label_timestamp, then latest ingestion_timestamp, then latest source_timestamp, then descending event_id",
+    "source_table": "crypto_fraud.silver.fraud_labels",
+    "target_field": "is_fraud renamed to target_is_fraud in the training dataset"
+  },
+  "model_input_candidates": [
+    "account_age_days",
+    "account_profile_available",
+    "amount_above_normal_usd",
+    "amount_to_normal_ratio",
+    "asset",
+    "country",
+    "crypto_quantity",
+    "customer_risk_tier",
+    "destination_wallet_age_hours",
+    "destination_wallet_applicable",
+    "destination_wallet_first_seen_available",
+    "device_age_days",
+    "device_age_hours",
+    "device_distinct_account_count_1h",
+    "device_failed_auth_count_10m",
+    "device_profile_available",
+    "device_successful_auth_count_1h",
+    "failed_auth_count_10m",
+    "failed_auth_count_1h",
+    "has_previous_successful_auth",
+    "has_previous_transaction",
+    "has_prior_tx_24h",
+    "is_new_destination_wallet",
+    "is_new_device_24h",
+    "is_night_transaction_utc",
+    "is_weekend_utc",
+    "latest_market_close_usd",
+    "market_data_available",
+    "market_data_freshness_seconds",
+    "market_price_usd",
+    "market_return_1h",
+    "market_return_5m",
+    "market_volatility_1h",
+    "market_volume_sum_1h",
+    "normal_transaction_amount_available",
+    "normal_transaction_amount_usd",
+    "prior_destination_wallet_tx_count",
+    "prior_source_wallet_tx_count",
+    "prior_tx_amount_avg_24h",
+    "prior_tx_amount_max_24h",
+    "prior_tx_amount_sum_1h",
+    "prior_tx_amount_sum_24h",
+    "prior_tx_count_1h",
+    "prior_tx_count_24h",
+    "prior_tx_count_5m",
+    "recent_auth_failure_flag_10m",
+    "seconds_since_last_successful_auth",
+    "seconds_since_previous_tx",
+    "source_wallet_applicable",
+    "successful_auth_count_1h",
+    "transaction_amount_usd",
+    "transaction_country_mismatch_home_country",
+    "transaction_day_of_week_utc",
+    "transaction_hour_utc",
+    "transaction_type"
+  ],
+  "non_model_columns": [
+    "transaction_id",
+    "account_id",
+    "device_id",
+    "source_wallet_id",
+    "destination_wallet_id",
+    "feature_timestamp",
+    "event_date",
+    "market_product_id",
+    "latest_market_candle_end_timestamp",
+    "_feature_generated_at",
+    "_feature_version",
+    "_feature_hash",
+    "_source_silver_transaction_hash"
+  ],
+  "point_in_time_policy": {
+    "feature_timestamp": "customer_transactions.event_timestamp",
+    "future_events_allowed": false,
+    "historical_event_rule": "historical_event_timestamp < feature_timestamp",
+    "identical_timestamp_policy": "strict exclusion; events at the exact same timestamp are not previous events",
+    "market_candle_rule": "latest completed candle with candle_end_timestamp <= feature_timestamp"
+  },
+  "primary_business_key": "transaction_id",
+  "training_dataset": "crypto_fraud.features.transaction_training_dataset",
+  "training_dataset_non_feature_columns": [
+    "target_is_fraud",
+    "label_timestamp",
+    "investigation_status",
+    "fraud_type",
+    "label_source",
+    "_source_silver_label_hash",
+    "_source_silver_label_event_id",
+    "_training_generated_at",
+    "_training_row_hash"
+  ]
+}

@@ -1,0 +1,1483 @@
+{
+  "candidate_feature_count": 55,
+  "candidate_features": [
+    "account_age_days",
+    "account_profile_available",
+    "amount_above_normal_usd",
+    "amount_to_normal_ratio",
+    "asset",
+    "country",
+    "crypto_quantity",
+    "customer_risk_tier",
+    "destination_wallet_age_hours",
+    "destination_wallet_applicable",
+    "destination_wallet_first_seen_available",
+    "device_age_days",
+    "device_age_hours",
+    "device_distinct_account_count_1h",
+    "device_failed_auth_count_10m",
+    "device_profile_available",
+    "device_successful_auth_count_1h",
+    "failed_auth_count_10m",
+    "failed_auth_count_1h",
+    "has_previous_successful_auth",
+    "has_previous_transaction",
+    "has_prior_tx_24h",
+    "is_new_destination_wallet",
+    "is_new_device_24h",
+    "is_night_transaction_utc",
+    "is_weekend_utc",
+    "latest_market_close_usd",
+    "market_data_available",
+    "market_data_freshness_seconds",
+    "market_price_usd",
+    "market_return_1h",
+    "market_return_5m",
+    "market_volatility_1h",
+    "market_volume_sum_1h",
+    "normal_transaction_amount_available",
+    "normal_transaction_amount_usd",
+    "prior_destination_wallet_tx_count",
+    "prior_source_wallet_tx_count",
+    "prior_tx_amount_avg_24h",
+    "prior_tx_amount_max_24h",
+    "prior_tx_amount_sum_1h",
+    "prior_tx_amount_sum_24h",
+    "prior_tx_count_1h",
+    "prior_tx_count_24h",
+    "prior_tx_count_5m",
+    "recent_auth_failure_flag_10m",
+    "seconds_since_last_successful_auth",
+    "seconds_since_previous_tx",
+    "source_wallet_applicable",
+    "successful_auth_count_1h",
+    "transaction_amount_usd",
+    "transaction_country_mismatch_home_country",
+    "transaction_day_of_week_utc",
+    "transaction_hour_utc",
+    "transaction_type"
+  ],
+  "categorical_distinct_values": {
+    "asset": [
+      {
+        "count": 2355,
+        "value": "BTC"
+      },
+      {
+        "count": 2124,
+        "value": "ETH"
+      }
+    ],
+    "country": [
+      {
+        "count": 1918,
+        "value": "US"
+      },
+      {
+        "count": 497,
+        "value": "GB"
+      },
+      {
+        "count": 393,
+        "value": "CA"
+      },
+      {
+        "count": 298,
+        "value": "DE"
+      },
+      {
+        "count": 293,
+        "value": "SG"
+      },
+      {
+        "count": 221,
+        "value": "NL"
+      },
+      {
+        "count": 190,
+        "value": "IN"
+      },
+      {
+        "count": 165,
+        "value": "AU"
+      },
+      {
+        "count": 143,
+        "value": "FR"
+      },
+      {
+        "count": 128,
+        "value": "JP"
+      },
+      {
+        "count": 120,
+        "value": "BR"
+      },
+      {
+        "count": 113,
+        "value": "AE"
+      }
+    ],
+    "customer_risk_tier": [
+      {
+        "count": 3283,
+        "value": "LOW"
+      },
+      {
+        "count": 1062,
+        "value": "MEDIUM"
+      },
+      {
+        "count": 134,
+        "value": "HIGH"
+      }
+    ],
+    "fraud_type": [
+      {
+        "count": 4439,
+        "value": null
+      },
+      {
+        "count": 8,
+        "value": "ACCOUNT_TAKEOVER"
+      },
+      {
+        "count": 8,
+        "value": "STRUCTURING"
+      },
+      {
+        "count": 6,
+        "value": "HIGH_TRANSACTION_VELOCITY"
+      },
+      {
+        "count": 6,
+        "value": "MULE_ACCOUNT_ACTIVITY"
+      },
+      {
+        "count": 6,
+        "value": "SHARED_SUSPICIOUS_DEVICE"
+      },
+      {
+        "count": 6,
+        "value": "UNUSUAL_TRANSACTION_AMOUNT"
+      }
+    ],
+    "investigation_status": [
+      {
+        "count": 4439,
+        "value": "CLEARED"
+      },
+      {
+        "count": 40,
+        "value": "CONFIRMED_FRAUD"
+      }
+    ],
+    "label_source": [
+      {
+        "count": 4479,
+        "value": "SIMULATED_INVESTIGATION"
+      }
+    ],
+    "transaction_type": [
+      {
+        "count": 2085,
+        "value": "WITHDRAWAL"
+      },
+      {
+        "count": 1531,
+        "value": "DEPOSIT"
+      },
+      {
+        "count": 863,
+        "value": "TRANSFER"
+      }
+    ]
+  },
+  "contract_name": "phase8_transaction_features_offline",
+  "contract_path": "/Workspace/Users/akanaskhan1506@gmail.com/config/feature_definitions.json",
+  "duplicate_transaction_count": 0,
+  "estimated_selected_in_memory_size_bytes": 5020959,
+  "estimated_selected_in_memory_size_mb": 4.788359642028809,
+  "excluded_columns": [
+    "_feature_generated_at",
+    "_feature_hash",
+    "_feature_version",
+    "_source_silver_label_event_id",
+    "_source_silver_label_hash",
+    "_source_silver_transaction_hash",
+    "_training_generated_at",
+    "_training_row_hash",
+    "account_id",
+    "destination_wallet_id",
+    "device_id",
+    "event_date",
+    "feature_timestamp",
+    "fraud_type",
+    "investigation_status",
+    "label_source",
+    "label_timestamp",
+    "latest_market_candle_end_timestamp",
+    "market_product_id",
+    "source_wallet_id",
+    "target_is_fraud",
+    "transaction_id"
+  ],
+  "failed_checks": [],
+  "feature_version": "v1",
+  "feature_version_distribution": [
+    {
+      "count": 4479,
+      "value": "v1"
+    }
+  ],
+  "fraud_label_semantics_checks": {
+    "cleared_status_target_violations": 0,
+    "confirmed_fraud_status_target_violations": 0,
+    "fraud_target_null_fraud_type_count": 0,
+    "normal_target_non_null_fraud_type_count": 0
+  },
+  "null_feature_timestamps": 0,
+  "null_target_count": 0,
+  "null_transaction_ids": 0,
+  "numeric_nan_and_infinite_counts": {
+    "account_age_days": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "account_profile_available": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "amount_above_normal_usd": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "amount_to_normal_ratio": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "crypto_quantity": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "destination_wallet_age_hours": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "destination_wallet_applicable": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "destination_wallet_first_seen_available": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "device_age_days": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "device_age_hours": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "device_distinct_account_count_1h": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "device_failed_auth_count_10m": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "device_profile_available": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "device_successful_auth_count_1h": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "failed_auth_count_10m": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "failed_auth_count_1h": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "has_previous_successful_auth": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "has_previous_transaction": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "has_prior_tx_24h": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "is_new_destination_wallet": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "is_new_device_24h": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "is_night_transaction_utc": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "is_weekend_utc": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "latest_market_close_usd": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "market_data_available": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "market_data_freshness_seconds": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "market_price_usd": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "market_return_1h": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 15
+    },
+    "market_return_5m": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "market_volatility_1h": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "market_volume_sum_1h": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "normal_transaction_amount_available": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "normal_transaction_amount_usd": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "prior_destination_wallet_tx_count": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "prior_source_wallet_tx_count": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "prior_tx_amount_avg_24h": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 88
+    },
+    "prior_tx_amount_max_24h": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 88
+    },
+    "prior_tx_amount_sum_1h": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "prior_tx_amount_sum_24h": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "prior_tx_count_1h": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "prior_tx_count_24h": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "prior_tx_count_5m": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "recent_auth_failure_flag_10m": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "seconds_since_last_successful_auth": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 185
+    },
+    "seconds_since_previous_tx": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 87
+    },
+    "source_wallet_applicable": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "successful_auth_count_1h": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "transaction_amount_usd": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "transaction_country_mismatch_home_country": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "transaction_day_of_week_utc": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    },
+    "transaction_hour_utc": {
+      "infinite_count": 0,
+      "missing_from_table": 0,
+      "nan_count": 0,
+      "null_count": 0
+    }
+  },
+  "numeric_summary": {
+    "account_age_days": {
+      "infinite_count": 0,
+      "max": 545.0,
+      "mean": 280.22482697030586,
+      "min": 22.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 139.0228585630658
+    },
+    "account_profile_available": {
+      "infinite_count": 0,
+      "max": 1.0,
+      "mean": 1.0,
+      "min": 1.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 0.0
+    },
+    "amount_above_normal_usd": {
+      "infinite_count": 0,
+      "max": 6597.14051103,
+      "mean": 33.538196368939495,
+      "min": -1742.32996672,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 261.0625516675434
+    },
+    "amount_to_normal_ratio": {
+      "infinite_count": 0,
+      "max": 14.255811590766642,
+      "mean": 1.117708882474989,
+      "min": 0.23753798605050905,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 0.7054910196206271
+    },
+    "crypto_quantity": {
+      "infinite_count": 0,
+      "max": 4.45167281,
+      "mean": 0.08325102970529133,
+      "min": 0.00036542,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 0.14720917534833228
+    },
+    "destination_wallet_age_hours": {
+      "infinite_count": 0,
+      "max": 8755.25888888889,
+      "mean": 3414.9837357048823,
+      "min": 27.725833333333334,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 2094.167872375434
+    },
+    "destination_wallet_applicable": {
+      "infinite_count": 0,
+      "max": 1.0,
+      "mean": 1.0,
+      "min": 1.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 0.0
+    },
+    "destination_wallet_first_seen_available": {
+      "infinite_count": 0,
+      "max": 1.0,
+      "mean": 1.0,
+      "min": 1.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 0.0
+    },
+    "device_age_days": {
+      "infinite_count": 0,
+      "max": 365.98603009259256,
+      "mean": 181.5093412984875,
+      "min": 5.307280092592593,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 98.6888861658689
+    },
+    "device_age_hours": {
+      "infinite_count": 0,
+      "max": 8783.664722222222,
+      "mean": 4356.2241911636875,
+      "min": 127.37472222222222,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 2368.5332679808557
+    },
+    "device_distinct_account_count_1h": {
+      "infinite_count": 0,
+      "max": 6.0,
+      "mean": 0.12279526680062514,
+      "min": 0.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 0.35060803538301183
+    },
+    "device_failed_auth_count_10m": {
+      "infinite_count": 0,
+      "max": 6.0,
+      "mean": 0.011163206072784104,
+      "min": 0.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 0.20676469489930407
+    },
+    "device_profile_available": {
+      "infinite_count": 0,
+      "max": 1.0,
+      "mean": 1.0,
+      "min": 1.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 0.0
+    },
+    "device_successful_auth_count_1h": {
+      "infinite_count": 0,
+      "max": 2.0,
+      "mean": 0.12100915382897968,
+      "min": 0.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 0.34351421870316967
+    },
+    "failed_auth_count_10m": {
+      "infinite_count": 0,
+      "max": 6.0,
+      "mean": 0.009600357222594329,
+      "min": 0.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 0.1985809329281283
+    },
+    "failed_auth_count_1h": {
+      "infinite_count": 0,
+      "max": 6.0,
+      "mean": 0.01808439383791025,
+      "min": 0.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 0.2480541351697133
+    },
+    "has_previous_successful_auth": {
+      "infinite_count": 0,
+      "max": 1.0,
+      "mean": 0.9586961375306988,
+      "min": 0.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 0.19901431146689486
+    },
+    "has_previous_transaction": {
+      "infinite_count": 0,
+      "max": 1.0,
+      "mean": 0.9805760214333556,
+      "min": 0.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 0.13802514631361765
+    },
+    "has_prior_tx_24h": {
+      "infinite_count": 0,
+      "max": 1.0,
+      "mean": 0.9803527573119,
+      "min": 0.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 0.13880032364677677
+    },
+    "is_new_destination_wallet": {
+      "infinite_count": 0,
+      "max": 1.0,
+      "mean": 0.05269033266354097,
+      "min": 0.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 0.22343949519960093
+    },
+    "is_new_device_24h": {
+      "infinite_count": 0,
+      "max": 0.0,
+      "mean": 0.0,
+      "min": 0.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 0.0
+    },
+    "is_night_transaction_utc": {
+      "infinite_count": 0,
+      "max": 1.0,
+      "mean": 0.24402768475106051,
+      "min": 0.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 0.4295571794083037
+    },
+    "is_weekend_utc": {
+      "infinite_count": 0,
+      "max": 1.0,
+      "mean": 0.28600133958472873,
+      "min": 0.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 0.4519404552331701
+    },
+    "latest_market_close_usd": {
+      "infinite_count": 0,
+      "max": 73877.99,
+      "mean": 35100.02336905572,
+      "min": 1519.84,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 31793.330985928395
+    },
+    "market_data_available": {
+      "infinite_count": 0,
+      "max": 1.0,
+      "mean": 1.0,
+      "min": 1.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 0.0
+    },
+    "market_data_freshness_seconds": {
+      "infinite_count": 0,
+      "max": 59.0,
+      "mean": 29.539629381558385,
+      "min": 0.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 17.42115983897327
+    },
+    "market_price_usd": {
+      "infinite_count": 0,
+      "max": 73877.99,
+      "mean": 35100.02336905572,
+      "min": 1519.84,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 31793.330985928395
+    },
+    "market_return_1h": {
+      "infinite_count": 0,
+      "max": 0.03944039710845537,
+      "mean": -0.001002671038163518,
+      "min": -0.052535301483614405,
+      "nan_count": 0,
+      "null_count": 15,
+      "stddev": 0.00836050678175936
+    },
+    "market_return_5m": {
+      "infinite_count": 0,
+      "max": 0.03499951066744944,
+      "mean": -0.00010673225926118371,
+      "min": -0.011558611076657677,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 0.0023787946738819594
+    },
+    "market_volatility_1h": {
+      "infinite_count": 0,
+      "max": 0.0037701428975377726,
+      "mean": 0.0009691375105620494,
+      "min": 0.00028936435915665354,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 0.00048758802764483955
+    },
+    "market_volume_sum_1h": {
+      "infinite_count": 0,
+      "max": 53810.561048470016,
+      "mean": 5098.844049166569,
+      "min": 106.48990253000004,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 7441.235888017043
+    },
+    "normal_transaction_amount_available": {
+      "infinite_count": 0,
+      "max": 1.0,
+      "mean": 1.0,
+      "min": 1.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 0.0
+    },
+    "normal_transaction_amount_usd": {
+      "infinite_count": 0,
+      "max": 3006.85,
+      "mean": 292.6056173252972,
+      "min": 58.64,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 294.38763282872117
+    },
+    "prior_destination_wallet_tx_count": {
+      "infinite_count": 0,
+      "max": 48.0,
+      "mean": 11.024559053360125,
+      "min": 0.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 8.62727918121329
+    },
+    "prior_source_wallet_tx_count": {
+      "infinite_count": 0,
+      "max": 51.0,
+      "mean": 10.268140209868275,
+      "min": 0.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 11.283537313000288
+    },
+    "prior_tx_amount_avg_24h": {
+      "infinite_count": 0,
+      "max": 4003.0350732383336,
+      "mean": 322.7718670039394,
+      "min": 48.82000747166666,
+      "nan_count": 0,
+      "null_count": 88,
+      "stddev": 318.0049438409734
+    },
+    "prior_tx_amount_max_24h": {
+      "infinite_count": 0,
+      "max": 8393.50005798,
+      "mean": 548.4109339504479,
+      "min": 58.38982538,
+      "nan_count": 0,
+      "null_count": 88,
+      "stddev": 678.3464818834622
+    },
+    "prior_tx_amount_sum_1h": {
+      "infinite_count": 0,
+      "max": 7796.690132830001,
+      "mean": 98.00251000161641,
+      "min": 0.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 269.18459884123405
+    },
+    "prior_tx_amount_sum_24h": {
+      "infinite_count": 0,
+      "max": 31437.39059337,
+      "mean": 2172.0951140794696,
+      "min": 0.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 2210.8455769812203
+    },
+    "prior_tx_count_1h": {
+      "infinite_count": 0,
+      "max": 6.0,
+      "mean": 0.3203840142889038,
+      "min": 0.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 0.591975696658605
+    },
+    "prior_tx_count_24h": {
+      "infinite_count": 0,
+      "max": 20.0,
+      "mean": 6.875195356106274,
+      "min": 0.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 3.0587238303438564
+    },
+    "prior_tx_count_5m": {
+      "infinite_count": 0,
+      "max": 4.0,
+      "mean": 0.033489618218352314,
+      "min": 0.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 0.22711295463753448
+    },
+    "recent_auth_failure_flag_10m": {
+      "infinite_count": 0,
+      "max": 1.0,
+      "mean": 0.003125697700379549,
+      "min": 0.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 0.055826727868315544
+    },
+    "seconds_since_last_successful_auth": {
+      "infinite_count": 0,
+      "max": 168195.0,
+      "mean": 22370.666045645085,
+      "min": 12.0,
+      "nan_count": 0,
+      "null_count": 185,
+      "stddev": 21487.456709102516
+    },
+    "seconds_since_previous_tx": {
+      "infinite_count": 0,
+      "max": 96839.0,
+      "mean": 11355.826958105647,
+      "min": 1.0,
+      "nan_count": 0,
+      "null_count": 87,
+      "stddev": 11108.653286976745
+    },
+    "source_wallet_applicable": {
+      "infinite_count": 0,
+      "max": 1.0,
+      "mean": 0.6581826300513508,
+      "min": 0.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 0.47437168585358824
+    },
+    "successful_auth_count_1h": {
+      "infinite_count": 0,
+      "max": 3.0,
+      "mean": 0.15360571556150926,
+      "min": 0.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 0.38342130277366204
+    },
+    "transaction_amount_usd": {
+      "infinite_count": 0,
+      "max": 8393.50005798,
+      "mean": 326.1438136942352,
+      "min": 22.54019821,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 407.3030986361024
+    },
+    "transaction_country_mismatch_home_country": {
+      "infinite_count": 0,
+      "max": 1.0,
+      "mean": 0.02589863808885912,
+      "min": 0.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 0.15885066061064612
+    },
+    "transaction_day_of_week_utc": {
+      "infinite_count": 0,
+      "max": 7.0,
+      "mean": 3.9631614199598126,
+      "min": 1.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 2.013294449635218
+    },
+    "transaction_hour_utc": {
+      "infinite_count": 0,
+      "max": 23.0,
+      "mean": 11.568207189104712,
+      "min": 0.0,
+      "nan_count": 0,
+      "null_count": 0,
+      "stddev": 6.895683393607838
+    }
+  },
+  "phase": "9A",
+  "sample_rows": [
+    {
+      "_feature_version": "v1",
+      "account_id": "60cf65e1-77b0-5934-8427-062839da530c",
+      "asset": "ETH",
+      "country": "US",
+      "customer_risk_tier": "LOW",
+      "device_id": "6abdfb6f-d435-535d-bf8b-79025fa985e4",
+      "feature_timestamp": "2026-06-01T00:30:28",
+      "target_is_fraud": false,
+      "transaction_id": "69994ad4-505b-544b-97ca-c22234e002dc",
+      "transaction_type": "DEPOSIT"
+    },
+    {
+      "_feature_version": "v1",
+      "account_id": "5d79daba-0ad3-5e0a-bda3-b0a1babad42b",
+      "asset": "BTC",
+      "country": "SG",
+      "customer_risk_tier": "MEDIUM",
+      "device_id": "b90e8317-d8b1-5f7d-8c1c-c20cc8b2b1d3",
+      "feature_timestamp": "2026-06-01T00:35:27",
+      "target_is_fraud": false,
+      "transaction_id": "c7df9cb7-8092-52ec-8bc8-9c4f8a6da722",
+      "transaction_type": "WITHDRAWAL"
+    },
+    {
+      "_feature_version": "v1",
+      "account_id": "3ecf414f-e3a5-520f-824d-3e35245b34fe",
+      "asset": "BTC",
+      "country": "CA",
+      "customer_risk_tier": "MEDIUM",
+      "device_id": "c249fc34-e793-5574-ada0-794a95b416e4",
+      "feature_timestamp": "2026-06-01T00:39:13",
+      "target_is_fraud": false,
+      "transaction_id": "7123ccb7-2362-5c4c-a1b8-9c75ad07e420",
+      "transaction_type": "TRANSFER"
+    },
+    {
+      "_feature_version": "v1",
+      "account_id": "7afe4546-1909-5ed9-8bb1-e41ddafab075",
+      "asset": "ETH",
+      "country": "US",
+      "customer_risk_tier": "MEDIUM",
+      "device_id": "8c5e4d57-1b56-51b4-b3ae-449c7fe8af7d",
+      "feature_timestamp": "2026-06-01T00:41:54",
+      "target_is_fraud": false,
+      "transaction_id": "51c694ad-c31a-5785-a84d-b2fa56b7163e",
+      "transaction_type": "WITHDRAWAL"
+    },
+    {
+      "_feature_version": "v1",
+      "account_id": "8b2f2ece-6311-555b-9e89-96a8e8cc227b",
+      "asset": "ETH",
+      "country": "AU",
+      "customer_risk_tier": "LOW",
+      "device_id": "9f1f0a80-e30a-5e93-b5ae-2c568395911d",
+      "feature_timestamp": "2026-06-01T00:44:31",
+      "target_is_fraud": false,
+      "transaction_id": "02750607-6cae-5cfe-bac6-ca8c7e8ecbd3",
+      "transaction_type": "WITHDRAWAL"
+    }
+  ],
+  "schema": [
+    {
+      "data_type": "string",
+      "name": "transaction_id",
+      "nullable": true
+    },
+    {
+      "data_type": "string",
+      "name": "account_id",
+      "nullable": true
+    },
+    {
+      "data_type": "string",
+      "name": "device_id",
+      "nullable": true
+    },
+    {
+      "data_type": "string",
+      "name": "source_wallet_id",
+      "nullable": true
+    },
+    {
+      "data_type": "string",
+      "name": "destination_wallet_id",
+      "nullable": true
+    },
+    {
+      "data_type": "timestamp",
+      "name": "feature_timestamp",
+      "nullable": true
+    },
+    {
+      "data_type": "date",
+      "name": "event_date",
+      "nullable": true
+    },
+    {
+      "data_type": "string",
+      "name": "asset",
+      "nullable": true
+    },
+    {
+      "data_type": "string",
+      "name": "transaction_type",
+      "nullable": true
+    },
+    {
+      "data_type": "string",
+      "name": "country",
+      "nullable": true
+    },
+    {
+      "data_type": "double",
+      "name": "transaction_amount_usd",
+      "nullable": true
+    },
+    {
+      "data_type": "double",
+      "name": "crypto_quantity",
+      "nullable": true
+    },
+    {
+      "data_type": "double",
+      "name": "market_price_usd",
+      "nullable": true
+    },
+    {
+      "data_type": "int",
+      "name": "transaction_hour_utc",
+      "nullable": true
+    },
+    {
+      "data_type": "int",
+      "name": "transaction_day_of_week_utc",
+      "nullable": true
+    },
+    {
+      "data_type": "int",
+      "name": "is_weekend_utc",
+      "nullable": true
+    },
+    {
+      "data_type": "int",
+      "name": "is_night_transaction_utc",
+      "nullable": true
+    },
+    {
+      "data_type": "bigint",
+      "name": "account_age_days",
+      "nullable": true
+    },
+    {
+      "data_type": "int",
+      "name": "account_profile_available",
+      "nullable": true
+    },
+    {
+      "data_type": "string",
+      "name": "customer_risk_tier",
+      "nullable": true
+    },
+    {
+      "data_type": "double",
+      "name": "normal_transaction_amount_usd",
+      "nullable": true
+    },
+    {
+      "data_type": "int",
+      "name": "normal_transaction_amount_available",
+      "nullable": true
+    },
+    {
+      "data_type": "double",
+      "name": "amount_to_normal_ratio",
+      "nullable": true
+    },
+    {
+      "data_type": "double",
+      "name": "amount_above_normal_usd",
+      "nullable": true
+    },
+    {
+      "data_type": "int",
+      "name": "transaction_country_mismatch_home_country",
+      "nullable": true
+    },
+    {
+      "data_type": "bigint",
+      "name": "prior_tx_count_5m",
+      "nullable": true
+    },
+    {
+      "data_type": "bigint",
+      "name": "prior_tx_count_1h",
+      "nullable": true
+    },
+    {
+      "data_type": "bigint",
+      "name": "prior_tx_count_24h",
+      "nullable": true
+    },
+    {
+      "data_type": "double",
+      "name": "prior_tx_amount_sum_1h",
+      "nullable": true
+    },
+    {
+      "data_type": "double",
+      "name": "prior_tx_amount_sum_24h",
+      "nullable": true
+    },
+    {
+      "data_type": "double",
+      "name": "prior_tx_amount_avg_24h",
+      "nullable": true
+    },
+    {
+      "data_type": "double",
+      "name": "prior_tx_amount_max_24h",
+      "nullable": true
+    },
+    {
+      "data_type": "int",
+      "name": "has_prior_tx_24h",
+      "nullable": true
+    },
+    {
+      "data_type": "bigint",
+      "name": "seconds_since_previous_tx",
+      "nullable": true
+    },
+    {
+      "data_type": "int",
+      "name": "has_previous_transaction",
+      "nullable": true
+    },
+    {
+      "data_type": "bigint",
+      "name": "failed_auth_count_10m",
+      "nullable": true
+    },
+    {
+      "data_type": "bigint",
+      "name": "failed_auth_count_1h",
+      "nullable": true
+    },
+    {
+      "data_type": "bigint",
+      "name": "successful_auth_count_1h",
+      "nullable": true
+    },
+    {
+      "data_type": "int",
+      "name": "recent_auth_failure_flag_10m",
+      "nullable": true
+    },
+    {
+      "data_type": "bigint",
+      "name": "seconds_since_last_successful_auth",
+      "nullable": true
+    },
+    {
+      "data_type": "int",
+      "name": "has_previous_successful_auth",
+      "nullable": true
+    },
+    {
+      "data_type": "bigint",
+      "name": "device_failed_auth_count_10m",
+      "nullable": true
+    },
+    {
+      "data_type": "bigint",
+      "name": "device_successful_auth_count_1h",
+      "nullable": true
+    },
+    {
+      "data_type": "bigint",
+      "name": "device_distinct_account_count_1h",
+      "nullable": true
+    },
+    {
+      "data_type": "int",
+      "name": "device_profile_available",
+      "nullable": true
+    },
+    {
+      "data_type": "double",
+      "name": "device_age_hours",
+      "nullable": true
+    },
+    {
+      "data_type": "double",
+      "name": "device_age_days",
+      "nullable": true
+    },
+    {
+      "data_type": "int",
+      "name": "is_new_device_24h",
+      "nullable": true
+    },
+    {
+      "data_type": "int",
+      "name": "source_wallet_applicable",
+      "nullable": true
+    },
+    {
+      "data_type": "int",
+      "name": "destination_wallet_applicable",
+      "nullable": true
+    },
+    {
+      "data_type": "int",
+      "name": "destination_wallet_first_seen_available",
+      "nullable": true
+    },
+    {
+      "data_type": "double",
+      "name": "destination_wallet_age_hours",
+      "nullable": true
+    },
+    {
+      "data_type": "int",
+      "name": "is_new_destination_wallet",
+      "nullable": true
+    },
+    {
+      "data_type": "bigint",
+      "name": "prior_destination_wallet_tx_count",
+      "nullable": true
+    },
+    {
+      "data_type": "bigint",
+      "name": "prior_source_wallet_tx_count",
+      "nullable": true
+    },
+    {
+      "data_type": "string",
+      "name": "market_product_id",
+      "nullable": true
+    },
+    {
+      "data_type": "timestamp",
+      "name": "latest_market_candle_end_timestamp",
+      "nullable": true
+    },
+    {
+      "data_type": "bigint",
+      "name": "market_data_freshness_seconds",
+      "nullable": true
+    },
+    {
+      "data_type": "double",
+      "name": "latest_market_close_usd",
+      "nullable": true
+    },
+    {
+      "data_type": "double",
+      "name": "market_return_5m",
+      "nullable": true
+    },
+    {
+      "data_type": "double",
+      "name": "market_return_1h",
+      "nullable": true
+    },
+    {
+      "data_type": "double",
+      "name": "market_volatility_1h",
+      "nullable": true
+    },
+    {
+      "data_type": "double",
+      "name": "market_volume_sum_1h",
+      "nullable": true
+    },
+    {
+      "data_type": "int",
+      "name": "market_data_available",
+      "nullable": true
+    },
+    {
+      "data_type": "timestamp",
+      "name": "_feature_generated_at",
+      "nullable": true
+    },
+    {
+      "data_type": "string",
+      "name": "_feature_version",
+      "nullable": true
+    },
+    {
+      "data_type": "string",
+      "name": "_feature_hash",
+      "nullable": true
+    },
+    {
+      "data_type": "string",
+      "name": "_source_silver_transaction_hash",
+      "nullable": true
+    },
+    {
+      "data_type": "boolean",
+      "name": "target_is_fraud",
+      "nullable": true
+    },
+    {
+      "data_type": "timestamp",
+      "name": "label_timestamp",
+      "nullable": true
+    },
+    {
+      "data_type": "string",
+      "name": "investigation_status",
+      "nullable": true
+    },
+    {
+      "data_type": "string",
+      "name": "fraud_type",
+      "nullable": true
+    },
+    {
+      "data_type": "string",
+      "name": "label_source",
+      "nullable": true
+    },
+    {
+      "data_type": "string",
+      "name": "_source_silver_label_hash",
+      "nullable": true
+    },
+    {
+      "data_type": "string",
+      "name": "_source_silver_label_event_id",
+      "nullable": true
+    },
+    {
+      "data_type": "timestamp",
+      "name": "_training_generated_at",
+      "nullable": true
+    },
+    {
+      "data_type": "string",
+      "name": "_training_row_hash",
+      "nullable": true
+    }
+  ],
+  "selected_column_count_for_pandas_conversion": 66,
+  "source_column_count": 77,
+  "source_row_count": 4479,
+  "source_table": "crypto_fraud.features.transaction_training_dataset",
+  "supporting_feature_table": "crypto_fraud.features.transaction_features_offline",
+  "target_column": "target_is_fraud",
+  "target_distinct_values": [
+    true,
+    false
+  ],
+  "target_distribution": {
+    "fraud": 40,
+    "normal": 4439,
+    "other_or_null": 0
+  },
+  "target_distribution_warning": null,
+  "timestamp_range": {
+    "max_feature_timestamp": "2026-06-07T23:58:57",
+    "min_feature_timestamp": "2026-06-01T00:30:28"
+  },
+  "training_rows_missing_in_feature_table": 0,
+  "unique_transaction_count": 4479
+}

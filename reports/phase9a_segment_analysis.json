@@ -1,0 +1,265 @@
+{
+  "limitations": "Segment metrics are unstable when segment fraud counts are small.",
+  "model_name": "logistic_regression_balanced_v1",
+  "scope": "validation and locked test splits at threshold 0.5",
+  "test": {
+    "asset": [
+      {
+        "average_predicted_fraud_probability": 0.04580797975300246,
+        "fraud_count": 1,
+        "fraud_precision": 0.045454545454545456,
+        "fraud_recall": 1.0,
+        "precision_defined": true,
+        "predicted_high_risk_count_at_threshold_0_5": 22,
+        "recall_defined": true,
+        "row_count": 636,
+        "segment_name": "asset",
+        "segment_value": "BTC"
+      },
+      {
+        "average_predicted_fraud_probability": 0.06626009148257073,
+        "fraud_count": 2,
+        "fraud_precision": 0.06896551724137931,
+        "fraud_recall": 1.0,
+        "precision_defined": true,
+        "predicted_high_risk_count_at_threshold_0_5": 29,
+        "recall_defined": true,
+        "row_count": 573,
+        "segment_name": "asset",
+        "segment_value": "ETH"
+      }
+    ],
+    "cold_start_status": [
+      {
+        "average_predicted_fraud_probability": null,
+        "fraud_count": 0,
+        "fraud_precision": null,
+        "fraud_recall": null,
+        "precision_defined": false,
+        "predicted_high_risk_count_at_threshold_0_5": 0,
+        "recall_defined": false,
+        "row_count": 0,
+        "segment_name": "cold_start_status",
+        "segment_value": "cold_start"
+      },
+      {
+        "average_predicted_fraud_probability": 0.05550116422036608,
+        "fraud_count": 3,
+        "fraud_precision": 0.058823529411764705,
+        "fraud_recall": 1.0,
+        "precision_defined": true,
+        "predicted_high_risk_count_at_threshold_0_5": 51,
+        "recall_defined": true,
+        "row_count": 1209,
+        "segment_name": "cold_start_status",
+        "segment_value": "existing_history"
+      }
+    ],
+    "customer_risk_tier": [
+      {
+        "average_predicted_fraud_probability": 0.00020410621210218506,
+        "fraud_count": 0,
+        "fraud_precision": null,
+        "fraud_recall": null,
+        "precision_defined": false,
+        "predicted_high_risk_count_at_threshold_0_5": 0,
+        "recall_defined": false,
+        "row_count": 39,
+        "segment_name": "customer_risk_tier",
+        "segment_value": "HIGH"
+      },
+      {
+        "average_predicted_fraud_probability": 0.0679041529063894,
+        "fraud_count": 1,
+        "fraud_precision": 0.021739130434782608,
+        "fraud_recall": 1.0,
+        "precision_defined": true,
+        "predicted_high_risk_count_at_threshold_0_5": 46,
+        "recall_defined": true,
+        "row_count": 881,
+        "segment_name": "customer_risk_tier",
+        "segment_value": "LOW"
+      },
+      {
+        "average_predicted_fraud_probability": 0.02515359408173543,
+        "fraud_count": 2,
+        "fraud_precision": 0.4,
+        "fraud_recall": 1.0,
+        "precision_defined": true,
+        "predicted_high_risk_count_at_threshold_0_5": 5,
+        "recall_defined": true,
+        "row_count": 289,
+        "segment_name": "customer_risk_tier",
+        "segment_value": "MEDIUM"
+      }
+    ],
+    "transaction_type": [
+      {
+        "average_predicted_fraud_probability": 0.00014612939115886742,
+        "fraud_count": 0,
+        "fraud_precision": null,
+        "fraud_recall": null,
+        "precision_defined": false,
+        "predicted_high_risk_count_at_threshold_0_5": 0,
+        "recall_defined": false,
+        "row_count": 394,
+        "segment_name": "transaction_type",
+        "segment_value": "DEPOSIT"
+      },
+      {
+        "average_predicted_fraud_probability": 0.037684596356934025,
+        "fraud_count": 0,
+        "fraud_precision": 0.0,
+        "fraud_recall": null,
+        "precision_defined": true,
+        "predicted_high_risk_count_at_threshold_0_5": 7,
+        "recall_defined": false,
+        "row_count": 244,
+        "segment_name": "transaction_type",
+        "segment_value": "TRANSFER"
+      },
+      {
+        "average_predicted_fraud_probability": 0.10131049220878124,
+        "fraud_count": 3,
+        "fraud_precision": 0.06818181818181818,
+        "fraud_recall": 1.0,
+        "precision_defined": true,
+        "predicted_high_risk_count_at_threshold_0_5": 44,
+        "recall_defined": true,
+        "row_count": 571,
+        "segment_name": "transaction_type",
+        "segment_value": "WITHDRAWAL"
+      }
+    ]
+  },
+  "validation": {
+    "asset": [
+      {
+        "average_predicted_fraud_probability": 0.06427488849931566,
+        "fraud_count": 4,
+        "fraud_precision": 0.17647058823529413,
+        "fraud_recall": 0.75,
+        "precision_defined": true,
+        "predicted_high_risk_count_at_threshold_0_5": 17,
+        "recall_defined": true,
+        "row_count": 312,
+        "segment_name": "asset",
+        "segment_value": "BTC"
+      },
+      {
+        "average_predicted_fraud_probability": 0.033161045724808914,
+        "fraud_count": 2,
+        "fraud_precision": 0.14285714285714285,
+        "fraud_recall": 0.5,
+        "precision_defined": true,
+        "predicted_high_risk_count_at_threshold_0_5": 7,
+        "recall_defined": true,
+        "row_count": 232,
+        "segment_name": "asset",
+        "segment_value": "ETH"
+      }
+    ],
+    "cold_start_status": [
+      {
+        "average_predicted_fraud_probability": null,
+        "fraud_count": 0,
+        "fraud_precision": null,
+        "fraud_recall": null,
+        "precision_defined": false,
+        "predicted_high_risk_count_at_threshold_0_5": 0,
+        "recall_defined": false,
+        "row_count": 0,
+        "segment_name": "cold_start_status",
+        "segment_value": "cold_start"
+      },
+      {
+        "average_predicted_fraud_probability": 0.05100574966901132,
+        "fraud_count": 6,
+        "fraud_precision": 0.16666666666666666,
+        "fraud_recall": 0.6666666666666666,
+        "precision_defined": true,
+        "predicted_high_risk_count_at_threshold_0_5": 24,
+        "recall_defined": true,
+        "row_count": 544,
+        "segment_name": "cold_start_status",
+        "segment_value": "existing_history"
+      }
+    ],
+    "customer_risk_tier": [
+      {
+        "average_predicted_fraud_probability": 0.0011974841090765234,
+        "fraud_count": 0,
+        "fraud_precision": null,
+        "fraud_recall": null,
+        "precision_defined": false,
+        "predicted_high_risk_count_at_threshold_0_5": 0,
+        "recall_defined": false,
+        "row_count": 18,
+        "segment_name": "customer_risk_tier",
+        "segment_value": "HIGH"
+      },
+      {
+        "average_predicted_fraud_probability": 0.06258313684617954,
+        "fraud_count": 4,
+        "fraud_precision": 0.13636363636363635,
+        "fraud_recall": 0.75,
+        "precision_defined": true,
+        "predicted_high_risk_count_at_threshold_0_5": 22,
+        "recall_defined": true,
+        "row_count": 405,
+        "segment_name": "customer_risk_tier",
+        "segment_value": "LOW"
+      },
+      {
+        "average_predicted_fraud_probability": 0.019664484985752614,
+        "fraud_count": 2,
+        "fraud_precision": 0.5,
+        "fraud_recall": 0.5,
+        "precision_defined": true,
+        "predicted_high_risk_count_at_threshold_0_5": 2,
+        "recall_defined": true,
+        "row_count": 121,
+        "segment_name": "customer_risk_tier",
+        "segment_value": "MEDIUM"
+      }
+    ],
+    "transaction_type": [
+      {
+        "average_predicted_fraud_probability": 0.002038590236254233,
+        "fraud_count": 0,
+        "fraud_precision": null,
+        "fraud_recall": null,
+        "precision_defined": false,
+        "predicted_high_risk_count_at_threshold_0_5": 0,
+        "recall_defined": false,
+        "row_count": 192,
+        "segment_name": "transaction_type",
+        "segment_value": "DEPOSIT"
+      },
+      {
+        "average_predicted_fraud_probability": 0.027186949071049404,
+        "fraud_count": 2,
+        "fraud_precision": 1.0,
+        "fraud_recall": 0.5,
+        "precision_defined": true,
+        "predicted_high_risk_count_at_threshold_0_5": 1,
+        "recall_defined": true,
+        "row_count": 103,
+        "segment_name": "transaction_type",
+        "segment_value": "TRANSFER"
+      },
+      {
+        "average_predicted_fraud_probability": 0.09861631622595686,
+        "fraud_count": 4,
+        "fraud_precision": 0.13043478260869565,
+        "fraud_recall": 0.75,
+        "precision_defined": true,
+        "predicted_high_risk_count_at_threshold_0_5": 23,
+        "recall_defined": true,
+        "row_count": 249,
+        "segment_name": "transaction_type",
+        "segment_value": "WITHDRAWAL"
+      }
+    ]
+  }
+}

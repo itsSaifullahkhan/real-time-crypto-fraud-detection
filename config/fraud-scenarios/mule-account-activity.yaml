@@ -1,0 +1,116 @@
+scenario_id: mule_account_activity
+scenario_version: "1.0"
+display_name: "Mule-account activity"
+description: "Multiple apparently unrelated accounts send funds to the same external destination wallet within a defined time horizon."
+enabled: true
+fraud_type: MULE_ACCOUNT_ACTIVITY
+reason_codes:
+  - NEW_DESTINATION_WALLET
+affected_entities:
+  - account
+  - device
+  - wallet
+  - customer_transaction
+  - fraud_decision
+  - fraud_label
+affected_event_types:
+  - customer_transaction
+  - fraud_decision
+  - fraud_label
+prerequisites:
+  - "Multiple active accounts exist with no normal relationship to each other."
+  - "Separate devices are used where possible."
+  - "One shared external destination wallet is available with owner_account_id null."
+trigger_logic:
+  graph_relative_rules:
+    distinct_accounts_to_destination_wallet:
+      min: 3
+      max: 8
+    destination_transactions:
+      min: 3
+      max: 12
+  wallet_pattern: "Destination wallet accumulates suspicious connectivity over event time."
+event_sequence:
+  - step: 1
+    event_type: customer_transaction
+    description: "First account sends funds to a shared external wallet; this may not be fraud-obvious yet."
+    transaction_event_contains_label: false
+  - step: 2
+    event_type: customer_transaction
+    description: "Additional unrelated accounts send funds to the same external wallet within the horizon."
+    transaction_event_contains_label: false
+  - step: 3
+    event_type: fraud_decision
+    description: "Later transactions can use wallet connectivity known before each prediction point."
+    transaction_event_contains_label: false
+  - step: 4
+    event_type: fraud_label
+    description: "Delayed investigation labels the documented subset of wallet-connected transactions."
+    transaction_event_contains_label: false
+timing_rules:
+  prerequisite_history_days:
+    min: 14
+    max: 180
+  wallet_activity_horizon_hours:
+    min: 1
+    max: 24
+  spacing_between_accounts_minutes:
+    min: 5
+    max: 180
+  maximum_scenario_duration_hours:
+    min: 2
+    max: 24
+  label_delay_hours:
+    min: 24
+    max: 120
+  late_or_out_of_order_variants_later: true
+  can_overlap_with_another_scenario: false
+expected_feature_signals:
+  - name: accounts_connected_to_destination_wallet
+    source: prior_wallet_activity
+    availability: before_prediction
+  - name: destination_wallet_transaction_count
+    source: prior_transaction_events
+    availability: before_prediction
+  - name: destination_wallet_risk_score
+    source: prior_wallet_activity
+    availability: before_prediction
+  - name: unique_destination_wallets_last_1_hour
+    source: prior_transaction_events
+    availability: before_prediction
+  - name: transaction_count_last_1_hour
+    source: prior_transaction_events
+    availability: before_prediction
+  - name: wallet_recent_fraud_count
+    source: prior_confirmed_labels
+    availability: before_prediction
+label_rules:
+  labeled_transaction_selection: "Transactions after the second distinct account connects to the destination wallet receive confirmed fraud labels."
+  multiple_labels_can_relate_to_same_scenario: true
+  label_delay_hours:
+    min: 24
+    max: 120
+  fraud_type: MULE_ACCOUNT_ACTIVITY
+  investigation_status: CONFIRMED_FRAUD
+  is_fraud: true
+  label_source: SIMULATED_INVESTIGATION
+  normal_control_records_generated: true
+  cleared_control_label:
+    investigation_status: CLEARED
+    is_fraud: false
+    fraud_type: null
+difficulty: HARD
+false_positive_risk:
+  level: HIGH
+  examples:
+    - "Corporate wallet used by authorized accounts."
+    - "Shared merchant, payroll, or family destination wallet."
+normal_control_cases:
+  - "Corporate destination wallet used by approved accounts with normal authentication."
+  - "Known exchange destination wallet used by multiple unrelated customers."
+validation_rules:
+  - "Wallet-connectivity features must use only transactions known before each prediction timestamp."
+  - "Future labels cannot contribute to wallet_recent_fraud_count."
+  - "A future wallet-specific reason code requires an approved schema-version change."
+notes:
+  - "The approved reason code is NEW_DESTINATION_WALLET until a wallet-connectivity reason code is added through schema governance."

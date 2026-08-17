@@ -1,0 +1,53 @@
+catalogue_version: "1.0"
+description: "Phase 3 scenario registry for controlled synthetic fraud behaviour."
+
+target_fraud_rate_range:
+  unit: fraction_of_customer_transactions
+  min: 0.005
+  max: 0.01
+  note: "Approved project range is 0.5% to 1.0%; final values will be calibrated during generator testing."
+
+random_seed:
+  value: null
+  note: "Placeholder for deterministic generator runs in a later phase."
+
+enabled_scenarios:
+  - account_takeover
+  - high_transaction_velocity
+  - unusual_transaction_amount
+  - structuring
+  - mule_account_activity
+  - shared_suspicious_device
+
+optional_scenarios:
+  - high_volatility_unusual_withdrawal
+
+scenario_paths:
+  account_takeover: config/fraud-scenarios/account-takeover.yaml
+  high_transaction_velocity: config/fraud-scenarios/high-transaction-velocity.yaml
+  unusual_transaction_amount: config/fraud-scenarios/unusual-transaction-amount.yaml
+  structuring: config/fraud-scenarios/structuring.yaml
+  mule_account_activity: config/fraud-scenarios/mule-account-activity.yaml
+  shared_suspicious_device: config/fraud-scenarios/shared-suspicious-device.yaml
+  high_volatility_unusual_withdrawal: config/fraud-scenarios/high-volatility-unusual-withdrawal.yaml
+
+common_label_delay_policy:
+  unit: hours
+  min: 12
+  max: 72
+  label_source: SIMULATED_INVESTIGATION
+  confirmed_status: CONFIRMED_FRAUD
+  cleared_status: CLEARED
+  note: "Fraud labels are separate fraud_label events and are never embedded in customer transactions."
+
+scenario_overlap_policy:
+  default: avoid_same_transaction_overlap
+  allowed_when_explicitly_documented: true
+  max_active_scenarios_per_account: 1
+  optional_market_context_can_overlap: false
+  note: "Overlap settings are simulation parameters, not model scoring rules."
+
+calibration_notes:
+  - "Final scenario mix and event ranges will be calibrated during data-generation testing."
+  - "The registry does not define model decision cutoffs or production fraud rules."
+  - "Scenario metadata must not be written into model-facing transaction records."
